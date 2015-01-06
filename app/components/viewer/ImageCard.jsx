@@ -1,5 +1,4 @@
 var React = require('react');
-var ReactStyle = require('react-style');
 
 var ImageCard = React.createClass({
   styles: {
@@ -14,22 +13,22 @@ var ImageCard = React.createClass({
         position: 'absolute',
         left: 0,
         top: 0
-      }
+      };
     },
 
     img: function(props) {
-      return ReactStyle({
+      return {
         position: 'relative',
         height: props.height,
         width: '100%'
-      })
+      };
     }
   },
 
   render() {
     return (
       <div style={this.styles.card(this.props)}>
-        <div styles={this.styles.img(this.props)}></div>
+        <div style={this.styles.img(this.props)}></div>
       </div>
     );
   }

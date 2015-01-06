@@ -1,19 +1,19 @@
 var React = require('react');
-var StaticView = require('ui/helpers/StaticView');
-var TitleBar = require('ui/components/TitleBar');
-var BackButton = require('ui/components/buttons/BackButton');
-var { Container } = require('ui/components/Grid');
-var List = require('ui/components/List');
-var Icon = require('ui/components/Icon');
-var Badge = require('ui/components/Badge');
-var Title = require('ui/components/Title');
-var ListItem = require('ui/components/ListItem');
-var ScrollableMixin = require('ui/mixins/Scrollable');
+var StaticView = require('reapp-ui/helpers/StaticView');
+var TitleBar = require('reapp-ui/components/TitleBar');
+var BackButton = require('reapp-ui/components/buttons/BackButton');
+var { Container } = require('reapp-ui/components/Grid');
+var List = require('reapp-ui/components/List');
+var Icon = require('reapp-ui/components/Icon');
+var Badge = require('reapp-ui/components/Badge');
+var Title = require('reapp-ui/components/Title');
+var ListItem = require('reapp-ui/components/ListItem');
+var ScrollableMixin = require('reapp-ui/mixins/Scrollable');
 var { Link } = require('react-router');
 
-var TouchableArea = require('ui/helpers/TouchableArea');
-var AnimatableContainer = require('ui/helpers/AnimatableContainer');
-var FrostedGlassContainer = require('ui/helpers/FrostedGlassContainer');
+var TouchableArea = require('reapp-ui/helpers/TouchableArea');
+var AnimatableContainer = require('reapp-ui/helpers/AnimatableContainer');
+var FrostedGlassContainer = require('reapp-ui/helpers/FrostedGlassContainer');
 var HEADER_HEIGHT = 44;
 
 module.exports = StaticView({

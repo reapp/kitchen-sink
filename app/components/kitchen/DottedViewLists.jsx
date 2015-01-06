@@ -1,9 +1,9 @@
 var React = require('react');
-var StaticView = require('ui/helpers/StaticView');
-var DottedViewList = require('ui/views/DottedViewList');
-var View = require('ui/views/View');
-var BackButton = require('ui/components/buttons/BackButton');
-var { Container } = require('ui/components/Grid');
+var StaticView = require('reapp-ui/helpers/StaticView');
+var DottedViewList = require('reapp-ui/views/DottedViewList');
+var View = require('reapp-ui/views/View');
+var BackButton = require('reapp-ui/components/buttons/BackButton');
+var { Container } = require('reapp-ui/components/Grid');
 
 module.exports = StaticView({
   statics: {

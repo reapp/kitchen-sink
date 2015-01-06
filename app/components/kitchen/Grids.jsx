@@ -1,7 +1,7 @@
 var React = require('react');
-var View = require('ui/views/View');
-var BackButton = require('ui/components/buttons/BackButton');
-var { Container, Block } = require('ui/components/Grid');
+var View = require('reapp-ui/views/View');
+var BackButton = require('reapp-ui/components/buttons/BackButton');
+var { Container, Block } = require('reapp-ui/components/Grid');
 
 require('./Grids.styl');
 

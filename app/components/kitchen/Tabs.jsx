@@ -1,10 +1,10 @@
 var React = require('react');
-var StaticView = require('ui/helpers/StaticView');
-var Tabs = require('ui/components/Tabs');
-var TabItem = require('ui/components/TabItem');
-var Button = require('ui/components/Button');
-var BackButton = require('ui/components/buttons/BackButton');
-var { Container, Block } = require('ui/components/Grid');
+var StaticView = require('reapp-ui/helpers/StaticView');
+var Tabs = require('reapp-ui/components/Tabs');
+var TabItem = require('reapp-ui/components/TabItem');
+var Button = require('reapp-ui/components/Button');
+var BackButton = require('reapp-ui/components/buttons/BackButton');
+var { Container, Block } = require('reapp-ui/components/Grid');
 
 module.exports = StaticView({
   statics: {

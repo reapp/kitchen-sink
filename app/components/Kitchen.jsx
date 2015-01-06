@@ -2,6 +2,7 @@ var Component = require('component');
 var React = require('react');
 var { Link } = require('react-router');
 var Layout = require('./Layout');
+var { RoutedViewListMixin } = require('reapp-platform');
 var NestedViewList = require('reapp-ui/views/NestedViewList');
 var View = require('reapp-ui/views/View');
 var SearchBar = require('reapp-ui/components/SearchBar');
@@ -17,7 +18,7 @@ var InertLink = React.createClass({
 
 module.exports = Component({
   mixins: [
-    Component.mixins.routedViewListHandler
+    RoutedViewListMixin
   ],
 
   getInitialState() {

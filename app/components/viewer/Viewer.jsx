@@ -1,17 +1,16 @@
 var ImageCardContainer = require('./ImageCardContainer');
 var React = require('react');
-var ReactStyle = require('react-style');
-var TouchableArea = require('ui/helpers/TouchableArea');
+var TouchableArea = require('reapp-ui/helpers/TouchableArea');
 var { Scroller } = require('scroller');
 
 var Viewer = React.createClass({
-  styles: ReactStyle({
+  styles: {
     'background': 'black',
     'overflow': 'hidden',
     'perspective': '500px',
     '-webkit-perspective': '500px',
     '-moz-perspective': '500px',
-  }),
+  },
 
   componentWillMount() {
     this.scroller = new Scroller(this.handleScroll, {
@@ -59,8 +58,7 @@ var Viewer = React.createClass({
     return (
       <TouchableArea
         className="Viewer"
-        style={{width: this.props.width, height: this.props.height}}
-        styles={this.styles}
+        style={Object.assign(this.styles, {width: this.props.width, height: this.props.height})}
         scroller={this.scroller}>
         {images}
       </TouchableArea>

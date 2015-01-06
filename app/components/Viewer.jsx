@@ -1,9 +1,9 @@
 var React = require('react');
 var Component = require('component');
-var Images = require('../../assets/data/images');
+// var Images = require('../../assets/data/images');
 var Viewer = require('../components/viewer/Viewer');
-var View = require('ui/views/View');
-var TitleBar = require('ui/components/TitleBar');
+var View = require('reapp-ui/views/View');
+var TitleBar = require('reapp-ui/components/TitleBar');
 
 var ViewerPage = React.createClass({
   getInitialState() {
@@ -28,7 +28,7 @@ var ViewerPage = React.createClass({
         <Viewer
           width={this.state.width}
           height={this.state.height}
-          images={Images} />
+          images={[]} />
       </View>
     );
   }

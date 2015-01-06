@@ -1,10 +1,10 @@
 var React = require('react');
-var View = require('ui/views/View');
-var PopoverLink = require('ui/components/PopoverLink');
-var ShowPopover = require('ui/actions/ShowPopover');
-var { Container } = require('ui/components/Grid');
-var Button = require('ui/components/Button');
-var BackButton = require('ui/components/buttons/BackButton');
+var View = require('reapp-ui/views/View');
+var PopoverLink = require('reapp-ui/components/PopoverLink');
+var ShowPopover = require('reapp-ui/actions/ShowPopover');
+var { Container } = require('reapp-ui/components/Grid');
+var Button = require('reapp-ui/components/Button');
+var BackButton = require('reapp-ui/components/buttons/BackButton');
 var { Link } = require('react-router');
 
 var PopoversPage = React.createClass({

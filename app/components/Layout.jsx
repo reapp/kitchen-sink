@@ -1,14 +1,13 @@
 var React = require('react');
 var Component = require('component');
 var { Link, RouteHandler } = require('react-router');
-var DocumentTitle = require('react-document-title');
-var Menu = require('ui/components/Menu');
-var Button = require('ui/components/Button');
-var LayoutLeftNav = require('ui/views/LayoutLeftNav');
-var PopoverHandler = require('ui/mixins/PopoverHandler');
-var Popover = require('ui/components/Popover');
-var ModalHandler = require('ui/mixins/ModalHandler');
-var Modal = require('ui/components/Modal');
+var Menu = require('reapp-ui/components/Menu');
+var Button = require('reapp-ui/components/Button');
+var LayoutLeftNav = require('reapp-ui/views/LayoutLeftNav');
+var PopoverHandler = require('reapp-ui/mixins/PopoverHandler');
+var Popover = require('reapp-ui/components/Popover');
+var ModalHandler = require('reapp-ui/mixins/ModalHandler');
+var Modal = require('reapp-ui/components/Modal');
 
 require('./App.css');
 
@@ -37,8 +36,7 @@ module.exports = Component({
     );
 
     return (
-      <LayoutLeftNav side={menu} handle={button}>
-        <DocumentTitle title="React Base" />
+      <LayoutLeftNav side={menu} handle={button} title="Kitchen Sink">
         {this.props.children}
         {this.state.popoverProps && (
           <Popover {...this.state.popoverProps} />
