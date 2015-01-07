@@ -1,11 +1,11 @@
-var barBG = '#3552ff';
-
 module.exports = {
-  titleBarBG: barBG,
-  titleBarColor: '#fff',
+  bgColor: '#eee',
+  activeColor: '#fff',
 
-  // colors
-  bgLight: '#eee',
+  // Dots
   dotColor: '0,0,0',
-  greyMid: '#8e8e93'
+
+  // TitleBar
+  titleBarBG: '#3552ff',
+  titleBarColor: '#fff'
 };

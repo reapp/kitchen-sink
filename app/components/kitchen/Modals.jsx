@@ -20,23 +20,23 @@ module.exports = StaticView({
   },
 
   handlePrompt() {
-    this.setState({modal: 'prompt'});
-  },
-
-  handleConfirm() {
-    this.setState({modal: 'confirm'});
+    ShowModal({
+      type: 'prompt',
+      title: 'React',
+      onAccept: this.toggleAlert,
+      children: 'Hello'
+    });
   },
 
   render() {
     return (
       <div>
         <Container>
-          <p>These are replicas of the native Alert, Prompt and Confirm modals.</p>
+          <p>These are replacements for the Alert and Prompt modals.</p>
         </Container>
         <Container>
           <Button onClick={this.toggleAlert}>Alert</Button>
           <Button onClick={this.handlePrompt}>Prompt</Button>
-          <Button onClick={this.handleConfirm}>Confirm</Button>
         </Container>
       </div>
     );
