@@ -1,7 +1,6 @@
 var Component = require('component');
 var React = require('react');
 var { Link } = require('react-router');
-var Layout = require('./Layout');
 var { RoutedViewListMixin } = require('reapp-platform');
 var NestedViewList = require('reapp-ui/views/NestedViewList');
 var View = require('reapp-ui/views/View');
@@ -52,11 +51,11 @@ module.exports = Component({
     ['lists', 'Lists'],
     ['modals', 'Modals'],
     ['popovers', 'Popovers'],
-    ['cards', 'Cards'],
     ['forms', 'Forms'],
     ['tabs', 'Tabs'],
     ['grids', 'Grid'],
-    ['panels', 'Drawers']
+    ['panels', 'Drawers'],
+    ['cards', 'Cards']
   ],
 
   viewLinks: [
@@ -66,29 +65,24 @@ module.exports = Component({
   ],
 
   render() {
-    var numRoutes = this.getRoutes().length;
-    var hasChild = numRoutes > 2;
-
     return (
-      <Layout>
-        <NestedViewList {...this.routedViewListProps()}>
-          <View title={[this.props.handle, 'Kitchen Sink']}>
-            <SearchBar onChange={this.handleSearch} defaultValue="" />
+      <NestedViewList {...this.routedViewListProps()}>
+        <View title={[this.props.handle, 'Kitchen Sink']}>
+          <SearchBar onChange={this.handleSearch} defaultValue="" />
 
-            <Title>Interface</Title>
-            <List>
-              {this.filteredLinks(this.interfaceLinks)}
-            </List>
+          <Title>Interface</Title>
+          <List>
+            {this.filteredLinks(this.interfaceLinks)}
+          </List>
 
-            <Title>Views</Title>
-            <List>
-              {this.filteredLinks(this.viewLinks)}
-            </List>
-          </View>
+          <Title>Views</Title>
+          <List>
+            {this.filteredLinks(this.viewLinks)}
+          </List>
+        </View>
 
-          {this.routedSubRoute()}
-        </NestedViewList>
-      </Layout>
+        {this.routedSubRoute()}
+      </NestedViewList>
     );
   }
 });

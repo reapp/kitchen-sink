@@ -37,7 +37,7 @@ module.exports = Component({
 
     return (
       <LayoutLeftNav side={menu} handle={button} title="Kitchen Sink">
-        {this.props.children}
+        <RouteHandler {...this.props} />
         {this.state.popoverProps && (
           <Popover {...this.state.popoverProps} />
         )}

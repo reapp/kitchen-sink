@@ -1,18 +1,21 @@
 var { route, routes } = require('reapp-routes/react-router/generator');
 
 module.exports = routes(require,
-  route('kitchen', '/',
-    route('controls'),
-    route('modals'),
-    route('popovers'),
-    route('tabs'),
-    route('cards'),
-    route('panels'),
-    route('lists'),
-    route('view-lists'),
-    route('dotted-view-lists'),
-    route('view-frosted'),
-    route('grids'),
-    route('forms')
+  route('app', '/', { dir: '' },
+    route('kitchen', '/',
+      route('controls'),
+      route('modals'),
+      route('popovers'),
+      route('tabs'),
+      route('cards'),
+      route('panels'),
+      route('lists'),
+      route('view-lists'),
+      route('dotted-view-lists'),
+      route('view-frosted'),
+      route('grids'),
+      route('forms')
+    ),
+    route('viewer')
   )
 );

@@ -11,10 +11,6 @@ body * {
   -webkit-backface-visibility: hidden;
 }
 
-script, link {
-  display: none;
-}
-
 html,
 body {
   background: white;
