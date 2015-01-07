@@ -1,6 +1,6 @@
 var React = require('react');
 var AnimatableContainer = require('reapp-ui/helpers/AnimatableContainer');
-var EasingFunctions = require('reapp-ui/lib/animate/EasingFunctions');
+var EasingFunctions = require('reapp-ui/lib/EasingFunctions');
 var ImageCard = require('./ImageCard');
 
 var ImageCardContainer = React.createClass({
