@@ -1,4 +1,3 @@
-var Component = require('component');
 var React = require('react');
 var { Link } = require('react-router');
 var { RoutedViewListMixin } = require('reapp-platform');
@@ -15,7 +14,7 @@ var InertLink = React.createClass({
   render() { return <Link {...this.props} activeClassName="" />; }
 });
 
-module.exports = Component({
+module.exports = React.createClass({
   mixins: [
     RoutedViewListMixin
   ],

@@ -1,5 +1,4 @@
 var React = require('react');
-var Component = require('component');
 var { Link, RouteHandler } = require('react-router');
 var Menu = require('reapp-ui/components/Menu');
 var Button = require('reapp-ui/components/Button');
@@ -11,7 +10,7 @@ var Modal = require('reapp-ui/components/Modal');
 
 require('./App.css');
 
-module.exports = Component({
+module.exports = React.createClass({
   mixins: [
     PopoverHandler,
     ModalHandler

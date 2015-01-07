@@ -1,5 +1,4 @@
 var React = require('react');
-var Component = require('component');
 // var Images = require('../../assets/data/images');
 var Viewer = require('../components/viewer/Viewer');
 var View = require('reapp-ui/views/View');
