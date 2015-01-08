@@ -1,16 +1,16 @@
-var React = require('react');
-var { Link, RouteHandler } = require('react-router');
-var Menu = require('reapp-ui/components/Menu');
-var Button = require('reapp-ui/components/Button');
-var LayoutLeftNav = require('reapp-ui/views/LayoutLeftNav');
-var PopoverHandler = require('reapp-ui/mixins/PopoverHandler');
-var Popover = require('reapp-ui/components/Popover');
-var ModalHandler = require('reapp-ui/mixins/ModalHandler');
-var Modal = require('reapp-ui/components/Modal');
+import React from 'react';
+import { Link, RouteHandler } from 'react-router';
+import Menu from 'reapp-ui/components/Menu';
+import Button from 'reapp-ui/components/Button';
+import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
+import PopoverHandler from 'reapp-ui/mixins/PopoverHandler';
+import Popover from 'reapp-ui/components/Popover';
+import ModalHandler from 'reapp-ui/mixins/ModalHandler';
+import Modal from 'reapp-ui/components/Modal';
 
-require('./App.css');
+import './App.css';
 
-module.exports = React.createClass({
+export default React.createClass({
   mixins: [
     PopoverHandler,
     ModalHandler

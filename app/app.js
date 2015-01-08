@@ -1,6 +1,6 @@
-var Run = require('reapp-routes/react-router/run');
-var Reapp = require('reapp-platform');
-var Routes = require('./routes');
+import Run from 'reapp-routes/react-router/run';
+import Reapp from 'reapp-platform';
+import Routes from './routes';
 
 // import our theme
 require('./theme/theme');

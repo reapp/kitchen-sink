@@ -1,15 +1,15 @@
-var React = require('react');
-var StaticView = require('reapp-ui/helpers/StaticView');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var { Container } = require('reapp-ui/components/Grid');
-var List = require('reapp-ui/components/List');
-var Icon = require('reapp-ui/components/Icon');
-var Badge = require('reapp-ui/components/Badge');
-var Title = require('reapp-ui/components/Title');
-var ListItem = require('reapp-ui/components/ListItem');
-var { Link } = require('react-router');
+import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import { Container } from 'reapp-ui/components/Grid';
+import List from 'reapp-ui/components/List';
+import Icon from 'reapp-ui/components/Icon';
+import Badge from 'reapp-ui/components/Badge';
+import Title from 'reapp-ui/components/Title';
+import ListItem from 'reapp-ui/components/ListItem';
+import { Link } from 'react-router';
 
-module.exports = StaticView({
+export default StaticView({
   statics: {
     title: [<BackButton />, 'Lists Page']
   },

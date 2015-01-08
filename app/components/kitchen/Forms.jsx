@@ -1,16 +1,16 @@
-var React = require('react');
-var StaticView = require('reapp-ui/helpers/StaticView');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var Button = require('reapp-ui/components/Button');
-var ButtonRow = require('reapp-ui/components/ButtonRow');
-var Title = require('reapp-ui/components/Title');
-var List = require('reapp-ui/components/List');
-var { Container, Block } = require('reapp-ui/components/Grid');
-var Form = require('reapp-ui/components/Form');
-var Label = require('reapp-ui/components/Label');
-var Input = require('reapp-ui/components/Input');
+import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import Button from 'reapp-ui/components/Button';
+import ButtonRow from 'reapp-ui/components/ButtonRow';
+import Title from 'reapp-ui/components/Title';
+import List from 'reapp-ui/components/List';
+import { Container, Block } from 'reapp-ui/components/Grid';
+import Form from 'reapp-ui/components/Form';
+import Label from 'reapp-ui/components/Label';
+import Input from 'reapp-ui/components/Input';
 
-module.exports = StaticView({
+export default StaticView({
   statics: {
     title: [<BackButton />, "Forms"]
   },

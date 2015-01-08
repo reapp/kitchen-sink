@@ -1,11 +1,11 @@
-var React = require('react');
-var StaticView = require('reapp-ui/helpers/StaticView');
-var { Container, Block } = require('reapp-ui/components/Grid');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var Button = require('reapp-ui/components/Button');
-var Title = require('reapp-ui/components/Title');
+import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
+import { Container, Block } from 'reapp-ui/components/Grid';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import Button from 'reapp-ui/components/Button';
+import Title from 'reapp-ui/components/Title';
 
-module.exports = StaticView({
+export default StaticView({
   statics: {
     title: [<BackButton />, 'Controls']
   },

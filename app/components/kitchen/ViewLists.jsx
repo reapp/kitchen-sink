@@ -1,12 +1,12 @@
-var React = require('react');
-var StaticView = require('reapp-ui/helpers/StaticView');
-var NestedViewList = require('reapp-ui/views/NestedViewList');
-var View = require('reapp-ui/views/View');
-var Button = require('reapp-ui/components/Button');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var { Container } = require('reapp-ui/components/Grid');
+import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
+import NestedViewList from 'reapp-ui/views/NestedViewList';
+import View from 'reapp-ui/views/View';
+import Button from 'reapp-ui/components/Button';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import { Container } from 'reapp-ui/components/Grid';
 
-module.exports = StaticView({
+export default StaticView({
   render() {
     return (
       <div>

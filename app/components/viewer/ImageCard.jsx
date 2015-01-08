@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-var ImageCard = React.createClass({
+export default React.createClass({
   styles: {
     card: function(props) {
       return {
@@ -33,5 +33,3 @@ var ImageCard = React.createClass({
     );
   }
 });
-
-module.exports = ImageCard;

@@ -1,9 +1,9 @@
-var ImageCardContainer = require('./ImageCardContainer');
-var React = require('react');
-var TouchableArea = require('reapp-ui/helpers/TouchableArea');
-var { Scroller } = require('scroller');
+import ImageCardContainer from './ImageCardContainer';
+import React from 'react';
+import TouchableArea from 'reapp-ui/helpers/TouchableArea';
+import { Scroller } from 'scroller';
 
-var Viewer = React.createClass({
+export default React.createClass({
   styles: {
     'background': 'black',
     'overflow': 'hidden',
@@ -65,5 +65,3 @@ var Viewer = React.createClass({
     );
   }
 });
-
-module.exports = Viewer;

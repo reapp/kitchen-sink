@@ -1,20 +1,20 @@
-var React = require('react');
-var { Link } = require('react-router');
-var { RoutedViewListMixin } = require('reapp-platform');
-var NestedViewList = require('reapp-ui/views/NestedViewList');
-var View = require('reapp-ui/views/View');
-var SearchBar = require('reapp-ui/components/SearchBar');
-var List = require('reapp-ui/components/List');
-var ListItem = require('reapp-ui/components/ListItem');
-var Title = require('reapp-ui/components/Title');
-var Badge = require('reapp-ui/components/Badge');
+import React from 'react';
+import { Link } from 'react-router';
+import { RoutedViewListMixin } from 'reapp-platform';
+import NestedViewList from 'reapp-ui/views/NestedViewList';
+import View from 'reapp-ui/views/View';
+import SearchBar from 'reapp-ui/components/SearchBar';
+import List from 'reapp-ui/components/List';
+import ListItem from 'reapp-ui/components/ListItem';
+import Title from 'reapp-ui/components/Title';
+import Badge from 'reapp-ui/components/Badge';
 
 var InertLink = React.createClass({
   displayName: 'Link',
   render() { return <Link {...this.props} activeClassName="" />; }
 });
 
-module.exports = React.createClass({
+export default React.createClass({
   mixins: [
     RoutedViewListMixin
   ],

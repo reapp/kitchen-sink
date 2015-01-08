@@ -1,7 +1,7 @@
-var React = require('react');
-var View = require('reapp-ui/views/View');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var { Container, Block } = require('reapp-ui/components/Grid');
+import React from 'react';
+import View from 'reapp-ui/views/View';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import { Container, Block } from 'reapp-ui/components/Grid';
 
 var BlueBlock = React.createClass({
   styles: {
@@ -16,7 +16,7 @@ var BlueBlock = React.createClass({
   }
 });
 
-module.exports = React.createClass({
+export default React.createClass({
   styles: {
     textAlign: 'center',
   },

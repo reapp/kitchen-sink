@@ -1,5 +1,5 @@
-var UI = require('reapp-ui');
-var iOSTheme = require('reapp-ui/themes/ios/all');
+import UI from 'reapp-ui';
+import iOSTheme from 'reapp-ui/themes/ios/all';
 
 UI.addConstants(
   iOSTheme.constants,

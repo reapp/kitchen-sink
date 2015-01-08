@@ -1,11 +1,11 @@
-var React = require('react');
-var View = require('reapp-ui/views/View');
-var PopoverLink = require('reapp-ui/components/PopoverLink');
-var ShowPopover = require('reapp-ui/actions/ShowPopover');
-var { Container } = require('reapp-ui/components/Grid');
-var Button = require('reapp-ui/components/Button');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var { Link } = require('react-router');
+import React from 'react';
+import View from 'reapp-ui/views/View';
+import PopoverLink from 'reapp-ui/components/PopoverLink';
+import ShowPopover from 'reapp-ui/actions/ShowPopover';
+import { Container } from 'reapp-ui/components/Grid';
+import Button from 'reapp-ui/components/Button';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import { Link } from 'react-router';
 
 var PopoversPage = React.createClass({
   render() {
@@ -23,7 +23,7 @@ var PopoversPage = React.createClass({
   }
 });
 
-module.exports = React.createClass({
+export default React.createClass({
   render() {
     var popoverContent = [
       <Link to="modals">Modals</Link>,

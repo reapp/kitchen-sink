@@ -1,8 +1,8 @@
-var React = require('react');
-// var Images = require('../../assets/data/images');
-var Viewer = require('../components/viewer/Viewer');
-var View = require('reapp-ui/views/View');
-var TitleBar = require('reapp-ui/components/TitleBar');
+import React from 'react';
+// import Images from '../../assets/data/images';
+import Viewer from '../components/viewer/Viewer';
+import View from 'reapp-ui/views/View';
+import TitleBar from 'reapp-ui/components/TitleBar';
 
 var ViewerPage = React.createClass({
   getInitialState() {

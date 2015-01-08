@@ -16,6 +16,6 @@
     "react-router": "~0.11.6",
     "reapp-request": "*",
     "reapp-component": "*",
-    "scroller": "0.0.2",
+    "scroller": "0.0.2"
   }
 }

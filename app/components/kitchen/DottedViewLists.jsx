@@ -1,11 +1,11 @@
-var React = require('react');
-var StaticView = require('reapp-ui/helpers/StaticView');
-var DottedViewList = require('reapp-ui/views/DottedViewList');
-var View = require('reapp-ui/views/View');
-var BackButton = require('reapp-ui/components/buttons/BackButton');
-var { Container } = require('reapp-ui/components/Grid');
+import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
+import DottedViewList from 'reapp-ui/views/DottedViewList';
+import View from 'reapp-ui/views/View';
+import BackButton from 'reapp-ui/components/buttons/BackButton';
+import { Container } from 'reapp-ui/components/Grid';
 
-module.exports = StaticView({
+export default StaticView({
   statics: {
     title: [<BackButton />, 'Dotted View List']
   },

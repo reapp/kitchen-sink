@@ -1,9 +1,9 @@
-var React = require('react');
-var AnimatableContainer = require('reapp-ui/helpers/AnimatableContainer');
-var EasingFunctions = require('reapp-ui/lib/EasingFunctions');
-var ImageCard = require('./ImageCard');
+import React from 'react';
+import AnimatableContainer from 'reapp-ui/helpers/AnimatableContainer';
+import EasingFunctions from 'reapp-ui/lib/EasingFunctions';
+import ImageCard from './ImageCard';
 
-var ImageCardContainer = React.createClass({
+export default React.createClass({
   styles: {
      backfaceVisibility: 'hidden',
      WebkitBackfaceVisibility: 'hidden',
@@ -36,5 +36,3 @@ var ImageCardContainer = React.createClass({
     );
   }
 });
-
-module.exports = ImageCardContainer;
