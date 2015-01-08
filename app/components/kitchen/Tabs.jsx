@@ -53,7 +53,7 @@ export default StaticView({
     var activeTabProps = this.tabProps[this.state.tabsType];
 
     var tabs = (
-      <Tabs type={this.state.tabsType}>
+      <Tabs type={this.state.tabsType} active={this.state.activeTab}>
         <TabItem {...activeTabProps[0]} onClick={this.handleTabActive.bind(null, 0)}>Feed</TabItem>,
         <TabItem{...activeTabProps[1]} onClick={this.handleTabActive.bind(null, 1)}>Stream</TabItem>,
         <TabItem {...activeTabProps[2]} onClick={this.handleTabActive.bind(null, 2)}>Board</TabItem>
@@ -85,24 +85,25 @@ export default StaticView({
           <Container>
             <Button onClick={this.handleTabType} data-type="icon-text-right">Icon + Text (Right)</Button>
           </Container>
-
-          {tabs}
         </div>
       ),
       (
         <div>
           <p>Stream tab.</p>
-          {tabs}
         </div>
       ),
       (
         <div>
           <p>Board tab.</p>
-          {tabs}
         </div>
       )
     ];
 
-    return contents[this.state.activeTab];
+    return (
+      <div>
+        {contents[this.state.activeTab]}
+        {tabs}
+      </div>
+    );
   }
 });
