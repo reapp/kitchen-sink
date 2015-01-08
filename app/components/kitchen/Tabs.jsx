@@ -12,69 +12,97 @@ export default StaticView({
   },
 
   getInitialState() {
-    return { tabsType: 'text' };
+    return {
+      tabsType: 'text',
+      activeTab: 0
+    };
+  },
+
+  handleTabActive(index) {
+    this.setState({
+      activeTab: index
+    });
   },
 
   handleTabType(e) {
-    this.setState({ tabsType: e.currentTarget.getAttribute('data-type') });
+    this.setState({
+      tabsType: e.currentTarget.getAttribute('data-type')
+    });
+  },
+
+  tabProps: {
+    text: [{}, {}, {}],
+    icon: [
+      { icon: 'mailbox' },
+      { icon: 'stopwatch' },
+      { icon: 'star' }
+    ],
+    'icon-text': [
+      { icon: 'mailbox', text: 'Mailbox' },
+      { icon: 'stopwatch', text: 'Stopwatch' },
+      { icon: 'star', text: 'Star' }
+    ],
+    'icon-text-right': [
+      { icon: 'mailbox', text: 'Mailbox' },
+      { icon: 'stopwatch', text: 'Stopwatch' },
+      { icon: 'star', text: 'Star' }
+    ]
   },
 
   render() {
-    var tabContents = {
-      text: [
-        <TabItem>Feed</TabItem>,
-        <TabItem>Stream</TabItem>,
-        <TabItem>Board</TabItem>
-      ],
+    var activeTabProps = this.tabProps[this.state.tabsType];
 
-      icon: [
-        <TabItem icon="mailbox" />,
-        <TabItem icon="stopwatch" />,
-        <TabItem icon="star" />
-      ],
-
-      'icon-text': [
-        <TabItem icon="mailbox" text="Mailbox" />,
-        <TabItem icon="stopwatch" text="Stopwatch" />,
-        <TabItem icon="star" text="Star" />
-      ],
-
-      'icon-text-right': [
-        <TabItem icon="mailbox" text="Mailbox" />,
-        <TabItem icon="stopwatch" text="Stopwatch" />,
-        <TabItem icon="star" text="Star" />
-      ]
-    };
-
-    return (
-      <div>
-        <Container>
-          <Block>
-            <h3>Tabs</h3>
-            <p>Tabs are something</p>
-          </Block>
-        </Container>
-
-        <Container>
-          <Button onClick={this.handleTabType} data-type="text">Text</Button>
-        </Container>
-
-        <Container>
-          <Button onClick={this.handleTabType} data-type="icon">Icon</Button>
-        </Container>
-
-        <Container>
-          <Button onClick={this.handleTabType} data-type="icon-text">Icon + Text</Button>
-        </Container>
-
-        <Container>
-          <Button onClick={this.handleTabType} data-type="icon-text-right">Icon + Text (Right)</Button>
-        </Container>
-
-        <Tabs type={this.state.tabsType}>
-          {tabContents[this.state.tabsType]}
-        </Tabs>
-      </div>
+    var tabs = (
+      <Tabs type={this.state.tabsType}>
+        <TabItem {...activeTabProps[0]} onClick={this.handleTabActive.bind(null, 0)}>Feed</TabItem>,
+        <TabItem{...activeTabProps[1]} onClick={this.handleTabActive.bind(null, 1)}>Stream</TabItem>,
+        <TabItem {...activeTabProps[2]} onClick={this.handleTabActive.bind(null, 2)}>Board</TabItem>
+      </Tabs>
     );
+
+    var contents = [
+      (
+        <div>
+          <Container>
+            <Block>
+              <h3>Tabs</h3>
+              <p>Tabs are something</p>
+            </Block>
+          </Container>
+
+          <Container>
+            <Button onClick={this.handleTabType} data-type="text">Text</Button>
+          </Container>
+
+          <Container>
+            <Button onClick={this.handleTabType} data-type="icon">Icon</Button>
+          </Container>
+
+          <Container>
+            <Button onClick={this.handleTabType} data-type="icon-text">Icon + Text</Button>
+          </Container>
+
+          <Container>
+            <Button onClick={this.handleTabType} data-type="icon-text-right">Icon + Text (Right)</Button>
+          </Container>
+
+          {tabs}
+        </div>
+      ),
+      (
+        <div>
+          <p>Stream tab.</p>
+          {tabs}
+        </div>
+      ),
+      (
+        <div>
+          <p>Board tab.</p>
+          {tabs}
+        </div>
+      )
+    ];
+
+    return contents[this.state.activeTab];
   }
 });
