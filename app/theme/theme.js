@@ -1,5 +1,6 @@
 import UI from 'reapp-ui';
 import iOSTheme from 'reapp-ui/themes/ios/all';
+import 'reapp-ui/themes/ios/stylesheets/base.css';
 
 UI.addConstants(
   iOSTheme.constants,

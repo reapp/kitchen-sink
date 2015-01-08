@@ -8,8 +8,6 @@ import Popover from 'reapp-ui/components/Popover';
 import ModalHandler from 'reapp-ui/mixins/ModalHandler';
 import Modal from 'reapp-ui/components/Modal';
 
-import './App.css';
-
 export default React.createClass({
   mixins: [
     PopoverHandler,
