@@ -4,6 +4,7 @@ import iOS from 'reapp-ui/themes/ios';
 import 'reapp-ui/themes/ios/stylesheets';
 
 UI.addConstants(
+  iOS.constants.base,
   require('./constants'),
   iOS.constants.components
 );
