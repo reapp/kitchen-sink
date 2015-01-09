@@ -1,15 +1,18 @@
 import UI from 'reapp-ui';
-import iOSTheme from 'reapp-ui/themes/ios/all';
-import 'reapp-ui/themes/ios/stylesheets/base.css';
+import iOS from 'reapp-ui/themes/ios';
+
+import 'reapp-ui/themes/ios/stylesheets';
 
 UI.addConstants(
-  iOSTheme.constants,
-  require('./constants')
+  require('./constants'),
+  iOS.constants.components
 );
 
 UI.addStyles(
-  iOSTheme.styles,
+  iOS.styles,
   require('./styles')
 );
 
-UI.addAnimations(iOSTheme.animations);
+UI.addAnimations(
+  iOS.animations
+);
