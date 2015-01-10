@@ -1,6 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container } from 'reapp-ui/components/Grid';
 import List from 'reapp-ui/components/List';
 import Icon from 'reapp-ui/components/Icon';
@@ -11,7 +11,7 @@ import { Link } from 'react-router';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Lists Page']
+    title: [BackButton, 'Lists Page']
   },
 
   render() {

@@ -7,7 +7,7 @@ import { Container } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Dotted View List']
+    title: [BackButton, 'Dotted View List']
   },
 
   render() {

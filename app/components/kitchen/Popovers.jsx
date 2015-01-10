@@ -4,7 +4,7 @@ import PopoverLink from 'reapp-ui/components/PopoverLink';
 import ShowPopover from 'reapp-ui/actions/ShowPopover';
 import { Container } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Link } from 'react-router';
 
 var PopoversPage = React.createClass({
@@ -44,7 +44,7 @@ export default React.createClass({
     );
 
     return (
-      <View {...this.props} title={[<BackButton />, 'Popovers', menuButton]}>
+      <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
         <PopoversPage {...this.props} content={popoverContent} />
       </View>
     );

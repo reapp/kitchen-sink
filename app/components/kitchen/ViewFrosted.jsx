@@ -1,7 +1,7 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import TitleBar from 'reapp-ui/components/TitleBar';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container } from 'reapp-ui/components/Grid';
 import List from 'reapp-ui/components/List';
 import Icon from 'reapp-ui/components/Icon';
@@ -19,7 +19,7 @@ const HEADER_HEIGHT = 44;
 
 module.exports = StaticView({
   statics: {
-    title: [<BackButton />, 'FrostedGlassContainer']
+    title: [BackButton, 'FrostedGlassContainer']
   },
 
   mixins: [ScrollableMixin({ scrollY: true })],

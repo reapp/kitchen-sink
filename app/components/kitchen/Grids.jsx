@@ -1,6 +1,6 @@
 import React from 'react';
 import View from 'reapp-ui/views/View';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 
 var BlueBlock = React.createClass({
@@ -37,7 +37,7 @@ export default React.createClass({
       <View {...this.props}
         id="GridsPage"
         styles={this.styles}
-        title={[<BackButton />, "Grid System"]}>
+        title={[BackButton, "Grid System"]}>
 
         <p>
           Included is a simple grid system, based on flexbox.

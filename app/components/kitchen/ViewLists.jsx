@@ -3,7 +3,7 @@ import StaticView from 'reapp-ui/helpers/StaticView';
 import NestedViewList from 'reapp-ui/views/NestedViewList';
 import View from 'reapp-ui/views/View';
 import Button from 'reapp-ui/components/Button';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container } from 'reapp-ui/components/Grid';
 
 export default StaticView({
@@ -11,7 +11,7 @@ export default StaticView({
     return (
       <div>
         <NestedViewList>
-          <View title={[<BackButton />, 'One', <a href="#two">Two</a>]}>
+          <View title={[BackButton, 'One', <a href="#two">Two</a>]}>
             <Container>
               Example of a deeply nested thing
               <Button href="#two">Button</Button>

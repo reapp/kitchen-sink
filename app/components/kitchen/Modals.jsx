@@ -2,12 +2,12 @@ import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import ShowModal from 'reapp-ui/actions/ShowModal';
 import Button from 'reapp-ui/components/Button';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Modals']
+    title: [BackButton, 'Modals']
   },
 
   toggleAlert() {

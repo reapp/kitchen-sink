@@ -2,12 +2,12 @@ import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import Drawer from 'reapp-ui/components/Drawer';
 import { Container, Block } from 'reapp-ui/components/Grid';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Panels']
+    title: [BackButton, 'Panels']
   },
 
   title: 'Panels',
@@ -38,8 +38,6 @@ export default StaticView({
   },
 
   render() {
-    var title = [<BackButton />, this.title];
-
     return (
       <div>
         <h3>{this.title}</h3>

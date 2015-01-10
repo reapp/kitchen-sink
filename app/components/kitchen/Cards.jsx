@@ -3,12 +3,12 @@ import StaticView from 'reapp-ui/helpers/StaticView';
 import CardList from 'reapp-ui/components/CardList';
 import Card from 'reapp-ui/components/Card';
 import { Container, Block } from 'reapp-ui/components/Grid';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Cards']
+    title: [BackButton, 'Cards']
   },
 
   render() {

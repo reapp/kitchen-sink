@@ -3,12 +3,12 @@ import StaticView from 'reapp-ui/helpers/StaticView';
 import Tabs from 'reapp-ui/components/Tabs';
 import TabItem from 'reapp-ui/components/TabItem';
 import Button from 'reapp-ui/components/Button';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, 'Tabs']
+    title: [BackButton, 'Tabs']
   },
 
   getInitialState() {

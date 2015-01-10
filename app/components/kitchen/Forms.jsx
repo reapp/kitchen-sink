@@ -1,6 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
-import BackButton from 'reapp-ui/components/buttons/BackButton';
+import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
 import ButtonRow from 'reapp-ui/components/ButtonRow';
 import Title from 'reapp-ui/components/Title';
@@ -12,7 +12,7 @@ import Input from 'reapp-ui/components/Input';
 
 export default StaticView({
   statics: {
-    title: [<BackButton />, "Forms"]
+    title: [BackButton, "Forms"]
   },
 
   render() {
