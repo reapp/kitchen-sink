@@ -4,7 +4,6 @@ import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
 import List from 'reapp-ui/components/List';
 import { Container, Block } from 'reapp-ui/components/Grid';
-import Form from 'reapp-ui/components/Form';
 import Label from 'reapp-ui/components/Label';
 import Input from 'reapp-ui/components/Input';
 
@@ -17,10 +16,8 @@ export default StaticView({
     return (
       <div>
         <Container>
-          <Title>Checkboxes &amp; Radios</Title>
-        </Container>
-        <Container>
-          <Form>
+          <form>
+            <Title>Checkboxes</Title>
             <List>
               <Input type="checkbox" label="Work" />
             </List>
@@ -32,14 +29,12 @@ export default StaticView({
               <Input type="radio" label="Select" />
               <Input type="radio" label="Group" />
             </List>
-          </Form>
+          </form>
         </Container>
 
         <Container>
-          <Title>Elements</Title>
-        </Container>
-        <Container>
           <form>
+            <Title>Inputs</Title>
             <List>
               <Input name="name" placeholder="Your Name" />
               <Input name="email" type="email" placeholder="Your Email" />
