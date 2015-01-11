@@ -12,11 +12,22 @@ var PopoversPage = React.createClass({
     return (
       <div>
         <Container>
-          <p>Popovers
-          are <PopoverLink content={this.props.content}>menus</PopoverLink> that
-          will float above an element that triggers them. Apple recommends
-          to use popovers on iPad, not smaller mobile devices. For iPhone, use
-          actions and modals.</p>
+          <p>
+            Popovers
+            are <PopoverLink content={this.props.content}>menus</PopoverLink>
+            that will float above an element that triggers them. Apple recommends
+            to use popovers on iPad, not smaller mobile devices. For iPhone, use
+            actions and modals.
+          </p>
+        </Container>
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+
+        <Container>
+          <p>
+            This is a popover that should trigger from the bottom of the page and point upwards.
+            <PopoverLink content={this.props.content}>Check it out</PopoverLink>.
+          </p>
         </Container>
       </div>
     );
