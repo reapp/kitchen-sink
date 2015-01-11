@@ -1,8 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import BackButton from 'components/shared/BackButton';
-import Button from 'reapp-ui/components/Button';
-import ButtonRow from 'reapp-ui/components/ButtonRow';
 import Title from 'reapp-ui/components/Title';
 import List from 'reapp-ui/components/List';
 import { Container, Block } from 'reapp-ui/components/Grid';
@@ -18,28 +16,6 @@ export default StaticView({
   render() {
     return (
       <div>
-        <Container>
-          <Title>Buttons</Title>
-        </Container>
-        <Container>
-          <Button active>Active</Button>
-          <Button>Button</Button>
-          <Button rounded>Round</Button>
-        </Container>
-        <Container>
-          <ButtonRow>
-            <Button>Button</Button>
-            <Button>Button</Button>
-          </ButtonRow>
-        </Container>
-        <Container>
-          <ButtonRow rounded>
-            <Button>Button</Button>
-            <Button active>Button</Button>
-            <Button>Button</Button>
-          </ButtonRow>
-        </Container>
-
         <Container>
           <Title>Checkboxes &amp; Radios</Title>
         </Container>

@@ -46,7 +46,7 @@ export default React.createClass({
   },
 
   interfaceLinks: [
-    ['controls', 'Controls'],
+    ['buttons', 'Buttons'],
     ['lists', 'Lists'],
     ['modals', 'Modals'],
     ['popovers', 'Popovers'],
@@ -58,7 +58,7 @@ export default React.createClass({
   ],
 
   viewLinks: [
-    ['view-lists', 'View List'],
+    ['view-lists', 'Nested View List'],
     ['dotted-view-lists', 'Dotted View List'],
     ['view-frosted', 'Frosted Glass Titlebar', true]
   ],
