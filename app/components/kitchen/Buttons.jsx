@@ -11,9 +11,17 @@ export default StaticView({
     title: [BackButton, 'Buttons']
   },
 
+  themedButtonStyles: {
+    self: {
+      background: '#3dd253',
+      color: '#fff'
+    }
+  },
+
   render() {
     return (
       <div>
+        <Title>Default Buttons</Title>
         <Container>
           <Title>Buttons</Title>
         </Container>
@@ -30,6 +38,15 @@ export default StaticView({
         </Container>
         <Container>
           <ButtonRow rounded>
+            <Button>Button</Button>
+            <Button active>Button</Button>
+            <Button>Button</Button>
+          </ButtonRow>
+        </Container>
+
+        <Title>Styled Buttons</Title>
+        <Container>
+          <ButtonRow buttonProps={{styles: this.themedButtonStyles}} rounded>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
