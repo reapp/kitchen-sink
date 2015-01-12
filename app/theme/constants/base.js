@@ -1,4 +1,4 @@
-var themeColor = '#3552ff';
+var themeColor = '#4971f6';
 var themeTextColor = '#fff';
 
 module.exports = {
