@@ -1,5 +1,5 @@
-import Run from 'reapp-routes/react-router/run';
 import Reapp from 'reapp-platform';
+import Run from 'reapp-routes/react-router/run';
 import Routes from './routes';
 
 // import our theme
