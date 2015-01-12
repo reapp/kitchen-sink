@@ -4,7 +4,7 @@ import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
-import ButtonRow from 'reapp-ui/components/ButtonRow';
+import ButtonGroup from 'reapp-ui/components/ButtonGroup';
 
 export default StaticView({
   statics: {
@@ -21,36 +21,37 @@ export default StaticView({
   render() {
     return (
       <div>
-        <Title>Default Buttons</Title>
-        <Container>
-          <Title>Buttons</Title>
-        </Container>
+        <Title>Buttons</Title>
         <Container>
           <Button active>Active</Button>
           <Button>Button</Button>
           <Button rounded>Round</Button>
         </Container>
+
+        <Title>ButtonGroup</Title>
         <Container>
-          <ButtonRow>
+          <ButtonGroup>
             <Button>Button</Button>
             <Button>Button</Button>
-          </ButtonRow>
+          </ButtonGroup>
         </Container>
+
+        <Title>ButtonGroup Rounded</Title>
         <Container>
-          <ButtonRow rounded>
+          <ButtonGroup rounded>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
-          </ButtonRow>
+          </ButtonGroup>
         </Container>
 
         <Title>Styled Buttons</Title>
         <Container>
-          <ButtonRow buttonProps={{styles: this.themedButtonStyles}} rounded>
+          <ButtonGroup buttonProps={{styles: this.themedButtonStyles}} rounded>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
-          </ButtonRow>
+          </ButtonGroup>
         </Container>
       </div>
     );
