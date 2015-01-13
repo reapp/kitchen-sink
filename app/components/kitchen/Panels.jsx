@@ -1,6 +1,7 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import Drawer from 'reapp-ui/components/Drawer';
+import View from 'reapp-ui/views/View';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
@@ -50,19 +51,27 @@ export default StaticView({
         </Container>
 
         <Drawer type="bottom" closed={this.state.bottomClosed}>
-          <p>Bottom ipsum</p>
+          <View>
+            <p>Bottom ipsum</p>
+          </View>
         </Drawer>
 
         <Drawer type="top" closed={this.state.topClosed}>
-          <p>Top ipsum</p>
+          <View>
+            <p>Top ipsum</p>
+          </View>
         </Drawer>
 
         <Drawer type="left" closed={this.state.leftClosed}>
-          <p>Left ipsum</p>
+          <View>
+            <p>Left ipsum</p>
+          </View>
         </Drawer>
 
         <Drawer type="right" closed={this.state.rightClosed}>
-          <p>Right ipsum</p>
+          <View>
+            <p>Right ipsum</p>
+          </View>
         </Drawer>
       </div>
     );
