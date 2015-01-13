@@ -14,7 +14,8 @@ export default StaticView({
   themedButtonStyles: {
     self: {
       background: '#3dd253',
-      color: '#fff'
+      color: '#fff',
+      borderColor: '#3dd253'
     }
   },
 
@@ -38,7 +39,7 @@ export default StaticView({
 
         <Title>ButtonGroup Rounded</Title>
         <Container>
-          <ButtonGroup rounded>
+          <ButtonGroup buttonProps={{rounded: true}}>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
@@ -47,7 +48,7 @@ export default StaticView({
 
         <Title>Styled Buttons</Title>
         <Container>
-          <ButtonGroup buttonProps={{styles: this.themedButtonStyles}} rounded>
+          <ButtonGroup buttonProps={{styles: this.themedButtonStyles}}>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
