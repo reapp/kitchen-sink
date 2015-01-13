@@ -11,11 +11,29 @@ export default StaticView({
     title: [BackButton, 'Buttons']
   },
 
-  themedButtonStyles: {
-    self: {
-      background: '#3dd253',
-      color: '#fff',
-      borderColor: '#3dd253'
+  buttonStyles: {
+    red: {
+      self: {
+        background: '#d24420',
+        color: '#fff',
+        borderColor: '#d24420'
+      }
+    },
+
+    green: {
+      self: {
+        background: '#3dd253',
+        color: '#fff',
+        borderColor: '#3dd253'
+      }
+    },
+
+    blue: {
+      self: {
+        background: '#2f4cd2',
+        color: '#fff',
+        borderColor: '#2f4cd2'
+      }
     }
   },
 
@@ -23,6 +41,7 @@ export default StaticView({
     return (
       <div>
         <Title>Buttons</Title>
+
         <Container>
           <Button active>Active</Button>
           <Button>Button</Button>
@@ -30,6 +49,7 @@ export default StaticView({
         </Container>
 
         <Title>ButtonGroup</Title>
+
         <Container>
           <ButtonGroup>
             <Button>Button</Button>
@@ -38,6 +58,7 @@ export default StaticView({
         </Container>
 
         <Title>ButtonGroup Rounded</Title>
+
         <Container>
           <ButtonGroup buttonProps={{rounded: true}}>
             <Button>Button</Button>
@@ -47,12 +68,19 @@ export default StaticView({
         </Container>
 
         <Title>Styled Buttons</Title>
+
         <Container>
-          <ButtonGroup buttonProps={{styles: this.themedButtonStyles}}>
+          <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
             <Button>Button</Button>
             <Button active>Button</Button>
             <Button>Button</Button>
           </ButtonGroup>
+        </Container>
+
+        <Container>
+          <Button styles={this.buttonStyles.red}>Active</Button>
+          <Button styles={this.buttonStyles.green}>Button</Button>
+          <Button styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
       </div>
     );
