@@ -20,9 +20,17 @@ export default StaticView({
     };
   },
 
-  toggleDrawer(type) {
-    var key = `${type}Closed`;
-    this.setState({ [key]: !this.state[key] });
+  getStateKey(type) {
+    return `${type}Closed`;
+  },
+
+  // if val isn't passed it, it toggles, otherwise sets to val
+  toggleDrawer(type, val) {
+    var key = this.getStateKey(type);
+
+    this.setState({
+      [key]: (typeof val !== 'undefined') ? val : !this.state[key]
+    });
   },
 
   render() {
@@ -37,25 +45,37 @@ export default StaticView({
           <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
-        <Drawer type="bottom" closed={this.state.bottomClosed}>
+        <Drawer
+          type="bottom"
+          closed={this.state.bottomClosed}
+          onClose={this.toggleDrawer.bind(this, 'bottom', false)}>
           <View>
             <p>Bottom ipsum</p>
           </View>
         </Drawer>
 
-        <Drawer type="top" closed={this.state.topClosed}>
+        <Drawer
+          type="top"
+          closed={this.state.topClosed}
+          onClose={this.toggleDrawer.bind(this, 'top', false)}>
           <View>
             <p>Top ipsum</p>
           </View>
         </Drawer>
 
-        <Drawer type="left" closed={this.state.leftClosed}>
+        <Drawer
+          type="left"
+          closed={this.state.leftClosed}
+          onClose={this.toggleDrawer.bind(this, 'left', false)}>
           <View>
             <p>Left ipsum</p>
           </View>
         </Drawer>
 
-        <Drawer type="right" closed={this.state.rightClosed}>
+        <Drawer
+          type="right"
+          closed={this.state.rightClosed}
+          onClose={this.toggleDrawer.bind(this, 'right', false)}>
           <View>
             <p>Right ipsum</p>
           </View>
