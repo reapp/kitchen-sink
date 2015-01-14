@@ -7,7 +7,7 @@ module.exports = ({ routes, route }) =>
         route('tabs'),
         route('buttons'),
         route('cards'),
-        route('panels'),
+        route('drawers'),
         route('lists'),
         route('view-lists'),
         route('dotted-view-lists'),

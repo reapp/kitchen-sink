@@ -53,7 +53,7 @@ export default React.createClass({
     ['forms', 'Forms'],
     ['tabs', 'Tabs'],
     ['grids', 'Grid'],
-    ['panels', 'Drawers'],
+    ['drawers', 'Drawers'],
     ['cards', 'Cards']
   ],
 

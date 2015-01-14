@@ -8,10 +8,8 @@ import Button from 'reapp-ui/components/Button';
 
 export default StaticView({
   statics: {
-    title: [BackButton, 'Panels']
+    title: [BackButton, 'Drawers']
   },
-
-  title: 'Panels',
 
   getInitialState() {
     return {
@@ -22,32 +20,21 @@ export default StaticView({
     };
   },
 
-  toggleBottomView() {
-    this.setState({ bottomClosed: !this.state.bottomClosed });
-  },
-
-  toggleLeftView() {
-    this.setState({ leftClosed: !this.state.leftClosed });
-  },
-
-  toggleRightView() {
-    this.setState({ rightClosed: !this.state.rightClosed });
-  },
-
-  toggleTopView() {
-    this.setState({ topClosed: !this.state.topClosed });
+  toggleDrawer(type) {
+    var key = `${type}Closed`;
+    this.setState({ [key]: !this.state[key] });
   },
 
   render() {
     return (
       <div>
-        <h3>{this.title}</h3>
-        <p>Panels slide out from a side of the screen</p>
+        <h3>Drawers</h3>
+        <p>Drawers slide out from a side of the screen</p>
         <Container>
-          <Button onClick={this.toggleTopView}>Top</Button>
-          <Button onClick={this.toggleBottomView}>Bottom</Button>
-          <Button onClick={this.toggleRightView}>Right</Button>
-          <Button onClick={this.toggleLeftView}>Left</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'top')}>Top</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'right')}>Right</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
         <Drawer type="bottom" closed={this.state.bottomClosed}>

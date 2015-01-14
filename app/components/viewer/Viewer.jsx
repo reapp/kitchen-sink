@@ -1,7 +1,7 @@
 import ImageCardContainer from './ImageCardContainer';
 import React from 'react';
 import TouchableArea from 'reapp-ui/helpers/TouchableArea';
-import { Scroller } from 'scroller';
+// import { Scroller } from 'scroller';
 
 export default React.createClass({
   styles: {
