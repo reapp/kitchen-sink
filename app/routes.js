@@ -4,7 +4,7 @@ module.exports = ({ routes, route }) =>
       route('kitchen', '/',
         route('modals'),
         route('popovers'),
-        route('tabs'),
+        route('bars'),
         route('buttons'),
         route('cards'),
         route('drawers'),

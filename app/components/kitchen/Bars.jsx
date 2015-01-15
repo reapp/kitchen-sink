@@ -1,36 +1,36 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
-import Tabs from 'reapp-ui/components/Tabs';
-import TabItem from 'reapp-ui/components/TabItem';
+import Bars from 'reapp-ui/components/Bars';
+import BarItem from 'reapp-ui/components/BarItem';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   statics: {
-    title: [BackButton, 'Tabs']
+    title: [BackButton, 'Bars']
   },
 
   getInitialState() {
     return {
-      tabsType: 'text',
-      activeTab: 0
+      barType: 'text',
+      activeBar: 0
     };
   },
 
-  handleTabActive(index) {
+  handleBarActive(index) {
     this.setState({
-      activeTab: index
+      activeBar: index
     });
   },
 
-  handleTabType(e) {
+  handleBarType(e) {
     this.setState({
-      tabsType: e.currentTarget.getAttribute('data-type')
+      barType: e.currentTarget.getAttribute('data-type')
     });
   },
 
-  tabProps: {
+  barProps: {
     text: [{}, {}, {}],
     icon: [
       { icon: 'mailbox' },
@@ -50,14 +50,14 @@ export default StaticView({
   },
 
   render() {
-    var activeTabProps = this.tabProps[this.state.tabsType];
+    var activeBarProps = this.barProps[this.state.barType];
 
-    var tabs = (
-      <Tabs type={this.state.tabsType} active={this.state.activeTab}>
-        <TabItem {...activeTabProps[0]} onClick={this.handleTabActive.bind(null, 0)}>Feed</TabItem>,
-        <TabItem{...activeTabProps[1]} onClick={this.handleTabActive.bind(null, 1)}>Stream</TabItem>,
-        <TabItem {...activeTabProps[2]} onClick={this.handleTabActive.bind(null, 2)}>Board</TabItem>
-      </Tabs>
+    var bar = (
+      <Bar type={this.state.barType} active={this.state.activeBar}>
+        <BarItem {...activeBarProps[0]} onClick={this.handleBarActive.bind(null, 0)}>Feed</BarItem>,
+        <BarItem{...activeBarProps[1]} onClick={this.handleBarActive.bind(null, 1)}>Stream</BarItem>,
+        <BarItem {...activeBarProps[2]} onClick={this.handleBarActive.bind(null, 2)}>Board</BarItem>
+      </Bar>
     );
 
     var contents = [
@@ -65,25 +65,25 @@ export default StaticView({
         <div>
           <Container>
             <Block>
-              <h3>Tabs</h3>
-              <p>Tabs are something</p>
+              <h3>Bar Example</h3>
+              <p>Feed page.</p>
             </Block>
           </Container>
 
           <Container>
-            <Button onClick={this.handleTabType} data-type="text">Text</Button>
+            <Button onClick={this.handleBarType} data-type="text">Text</Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleTabType} data-type="icon">Icon</Button>
+            <Button onClick={this.handleBarType} data-type="icon">Icon</Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleTabType} data-type="icon-text">Icon + Text</Button>
+            <Button onClick={this.handleBarType} data-type="icon-text">Icon + Text</Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleTabType} data-type="icon-text-right">Icon + Text (Right)</Button>
+            <Button onClick={this.handleBarType} data-type="icon-text-right">Icon + Text (Right)</Button>
           </Container>
         </div>
       ),
@@ -101,8 +101,8 @@ export default StaticView({
 
     return (
       <div>
-        {contents[this.state.activeTab]}
-        {tabs}
+        {contents[this.state.activeBar]}
+        {bar}
       </div>
     );
   }
