@@ -4,6 +4,10 @@ import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 
 var BlueBlock = React.createClass({
+  statics: {
+    isBlock: true
+  },
+
   styles: {
     self: {
       background: 'rgba(0,0,255,0.2)',
