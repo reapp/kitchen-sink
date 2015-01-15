@@ -27,7 +27,7 @@ module.exports = StaticView({
   render() {
     var titleBarStyle = { background: 'rgba(255,255,255,0.8)', height:44 };
     var icon = <Icon type="contact" size="28" />;
-    var badge = <Badge value="5" />;
+    var badge = <Badge>5</Badge>;
 
     // TODO: we can make this positioning significantly less lame
     // by measuring the DOM but I'm not sure we want to rely on that
