@@ -83,7 +83,7 @@ module.exports = StaticView({
         <List>
           <Link to="modals">Modals</Link>
           <Link to="popovers">Popovers</Link>
-          <Link to="tabs">Tabs</Link>
+          <Link to="view-frosted">View Frosted</Link>
         </List>
 
         <Title>Grouped with Sticky Titles</Title>
@@ -101,7 +101,7 @@ module.exports = StaticView({
         <List type="inset">
           <Link to="modals">Modals</Link>
           <Link to="popovers">Popovers</Link>
-          <Link to="tabs">Tabs</Link>
+          <Link to="view-frosted">View Frosted</Link>
         </List>
 
         <Title>Media List</Title>

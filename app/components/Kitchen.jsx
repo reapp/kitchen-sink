@@ -51,7 +51,7 @@ export default React.createClass({
     ['modals', 'Modals'],
     ['popovers', 'Popovers'],
     ['forms', 'Forms'],
-    ['tabs', 'Tabs'],
+    ['bars', 'Toolbars'],
     ['grids', 'Grid'],
     ['drawers', 'Drawers'],
     ['cards', 'Cards']
@@ -68,6 +68,10 @@ export default React.createClass({
       <NestedViewList {...this.routedViewListProps()}>
         <View title={[this.props.handle, 'Kitchen Sink']}>
           <SearchBar onChange={this.handleSearch} defaultValue="" />
+
+          <p>
+            Welcome! We're alpha, so expect some bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues">report issues</a> you find.
+          </p>
 
           <Title>Interface</Title>
           <List>

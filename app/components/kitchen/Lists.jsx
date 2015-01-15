@@ -73,9 +73,9 @@ export default StaticView({
 
         <Title>List with Links</Title>
         <List>
-          <Link to="modals">Modals</Link>
-          <Link to="popovers">Popovers</Link>
-          <Link to="tabs">Tabs</Link>
+          Modals
+          Popovers
+          Tabs
         </List>
 
         <Title>Grouped with Sticky Titles</Title>
@@ -93,7 +93,7 @@ export default StaticView({
         <List type="inset">
           <a href="http://google.com">Google</a>
           <Link to="popovers">Popovers</Link>
-          <Link to="tabs">Tabs</Link>
+          <Link to="drawers">Drawers</Link>
         </List>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
-import Bars from 'reapp-ui/components/Bars';
+import Bar from 'reapp-ui/components/Bar';
 import BarItem from 'reapp-ui/components/BarItem';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
@@ -8,7 +8,7 @@ import { Container, Block } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   statics: {
-    title: [BackButton, 'Bars']
+    title: [BackButton, 'Bar']
   },
 
   getInitialState() {

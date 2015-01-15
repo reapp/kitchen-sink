@@ -39,7 +39,7 @@ export default React.createClass({
     var popoverContent = [
       <Link to="modals">Modals</Link>,
       <Link to="popovers">Popovers</Link>,
-      <Link to="tabs">Tabs</Link>
+      <Link to="popovers">Tabs</Link>
     ];
 
     var menuButton = (
