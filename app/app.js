@@ -5,4 +5,4 @@ import Routes from './routes';
 require('./theme/theme');
 
 // run the app
-exports default Router.run(Routes);
+export default Router(Routes);
