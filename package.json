@@ -4,6 +4,7 @@
   "description": "reapp Kitchen Sink",
   "version": "1.0.0",
   "main": "./app/app.js",
+  "reapp": "true",
   "scripts": {
     "test": "",
     "start": "reapp run"
