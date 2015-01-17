@@ -5,6 +5,7 @@ import BarItem from 'reapp-ui/components/BarItem';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
+import Title from 'reapp-ui/components/Title';
 
 export default StaticView({
   statics: {
@@ -63,12 +64,8 @@ export default StaticView({
     var contents = [
       (
         <div>
-          <Container>
-            <Block>
-              <h3>Bar Example</h3>
-              <p>Feed page.</p>
-            </Block>
-          </Container>
+          <Title>Bars</Title>
+          <p>View different styles of bar displays:</p>
 
           <Container>
             <Button onClick={this.handleBarType} data-type="text">Text</Button>
