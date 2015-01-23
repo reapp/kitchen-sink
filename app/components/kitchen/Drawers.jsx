@@ -46,7 +46,7 @@ export default StaticView({
         </Container>
 
         <Drawer
-          type="bottom"
+          from="bottom"
           closed={this.state.bottomClosed}
           onClose={this.toggleDrawer.bind(this, 'bottom', false)}>
           <View>
@@ -55,7 +55,7 @@ export default StaticView({
         </Drawer>
 
         <Drawer
-          type="top"
+          from="top"
           closed={this.state.topClosed}
           onClose={this.toggleDrawer.bind(this, 'top', false)}>
           <View>
@@ -64,7 +64,7 @@ export default StaticView({
         </Drawer>
 
         <Drawer
-          type="left"
+          from="left"
           closed={this.state.leftClosed}
           onClose={this.toggleDrawer.bind(this, 'left', false)}>
           <View>
@@ -73,7 +73,7 @@ export default StaticView({
         </Drawer>
 
         <Drawer
-          type="right"
+          from="right"
           closed={this.state.rightClosed}
           onClose={this.toggleDrawer.bind(this, 'right', false)}>
           <View>
