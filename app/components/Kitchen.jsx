@@ -70,7 +70,7 @@ export default React.createClass({
           <SearchBar onChange={this.handleSearch} defaultValue="" />
 
           <p>
-            Welcome! We're alpha, so expect some bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues">report issues</a> you find.
+            Welcome! We're alpha, expect bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues">report issues</a> you find.
           </p>
 
           <Title>Interface</Title>
