@@ -16,6 +16,9 @@
     "reapp-routes": "^0.9.0",
     "react-router": "^0.11.6",
     "reapp-request": "^0.2.0",
-    "reapp-component": "^1.0.0"
+    "reapp-component": "^1.0.0",
+    "simulate-touch": "0.0.3",
+    "phantom-limb": "0.0.1",
+    "fingerblast": "~1.1.1"
   }
 }

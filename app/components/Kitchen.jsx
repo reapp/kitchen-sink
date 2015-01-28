@@ -65,7 +65,6 @@ export default React.createClass({
   ],
 
   disableScroll(val) {
-    console.log('disable', val)
     this.setState({
       disableScroll: val
     });
