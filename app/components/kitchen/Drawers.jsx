@@ -27,10 +27,20 @@ export default StaticView({
   // if val isn't passed it, it toggles, otherwise sets to val
   toggleDrawer(type, val) {
     var key = this.getStateKey(type);
+    var val = (typeof val !== 'undefined') ? val : !this.state[key];
 
-    this.setState({
-      [key]: (typeof val !== 'undefined') ? val : !this.state[key]
-    });
+    this.setState({ [key]: val });
+    this.disableViewList(val);
+  },
+
+  disableViewList(val) {
+    if (!this.props.disableViewList)
+      return;
+
+    if (val)
+      this.props.disableViewList(true);
+    else
+      this.props.disableViewList(false);
   },
 
   render() {
@@ -51,6 +61,7 @@ export default StaticView({
           onClose={this.toggleDrawer.bind(this, 'bottom', false)}>
           <View>
             <p>Bottom ipsum</p>
+            <img src="/assets/sunrise.jpg" />
           </View>
         </Drawer>
 
@@ -60,6 +71,7 @@ export default StaticView({
           onClose={this.toggleDrawer.bind(this, 'top', false)}>
           <View>
             <p>Top ipsum</p>
+            <img src="/assets/sunrise.jpg" />
           </View>
         </Drawer>
 
@@ -69,6 +81,7 @@ export default StaticView({
           onClose={this.toggleDrawer.bind(this, 'left', false)}>
           <View>
             <p>Left ipsum</p>
+            <img src="/assets/sunrise.jpg" />
           </View>
         </Drawer>
 
@@ -78,6 +91,7 @@ export default StaticView({
           onClose={this.toggleDrawer.bind(this, 'right', false)}>
           <View>
             <p>Right ipsum</p>
+            <img src="/assets/sunrise.jpg" />
           </View>
         </Drawer>
       </div>

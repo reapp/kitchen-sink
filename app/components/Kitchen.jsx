@@ -21,7 +21,8 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      searchVal: ''
+      searchVal: '',
+      disableScroll: false
     };
   },
 
@@ -63,9 +64,16 @@ export default React.createClass({
     ['view-frosted', 'Frosted Glass Titlebar', true]
   ],
 
+  disableScroll(val) {
+    console.log('disable', val)
+    this.setState({
+      disableScroll: val
+    });
+  },
+
   render() {
     return (
-      <NestedViewList {...this.routedViewListProps()}>
+      <NestedViewList {...this.routedViewListProps()} disableScroll={this.state.disableScroll}>
         <View title={[this.props.handle, 'Kitchen Sink']}>
           <SearchBar onChange={this.handleSearch} defaultValue="" />
 
@@ -84,7 +92,7 @@ export default React.createClass({
           </List>
         </View>
 
-        {this.routedSubRoute()}
+        {this.routedSubRoute({ disableViewList: this.disableScroll })}
       </NestedViewList>
     );
   }
