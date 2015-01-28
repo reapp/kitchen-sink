@@ -15,7 +15,7 @@ export default StaticView({
   },
 
   render() {
-    var icon = <Icon name="contact" size="28" />;
+    var icon = <Icon name="contact" size={28} />;
     var badge = <Badge>5</Badge>;
 
     return (

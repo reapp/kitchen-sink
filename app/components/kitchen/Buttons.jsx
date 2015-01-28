@@ -5,10 +5,20 @@ import Title from 'reapp-ui/components/Title';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
 import ButtonGroup from 'reapp-ui/components/ButtonGroup';
+import ShowModal from 'reapp-ui/actions/ShowModal';
 
 export default StaticView({
   statics: {
     title: [BackButton, 'Buttons']
+  },
+
+  toggleAlert() {
+    ShowModal({
+      type: 'alert',
+      title: 'React',
+      onAccept: this.toggleAlert,
+      children: 'Button pressed!'
+    });
   },
 
   buttonStyles: {
@@ -43,17 +53,17 @@ export default StaticView({
         <Title>Buttons</Title>
 
         <Container>
-          <Button active>Active</Button>
-          <Button>Button</Button>
-          <Button rounded>Round</Button>
+          <Button onClick={this.toggleAlert} active>Active</Button>
+          <Button onClick={this.toggleAlert}>Button</Button>
+          <Button onClick={this.toggleAlert} rounded>Round</Button>
         </Container>
 
         <Title>ButtonGroup</Title>
 
         <Container>
           <ButtonGroup>
-            <Button>Button</Button>
-            <Button>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
@@ -61,9 +71,9 @@ export default StaticView({
 
         <Container>
           <ButtonGroup buttonProps={{rounded: true}}>
-            <Button>Button</Button>
-            <Button active>Button</Button>
-            <Button>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onClick={this.toggleAlert} active>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
@@ -71,16 +81,16 @@ export default StaticView({
 
         <Container>
           <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
-            <Button>Button</Button>
-            <Button active>Button</Button>
-            <Button>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onClick={this.toggleAlert} active>Button</Button>
+            <Button onClick={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
         <Container>
-          <Button styles={this.buttonStyles.red}>Active</Button>
-          <Button styles={this.buttonStyles.green}>Button</Button>
-          <Button styles={this.buttonStyles.blue} rounded>Round</Button>
+          <Button onClick={this.toggleAlert} styles={this.buttonStyles.red}>Active</Button>
+          <Button onClick={this.toggleAlert} styles={this.buttonStyles.green}>Button</Button>
+          <Button onClick={this.toggleAlert} styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
       </div>
     );
