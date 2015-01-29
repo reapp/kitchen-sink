@@ -15,12 +15,12 @@ export default StaticView({
   },
 
   toggleModal(type) {
-    this.setState({
-      modal: this.state.modal === type ? false : type
-    });
+    console.log('toggle', type)
+    this.setState({ modal: type });
   },
 
   render() {
+    console.log('render modal?', this.state.modal)
     return (
       <div>
         {this.state.modal && (
@@ -28,7 +28,7 @@ export default StaticView({
             title="Hello"
             children="Something"
             type={this.state.modal}
-            onClose={this.toggleModal} />
+            onClose={this.toggleModal.bind(this, false)} />
         )}
         <Container>
           <p>These are replacements for the Alert and Prompt modals.</p>
