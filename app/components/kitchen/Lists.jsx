@@ -79,18 +79,18 @@ export default StaticView({
         </List>
 
         <Title>Grouped with Sticky Titles</Title>
-        <List title="A">
+        <List title="A" wrap>
           {['Adam', 'Alix', 'Annabel']}
         </List>
-        <List title="B">
+        <List title="B" wrap>
           {['Billy', 'Brenda', 'Byron']}
         </List>
-        <List title="C">
+        <List title="C" wrap>
           {['Clay', 'Cody', 'Crystal']}
         </List>
 
         <Title>Inset</Title>
-        <List type="inset">
+        <List type="inset" wrap>
           <a href="http://google.com">Google</a>
           <Link to="popovers">Popovers</Link>
           <Link to="drawers">Drawers</Link>
