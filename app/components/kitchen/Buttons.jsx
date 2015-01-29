@@ -5,7 +5,6 @@ import Title from 'reapp-ui/components/Title';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
 import ButtonGroup from 'reapp-ui/components/ButtonGroup';
-import ShowModal from 'reapp-ui/actions/ShowModal';
 
 export default StaticView({
   statics: {
@@ -13,12 +12,7 @@ export default StaticView({
   },
 
   toggleAlert() {
-    ShowModal({
-      type: 'alert',
-      title: 'React',
-      onAccept: this.toggleAlert,
-      children: 'Button pressed!'
-    });
+    // todo: show modal
   },
 
   buttonStyles: {
