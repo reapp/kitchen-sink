@@ -1,4 +1,4 @@
-import 'reapp-platform';
+import 'reapp-ui';
 import Router from 'reapp-routes/react-router';
 import Routes from './routes';
 
