@@ -28,7 +28,7 @@ export default StaticView({
             title="Hello"
             children="Something"
             type={this.state.modal}
-            onAccept={this[`toggle${this.state.modal}`]} />
+            onClose={this.toggleModal} />
         )}
         <Container>
           <p>These are replacements for the Alert and Prompt modals.</p>
