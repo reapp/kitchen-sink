@@ -20,7 +20,6 @@ export default StaticView({
   },
 
   render() {
-    console.log('render modal?', this.state.modal)
     return (
       <div>
         {this.state.modal && (
