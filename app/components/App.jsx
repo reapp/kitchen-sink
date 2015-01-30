@@ -11,8 +11,7 @@ export default React.createClass({
         iconProps={{
           name: 'hamburger',
           stroke: 1,
-          size: 26,
-          shapeRendering: 'crispEdges'
+          size: 26
         }}
         chromeless />
     );
