@@ -24,11 +24,9 @@ export default React.createClass({
     );
 
     return (
-      <div>
+      <LayoutLeftNav side={menu} handle={button} title="Kitchen Sink">
         <RouteHandler {...this.props} />
-      </div>
+      </LayoutLeftNav>
     );
   }
 });
-
-// <LayoutLeftNav side={menu} handle={button} title="Kitchen Sink">
