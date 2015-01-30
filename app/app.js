@@ -4,6 +4,7 @@ import 'reapp-platform';
 import Router from 'reapp-routes/react-router';
 import Routes from './routes';
 
+// demo
 import './phantom';
 
 // import our theme

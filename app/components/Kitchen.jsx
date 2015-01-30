@@ -1,5 +1,6 @@
-import React from 'react';
+import React from 'react/addons';
 import { Link } from 'react-router';
+import Tappable from 'react-tappable';
 import { RoutedViewListMixin } from 'reapp-platform';
 import NestedViewList from 'reapp-ui/views/NestedViewList';
 import View from 'reapp-ui/views/View';
@@ -8,11 +9,6 @@ import List from 'reapp-ui/components/List';
 import ListItem from 'reapp-ui/components/ListItem';
 import Title from 'reapp-ui/components/Title';
 import Badge from 'reapp-ui/components/Badge';
-
-var InertLink = React.createClass({
-  displayName: 'Link',
-  render() { return <Link {...this.props} activeClassName="" />; }
-});
 
 export default React.createClass({
   mixins: [
@@ -24,6 +20,22 @@ export default React.createClass({
       searchVal: '',
       disableScroll: false
     };
+  },
+
+  componentDidMount() {
+    this.demo();
+  },
+
+  componentWillReceiveProps() {
+    this.demo();
+  },
+
+  demo() {
+    setTimeout(() => {
+      var ref = this.interfaceLinks[this.props.demoIndex][0];
+      // var node = this.refs[ref].getDOMNode();
+      // React.addons.TestUtils.Simulate.click(node);
+    }, 500);
   },
 
   handleSearch(e) {
@@ -39,8 +51,11 @@ export default React.createClass({
   makeLink(link) {
     return (
       <ListItem
-        wrapper={<InertLink to={link[0]} />}
-        after={link[2] && <Badge styles={{self: { background: 'red' } }}>!</Badge>}>
+        onClick={() => this.transitionTo(link[0])}
+        after={link[2] &&
+          <Badge styles={{self: { background: 'red' } }}>!</Badge>
+        }
+        icon>
         {link[1]}
       </ListItem>
     );
