@@ -36,9 +36,9 @@ export default React.createClass({
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
         {this.state.popoverProps && (
           <Popover {...this.state.popoverProps}>
-            <Link to="modals">Modals</Link>
-            <Link to="popovers">Popovers</Link>
-            <Link to="popovers">Tabs</Link>
+            <a href="#">Modals</a>
+            <a href="#">Popovers</a>
+            <a href="#">Tabs</a>
           </Popover>
         )}
 

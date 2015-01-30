@@ -17,7 +17,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      hasInteracted: false,
+      hasInteracted: true,
       demoIndex: 0,
       searchVal: '',
       disableScroll: false

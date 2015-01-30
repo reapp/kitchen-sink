@@ -26,7 +26,7 @@
   function Finger() {
     this.node = document.createElement('span');
     this.node.classList.add('_phantom-limb_finger');
-    this.place();
+    // this.place();
   }
 
   Finger.prototype = {
