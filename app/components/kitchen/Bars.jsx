@@ -1,5 +1,6 @@
 import React from 'react';
-import StaticView from 'reapp-ui/helpers/StaticView';
+import Component from '../../component';
+// import StaticView from 'reapp-ui/helpers/StaticView';
 import Bar from 'reapp-ui/components/Bar';
 import BarItem from 'reapp-ui/components/BarItem';
 import Button from 'reapp-ui/components/Button';
@@ -7,7 +8,9 @@ import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Title from 'reapp-ui/components/Title';
 
-export default StaticView({
+export default Component({
+  page: true,
+
   statics: {
     title: [BackButton, 'Bar']
   },

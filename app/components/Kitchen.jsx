@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import { Link } from 'react-router';
 import Tappable from 'react-tappable';
 import { RoutedViewListMixin } from 'reapp-platform';
@@ -17,6 +17,8 @@ export default React.createClass({
 
   getInitialState() {
     return {
+      hasInteracted: false,
+      demoIndex: 0,
       searchVal: '',
       disableScroll: false
     };
@@ -24,18 +26,25 @@ export default React.createClass({
 
   componentDidMount() {
     this.demo();
+
+    window.addEventListener('mouseover', this.setInteracted);
+    window.addEventListener('focus', this.setInteracted);
   },
 
-  componentWillReceiveProps() {
-    this.demo();
+  setInteracted() {
+    if (!this.state.hasInteracted)
+      this.setState({ hasInteracted: true });
   },
 
   demo() {
     setTimeout(() => {
-      var ref = this.interfaceLinks[this.props.demoIndex][0];
-      // var node = this.refs[ref].getDOMNode();
-      // React.addons.TestUtils.Simulate.click(node);
-    }, 500);
+      var name = this.interfaceLinks[this.state.demoIndex][0];
+
+      if (!this.state.hasInteracted) {
+        this.transitionTo(name);
+        this.setState({ demoIndex: this.state.demoIndex + 1 });
+      }
+    }, 3500);
   },
 
   handleSearch(e) {
