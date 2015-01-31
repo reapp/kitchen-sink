@@ -18,12 +18,12 @@ export default StaticView({
         <Container>
           <form>
             <Title>Checkboxes</Title>
-            <List>
+            <List wrap>
               <Input type="checkbox" label="Work" />
             </List>
 
             <Title>Radio Group</Title>
-            <List>
+            <List wrap>
               <Input type="radio" label="Generic" />
               <Input type="radio" label="Radio" />
               <Input type="radio" label="Select" />
@@ -35,7 +35,7 @@ export default StaticView({
         <Container>
           <form>
             <Title>Inputs</Title>
-            <List>
+            <List wrap>
               <Input name="name" placeholder="Your Name" />
               <Input name="email" type="email" placeholder="Your Email" />
               <Input name="url" type="url" placeholder="URL" />
