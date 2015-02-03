@@ -60,7 +60,7 @@ export default React.createClass({
   makeLink(link) {
     return (
       <ListItem
-        onClick={() => this.transitionTo(link[0])}
+        onTap={() => this.transitionTo(link[0])}
         after={link[2] &&
           <Badge styles={{self: { background: 'red' } }}>!</Badge>
         }
