@@ -13,34 +13,24 @@ export default StaticView({
 
   getInitialState() {
     return {
-      bottomClosed: true,
-      leftClosed: true,
-      topClosed: true,
-      rightClosed: true
+      drawer: false
     };
   },
 
-  getStateKey(type) {
-    return `${type}Closed`;
+  toggleDrawer(drawer) {
+    console.log('drawer', drawer);
+    this.setState({
+      drawer: drawer === this.state.drawer ? false : drawer
+    });
+
+    this.disableViewList(!!drawer);
   },
 
-  // if val isn't passed it, it toggles, otherwise sets to val
-  toggleDrawer(type, val) {
-    var key = this.getStateKey(type);
-    var val = (typeof val !== 'undefined') ? val : !this.state[key];
-
-    this.setState({ [key]: val });
-    this.disableViewList(val);
-  },
-
-  disableViewList(val) {
+  disableViewList(disable) {
     if (!this.props.disableViewList)
       return;
 
-    if (val)
-      this.props.disableViewList(true);
-    else
-      this.props.disableViewList(false);
+    this.props.disableViewList(disable);
   },
 
   render() {
@@ -55,45 +45,16 @@ export default StaticView({
           <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
-        <Drawer
-          from="bottom"
-          closed={this.state.bottomClosed}
-          onClose={this.toggleDrawer.bind(this, 'bottom', false)}>
-          <View>
-            <p>Bottom ipsum</p>
-            <img src="/assets/sunrise.jpg" />
-          </View>
-        </Drawer>
-
-        <Drawer
-          from="top"
-          closed={this.state.topClosed}
-          onClose={this.toggleDrawer.bind(this, 'top', false)}>
-          <View>
-            <p>Top ipsum</p>
-            <img src="/assets/sunrise.jpg" />
-          </View>
-        </Drawer>
-
-        <Drawer
-          from="left"
-          closed={this.state.leftClosed}
-          onClose={this.toggleDrawer.bind(this, 'left', false)}>
-          <View>
-            <p>Left ipsum</p>
-            <img src="/assets/sunrise.jpg" />
-          </View>
-        </Drawer>
-
-        <Drawer
-          from="right"
-          closed={this.state.rightClosed}
-          onClose={this.toggleDrawer.bind(this, 'right', false)}>
-          <View>
-            <p>Right ipsum</p>
-            <img src="/assets/sunrise.jpg" />
-          </View>
-        </Drawer>
+        {this.state.drawer && (
+          <Drawer
+            from={this.state.drawer}
+            onClose={this.toggleDrawer.bind(this, this.state.drawer)}>
+            <View>
+              <p>{this.state.drawer} drawer</p>
+              <img src="/assets/sunrise.jpg" />
+            </View>
+          </Drawer>
+        )}
       </div>
     );
   }
