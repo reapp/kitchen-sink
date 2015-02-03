@@ -20,20 +20,12 @@ export default StaticView({
     };
   },
 
-  componentWillMount() {
+  toggleDrawer(type) {
+    this.setState({ [type]: !this.state[type] });
     this.props.disableViewListDrag(true);
-  },
 
-  componentWillUnmount() {
-    this.props.disableViewListDrag(false);
-  },
-
-  openDrawer(type) {
-    this.setState({ [type]: true });
-  },
-
-  closeDrawer(type) {
-    this.setState({ [type]: false });
+    if (!this.state.left && !this.state.right && !this.state.top && !this.state.bottom)
+      this.props.disableViewListDrag(false);
   },
 
   render() {
@@ -42,19 +34,20 @@ export default StaticView({
         <h3>Drawers</h3>
         <p>Drawers slide out from a side of the screen</p>
         <Container>
-          <Button onClick={this.openDrawer.bind(this, 'top')}>Top</Button>
-          <Button onClick={this.openDrawer.bind(this, 'bottom')}>Bottom</Button>
-          <Button onClick={this.openDrawer.bind(this, 'right')}>Right</Button>
-          <Button onClick={this.openDrawer.bind(this, 'left')}>Left</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'top')}>Top</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'right')}>Right</Button>
+          <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
         {['left', 'right', 'bottom', 'top'].map((type) =>
           <Drawer
             from={type}
             open={this.state[type]}
-            onClose={this.closeDrawer.bind(this, type)}>
+            dragger={type !== 'right'}>
             <View>
               <p>{type} drawer</p>
+              <a onClick={this.toggleDrawer.bind(this, type)}>Close me</a>
               <img src="/assets/sunrise.jpg" />
             </View>
           </Drawer>
