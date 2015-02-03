@@ -13,24 +13,27 @@ export default StaticView({
 
   getInitialState() {
     return {
-      drawer: false
+      left: false,
+      right: false,
+      bottom: false,
+      top: false
     };
   },
 
-  toggleDrawer(drawer) {
-    console.log('drawer', drawer);
-    this.setState({
-      drawer: drawer === this.state.drawer ? false : drawer
-    });
-
-    this.disableViewList(!!drawer);
+  componentWillMount() {
+    this.props.disableViewListDrag(true);
   },
 
-  disableViewList(disable) {
-    if (!this.props.disableViewList)
-      return;
+  componentWillUnmount() {
+    this.props.disableViewListDrag(false);
+  },
 
-    this.props.disableViewList(disable);
+  openDrawer(type) {
+    this.setState({ [type]: true });
+  },
+
+  closeDrawer(type) {
+    this.setState({ [type]: false });
   },
 
   render() {
@@ -39,18 +42,19 @@ export default StaticView({
         <h3>Drawers</h3>
         <p>Drawers slide out from a side of the screen</p>
         <Container>
-          <Button onClick={this.toggleDrawer.bind(this, 'top')}>Top</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'right')}>Right</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
+          <Button onClick={this.openDrawer.bind(this, 'top')}>Top</Button>
+          <Button onClick={this.openDrawer.bind(this, 'bottom')}>Bottom</Button>
+          <Button onClick={this.openDrawer.bind(this, 'right')}>Right</Button>
+          <Button onClick={this.openDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
-        {this.state.drawer && (
+        {['left', 'right', 'bottom', 'top'].map((type) =>
           <Drawer
-            from={this.state.drawer}
-            onClose={this.toggleDrawer.bind(this, this.state.drawer)}>
+            from={type}
+            open={this.state[type]}
+            onClose={this.closeDrawer.bind(this, type)}>
             <View>
-              <p>{this.state.drawer} drawer</p>
+              <p>{type} drawer</p>
               <img src="/assets/sunrise.jpg" />
             </View>
           </Drawer>

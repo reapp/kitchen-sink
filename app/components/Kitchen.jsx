@@ -115,7 +115,7 @@ export default React.createClass({
           </List>
         </View>
 
-        {this.routedSubRoute({ disableViewList: this.disableScroll })}
+        {this.routedSubRoute({ disableViewListDrag: this.disableScroll })}
       </NestedViewList>
     );
   }
