@@ -14,7 +14,7 @@ export default StaticView({
   },
 
   render() {
-    var icon = <Icon name="contact" size={28} />;
+    var icon = <img src={require('assets/icon.png')} width={32} height={32} />;
     var badge = <Badge>5</Badge>;
 
     return (
@@ -52,17 +52,17 @@ export default StaticView({
             before={icon}
             after="Whatup"
             wrapper={<a href="http://google.com" />}>
-            Nate Wienert
+            Brian Cole
           </ListItem>
           <ListItem
             before={icon}
             after={badge}>
-            Nate Wienert
+            Joey Mills
           </ListItem>
           <ListItem
             before={icon}
             after={icon}>
-            Nate Wienert
+            Blair Batac
           </ListItem>
         </List>
 
