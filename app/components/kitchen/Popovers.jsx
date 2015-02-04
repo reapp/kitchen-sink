@@ -4,11 +4,18 @@ import Popover from 'reapp-ui/components/Popover';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
-import { Link } from 'react-router';
+import { Link, Navigation } from 'react-router';
 
 export default React.createClass({
+  mixins: [
+    Navigation
+  ],
+
   getInitialState() {
-    return { popoverProps: false };
+    return {
+      to: null,
+      popoverProps: false
+    };
   },
 
   showPopover(e) {
@@ -17,6 +24,18 @@ export default React.createClass({
         target: e.target
       }
     });
+  },
+
+  popoverClick(to) {
+    console.log('set state', to)
+    this.setState({ to: to });
+  },
+
+  handlePopoverClose() {
+    if (this.state.to)
+      this.transitionTo(this.state.to);
+    else
+      this.setState({ popoverProps: null })
   },
 
   render() {
@@ -35,10 +54,10 @@ export default React.createClass({
     return (
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
         {this.state.popoverProps && (
-          <Popover {...this.state.popoverProps}>
-            <a href="#">Modals</a>
-            <a href="#">Popovers</a>
-            <a href="#">Tabs</a>
+          <Popover {...this.state.popoverProps} onClose={this.handlePopoverClose}>
+            <a onClick={this.popoverClick.bind(this, 'modals')}>Modals</a>
+            <a onClick={this.popoverClick.bind(this, 'popovers')}>Popovers</a>
+            <a onClick={this.popoverClick.bind(this, 'tabs')}>Tabs</a>
           </Popover>
         )}
 

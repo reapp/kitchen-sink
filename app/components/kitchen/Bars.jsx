@@ -58,9 +58,24 @@ export default StaticView({
 
     var bar = (
       <Bar display={this.state.barType} activeIndex={this.state.activeBar}>
-        <BarItem {...activeBarProps[0]} onClick={this.handleBarActive.bind(null, 0)}>Feed</BarItem>
-        <BarItem{...activeBarProps[1]} onClick={this.handleBarActive.bind(null, 1)}>Stream</BarItem>
-        <BarItem {...activeBarProps[2]} onClick={this.handleBarActive.bind(null, 2)}>Board</BarItem>
+        <BarItem
+          {...activeBarProps[0]}
+          onClick={this.handleBarActive.bind(null, 0)}
+        >
+          Feed
+        </BarItem>
+        <BarItem
+          {...activeBarProps[1]}
+          onClick={this.handleBarActive.bind(null, 1)}
+        >
+          Stream
+        </BarItem>
+        <BarItem
+          {...activeBarProps[2]}
+          onClick={this.handleBarActive.bind(null, 2)}
+        >
+          Board
+        </BarItem>
       </Bar>
     );
 
