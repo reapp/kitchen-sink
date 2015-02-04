@@ -84,8 +84,7 @@ export default React.createClass({
 
   viewLinks: [
     ['view-lists', 'Nested View List'],
-    ['dotted-view-lists', 'Dotted View List'],
-    ['view-frosted', 'Frosted Glass Titlebar', true]
+    ['dotted-view-lists', 'Dotted View List']
   ],
 
   disableScroll(val) {
