@@ -1,6 +1,7 @@
 import React from 'react';
 import BackButtonStatic from '../shared/BackButton';
 import BackButton from 'reapp-ui/components/buttons/BackButton';
+import Button from 'reapp-ui/components/Button';
 import DottedViewList from 'reapp-ui/views/DottedViewList';
 import View from 'reapp-ui/views/View';
 import { Container } from 'reapp-ui/components/Grid';
@@ -16,17 +17,36 @@ var OuterView = React.createClass({
 });
 
 var InnerView = React.createClass({
+  getInitialState() {
+    return {
+      step: 0
+    };
+  },
+
+  setViewStep(index) {
+    this.setState({ step: index });
+  },
+
+  viewButton(name, index) {
+    return (
+      <BackButton
+        onClick={this.setViewStep.bind(this, 0)}>
+        {name}
+      </BackButton>
+    );
+  },
+
   render() {
     return (
-      <DottedViewList>
+      <DottedViewList onViewEntered={this.setViewStep} scrollToStep={this.state.step}>
         <View id="one" title={[BackButtonStatic,'One']}>
           <Container>
             First
-            <a className="button" href="#two">Button</a>
+            <Button onClick={this.setViewStep.bind(this, 2)}>Go to third step</Button>
           </Container>
         </View>
 
-        <View id="two" title={[<BackButton onClick={this.prevView}>One</BackButton>,'Two']}>
+        <View id="two" title={[this.viewButton('One', 0),'Two']}>
           <Container>
             Second
           </Container>
