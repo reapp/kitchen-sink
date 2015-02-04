@@ -1,7 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import BackButton from 'components/shared/BackButton';
-import { Container } from 'reapp-ui/components/Grid';
 import List from 'reapp-ui/components/List';
 import Icon from 'reapp-ui/components/Icon';
 import Badge from 'reapp-ui/components/Badge';
@@ -20,10 +19,6 @@ export default StaticView({
 
     return (
       <div>
-        <Container>
-          <p>ListViewPage View</p>
-        </Container>
-
         <Title>Mail Style Media List</Title>
         <List>
           <ListItem
@@ -72,7 +67,7 @@ export default StaticView({
         </List>
 
         <Title>List with Links</Title>
-        <List wrap>
+        <List>
           Modals
           Popovers
           Tabs
