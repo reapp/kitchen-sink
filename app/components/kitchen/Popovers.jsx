@@ -27,19 +27,23 @@ export default React.createClass({
   },
 
   popoverClick(to) {
-    console.log('set state', to)
     this.setState({ to: to });
   },
 
   handlePopoverClose() {
-    if (this.state.to)
-      this.transitionTo(this.state.to);
-    else
-      this.setState({ popoverProps: null })
+    var path = this.state.to;
+
+    this.setState({
+      popoverProps: null,
+      to: null
+    });
+
+    if (path)
+      this.transitionTo(path);
   },
 
   render() {
-    var menuButton = (
+    var menuButton =
       <Button
         iconProps={{
           name: 'hamburger',
@@ -48,30 +52,33 @@ export default React.createClass({
           shapeRendering: 'crispEdges',
         }}
         onClick={this.showPopover}
-        chromeless />
-    );
+        chromeless
+      />
+
+    console.log('render', this.state.popoverProps)
 
     return (
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
-        {this.state.popoverProps && (
+        {this.state.popoverProps &&
           <Popover {...this.state.popoverProps} onClose={this.handlePopoverClose}>
             <a onClick={this.popoverClick.bind(this, 'modals')}>Modals</a>
             <a onClick={this.popoverClick.bind(this, 'popovers')}>Popovers</a>
             <a onClick={this.popoverClick.bind(this, 'tabs')}>Tabs</a>
           </Popover>
-        )}
+        }
 
         <Title>Popover Below</Title>
         <p>
-          Popovers are <a onClick={this.showPopover}>menus</a> that will float above an element that triggers them. Apple recommends to use popovers on iPad, not smaller mobile devices. For iPhone, use actions and modals.
+          Popovers are <Button onClick={this.showPopover}>menus</Button> that will float above an element that triggers them. Apple recommends to use popovers on iPad, not smaller mobile devices. For iPhone, use actions and modals.
         </p>
 
-        <div style={{height: 300}} />
+        <div style={{height: 200}} />
 
         <Title>Popover Above</Title>
         <p>
-          This is a popover that should trigger from the bottom of the page and point upwards. <a onClick={this.showPopover}>Click here</a>.
+          This is a popover that should trigger from the bottom of the page and point upwards.
         </p>
+        <Button onClick={this.showPopover}>Click here</Button>
       </View>
     );
   }
