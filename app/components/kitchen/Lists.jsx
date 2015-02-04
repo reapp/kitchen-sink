@@ -67,7 +67,7 @@ export default StaticView({
         </List>
 
         <Title>List with Links</Title>
-        <List>
+        <List wrap>
           Modals
           Popovers
           Tabs
