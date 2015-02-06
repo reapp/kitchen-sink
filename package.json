@@ -11,12 +11,12 @@
     "start": "reapp run"
   },
   "dependencies": {
+    "qs": "^2.3.3",
     "react": "^0.13.0-beta.1",
+    "react-router": "git+https://github.com/reapp/react-router#c0d380e",
+    "reapp-component": "~1.0.1",
     "reapp-platform": "^1.0.4",
-    "reapp-ui": "^0.8.0",
     "reapp-routes": "^0.9.5",
-    "react-router": "git+https://github.com/reapp/react-router#0cb83ddd3c",
-    "reapp-request": "^0.2.0",
-    "reapp-component": "~1.0.1"
+    "reapp-ui": "^0.8.0"
   }
 }
