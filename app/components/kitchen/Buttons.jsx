@@ -5,14 +5,21 @@ import Title from 'reapp-ui/components/Title';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
 import ButtonGroup from 'reapp-ui/components/ButtonGroup';
+import Modal from 'reapp-ui/components/Modal';
 
 export default StaticView({
   statics: {
     title: [BackButton, 'Buttons']
   },
 
+  getInitialState() {
+    return {
+      modal: false
+    };
+  },
+
   toggleAlert() {
-    // todo: show modal
+    this.setState({ modal: true });
   },
 
   buttonStyles: {
@@ -44,6 +51,10 @@ export default StaticView({
   render() {
     return (
       <div>
+        {this.state.modal &&
+          <Modal title="Button pressed" onClose={() => this.setState({ modal: false })}>You did it</Modal>
+        }
+
         <Title>Buttons</Title>
 
         <Container>
