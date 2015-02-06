@@ -1,6 +1,7 @@
 {
   "author": "Nate Wienert",
-  "name": "reapp-hn",
+  "name": "reapp-kitchen",
+  "repository": "https://github.com/reapp/kitchen-sink",
   "description": "reapp Kitchen Sink",
   "version": "1.0.0",
   "main": "./app/app.js",
@@ -14,7 +15,7 @@
     "reapp-platform": "^1.0.4",
     "reapp-ui": "^0.8.0",
     "reapp-routes": "^0.9.5",
-    "react-router": "^0.11.6",
+    "react-router": "git+https://github.com/reapp/react-router#0cb83ddd3c",
     "reapp-request": "^0.2.0",
     "reapp-component": "~1.0.1"
   }
