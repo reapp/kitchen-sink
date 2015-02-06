@@ -25,7 +25,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    this.demo();
+    // this.demo();
 
     window.addEventListener('mouseover', this.setInteracted);
     window.addEventListener('focus', this.setInteracted);
@@ -41,7 +41,7 @@ export default React.createClass({
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
       if (!this.state.hasInteracted) {
-        this.transitionTo.bind(this, name);
+        this.transitionTo(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
       }
     }, 3500);
@@ -94,10 +94,6 @@ export default React.createClass({
   },
 
   render() {
-    var ChildRoute = this.childRouteHandler({
-      disableViewListDrag: this.disableScroll
-    });
-
     return (
       <NestedViewList {...this.routedViewListProps()} disableScroll={this.state.disableScroll}>
         <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
@@ -118,7 +114,9 @@ export default React.createClass({
           </List>
         </View>
 
-        {ChildRoute && <ChildRoute />}
+        {this.childRouteHandler({
+          disableViewListDrag: this.disableScroll
+        })}
       </NestedViewList>
     );
   }
