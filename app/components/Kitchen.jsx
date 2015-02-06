@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Tappable from 'react-tappable';
-import { RoutedViewListMixin } from 'reapp-platform';
+import Tappable from 'reapp-ui/helpers/Tappable';
+import { RoutedViewListMixin } from 'reapp-routes/react-router';
 import NestedViewList from 'reapp-ui/views/NestedViewList';
 import View from 'reapp-ui/views/View';
 import SearchBar from 'reapp-ui/components/SearchBar';
@@ -41,7 +41,7 @@ export default React.createClass({
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
       if (!this.state.hasInteracted) {
-        this.transitionTo(name);
+        this.transitionTo.bind(this, name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
       }
     }, 3500);
@@ -94,6 +94,10 @@ export default React.createClass({
   },
 
   render() {
+    var ChildRoute = this.childRouteHandler({
+      disableViewListDrag: this.disableScroll
+    });
+
     return (
       <NestedViewList {...this.routedViewListProps()} disableScroll={this.state.disableScroll}>
         <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
@@ -114,7 +118,7 @@ export default React.createClass({
           </List>
         </View>
 
-        {this.routedSubRoute({ disableViewListDrag: this.disableScroll })}
+        {ChildRoute && <ChildRoute />}
       </NestedViewList>
     );
   }

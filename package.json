@@ -11,12 +11,11 @@
   },
   "dependencies": {
     "react": "^0.13.0-beta.1",
-    "reapp-platform": "^1.0.0",
+    "reapp-platform": "^1.0.4",
     "reapp-ui": "^0.8.0",
-    "reapp-routes": "^0.9.0",
+    "reapp-routes": "^0.9.5",
     "react-router": "^0.11.6",
     "reapp-request": "^0.2.0",
-    "reapp-component": "~1.0.1",
-    "react-tappable": "~0.2.5"
+    "reapp-component": "~1.0.1"
   }
 }
