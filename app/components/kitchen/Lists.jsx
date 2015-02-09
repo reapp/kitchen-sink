@@ -66,11 +66,9 @@ export default StaticView({
           </ListItem>
         </List>
 
-        <Title>List with Links</Title>
+        <Title>Basic list</Title>
         <List wrap>
-          Modals
-          Popovers
-          Tabs
+          {['Modals', 'Popovers', 'Tabs']}
         </List>
 
         <Title>Grouped with Sticky Titles</Title>
