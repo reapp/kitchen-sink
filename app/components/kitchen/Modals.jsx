@@ -33,8 +33,8 @@ export default StaticView({
           <p>These are replacements for the Alert and Prompt modals.</p>
         </Container>
         <Container>
-          <Button onClick={this.toggleModal.bind(this, 'alert')}>Alert</Button>
-          <Button onClick={this.toggleModal.bind(this, 'prompt')}>Prompt</Button>
+          <Button onTap={this.toggleModal.bind(this, 'alert')}>Alert</Button>
+          <Button onTap={this.toggleModal.bind(this, 'prompt')}>Prompt</Button>
         </Container>
       </div>
     );
