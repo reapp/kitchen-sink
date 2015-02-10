@@ -60,19 +60,19 @@ export default StaticView({
       <Bar display={this.state.barType} activeIndex={this.state.activeBar}>
         <BarItem
           {...activeBarProps[0]}
-          onClick={this.handleBarActive.bind(null, 0)}
+          onTap={this.handleBarActive.bind(null, 0)}
         >
           Feed
         </BarItem>
         <BarItem
           {...activeBarProps[1]}
-          onClick={this.handleBarActive.bind(null, 1)}
+          onTap={this.handleBarActive.bind(null, 1)}
         >
           Stream
         </BarItem>
         <BarItem
           {...activeBarProps[2]}
-          onClick={this.handleBarActive.bind(null, 2)}
+          onTap={this.handleBarActive.bind(null, 2)}
         >
           Board
         </BarItem>
@@ -86,25 +86,25 @@ export default StaticView({
           <p>View different styles of bar displays:</p>
 
           <Container>
-            <Button onClick={this.handleBarType} data-type="text">
+            <Button onTap={this.handleBarType} data-type="text">
               Text
             </Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleBarType} data-type="icon">
+            <Button onTap={this.handleBarType} data-type="icon">
               Icon
             </Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleBarType} data-type="icon-text">
+            <Button onTap={this.handleBarType} data-type="icon-text">
               Icon + Text
             </Button>
           </Container>
 
           <Container>
-            <Button onClick={this.handleBarType} data-type="icon-text-right">
+            <Button onTap={this.handleBarType} data-type="icon-text-right">
               Icon + Text (Right)
             </Button>
           </Container>

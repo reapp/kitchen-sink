@@ -51,7 +51,7 @@ export default React.createClass({
           stroke: 1,
           shapeRendering: 'crispEdges',
         }}
-        onClick={this.showPopover}
+        onTap={this.showPopover}
         chromeless
       />
 
@@ -69,7 +69,7 @@ export default React.createClass({
 
         <Title>Popover Below</Title>
         <p>
-          Popovers are <Button onClick={this.showPopover}>menus</Button> that will float above an element that triggers them. Apple recommends to use popovers on iPad, not smaller mobile devices. For iPhone, use actions and modals.
+          Popovers are <Button onTap={this.showPopover}>menus</Button> that will float above an element that triggers them. Apple recommends to use popovers on iPad, not smaller mobile devices. For iPhone, use actions and modals.
         </p>
 
         <div style={{height: 200}} />
@@ -78,7 +78,7 @@ export default React.createClass({
         <p>
           This is a popover that should trigger from the bottom of the page and point upwards.
         </p>
-        <Button onClick={this.showPopover}>Click here</Button>
+        <Button onTap={this.showPopover}>Click here</Button>
       </View>
     );
   }
