@@ -35,7 +35,7 @@ export default StaticView({
       <div>
         <Title>Drawers</Title>
         <p>Drawers slide out from a side of the screen</p>
-        <Container>
+        <Container wrap>
           <Button onClick={this.toggleDrawer.bind(this, 'top')}>Top</Button>
           <Button onClick={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
           <Button onClick={this.toggleDrawer.bind(this, 'right')}>Right</Button>
