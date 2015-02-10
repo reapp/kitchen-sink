@@ -15,7 +15,7 @@ export default StaticView({
   },
 
   toggleModal(type) {
-    console.log('toggle', type)
+    console.log('tog',type)
     this.setState({ modal: type });
   },
 

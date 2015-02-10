@@ -52,23 +52,27 @@ export default StaticView({
     return (
       <div>
         {this.state.modal &&
-          <Modal title="Button pressed" onClose={() => this.setState({ modal: false })}>You did it</Modal>
+          <Modal
+            title="Button pressed"
+            onClose={() => this.setState({ modal: false })}>
+              Try dragging this view from the left edge to go back!
+          </Modal>
         }
 
         <Title>Buttons</Title>
 
         <Container>
-          <Button onClick={this.toggleAlert} active>Active</Button>
-          <Button onClick={this.toggleAlert}>Button</Button>
-          <Button onClick={this.toggleAlert} rounded>Round</Button>
+          <Button onTap={this.toggleAlert} active>Active</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
+          <Button onTap={this.toggleAlert} rounded>Round</Button>
         </Container>
 
         <Title>ButtonGroup</Title>
 
         <Container>
           <ButtonGroup>
-            <Button onClick={this.toggleAlert}>Button</Button>
-            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
@@ -76,26 +80,25 @@ export default StaticView({
 
         <Container>
           <ButtonGroup buttonProps={{rounded: true}}>
-            <Button onClick={this.toggleAlert}>Button</Button>
-            <Button onClick={this.toggleAlert} active>Button</Button>
-            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert} active>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
         <Title>Styled Buttons</Title>
-
-        <Container>
+        <Container style={{marginBottom: 20}}>
           <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
-            <Button onClick={this.toggleAlert}>Button</Button>
-            <Button onClick={this.toggleAlert} active>Button</Button>
-            <Button onClick={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert} active>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
         <Container>
-          <Button onClick={this.toggleAlert} styles={this.buttonStyles.red}>Active</Button>
-          <Button onClick={this.toggleAlert} styles={this.buttonStyles.green}>Button</Button>
-          <Button onClick={this.toggleAlert} styles={this.buttonStyles.blue} rounded>Round</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.red}>Active</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.green}>Button</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
       </div>
     );

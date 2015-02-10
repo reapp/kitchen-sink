@@ -25,7 +25,7 @@ export default StaticView({
             title="Facebook"
             titleAfter="8:45"
             titleSub="New messages from Jane Doe"
-            wrapper={<a href="http://google.com" />}
+            wrapper={<a href="#" />}
             noicon>
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -43,7 +43,7 @@ export default StaticView({
             before={icon}
             title="Facebook"
             titleSub="New messages from Jane Doe"
-            wrapper={<a href="http://google.com" />} />
+            wrapper={<a href="#" />} />
         </List>
 
         <Title>List with Icons</Title>
@@ -51,7 +51,7 @@ export default StaticView({
           <ListItem
             before={icon}
             after="Whatup"
-            wrapper={<a href="http://google.com" />}>
+            wrapper={<a href="#" />}>
             Brian Cole
           </ListItem>
           <ListItem
@@ -84,7 +84,7 @@ export default StaticView({
 
         <Title>Inset</Title>
         <List type="inset" wrap>
-          <a href="http://google.com">Google</a>
+          <a href="#">Google</a>
           <Link to="popovers">Popovers</Link>
           <Link to="drawers">Drawers</Link>
         </List>

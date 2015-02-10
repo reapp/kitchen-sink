@@ -17,7 +17,7 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      hasInteracted: true,
+      hasInteracted: false,
       demoIndex: 0,
       searchVal: '',
       disableScroll: false
@@ -25,7 +25,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    // this.demo();
+    this.demo();
 
     window.addEventListener('mouseover', this.setInteracted);
     window.addEventListener('focus', this.setInteracted);
@@ -44,7 +44,7 @@ export default React.createClass({
         this.transitionTo(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
       }
-    }, 3500);
+    }, 2500);
   },
 
   handleSearch(e) {
