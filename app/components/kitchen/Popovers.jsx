@@ -53,9 +53,7 @@ export default React.createClass({
         }}
         onTap={this.showPopover}
         chromeless
-      />
-
-    console.log('render', this.state.popoverProps)
+      />;
 
     return (
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
