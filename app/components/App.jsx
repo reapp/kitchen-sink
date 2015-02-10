@@ -3,8 +3,18 @@ import { Link, RouteHandler } from 'react-router';
 import Menu from 'reapp-ui/components/Menu';
 import Button from 'reapp-ui/components/Button';
 import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
+import hasInteracted from 'lib/hasInteracted';
 
 export default React.createClass({
+  componentDidMount() {
+    window.addEventListener('mouseover', this.setInteracted);
+    window.addEventListener('focus', this.setInteracted);
+  },
+
+  setInteracted() {
+    hasInteracted(true);
+  },
+
   render() {
     var button = (
       <Button

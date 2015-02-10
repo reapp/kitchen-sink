@@ -7,8 +7,13 @@ import Badge from 'reapp-ui/components/Badge';
 import Title from 'reapp-ui/components/Title';
 import ListItem from 'reapp-ui/components/ListItem';
 import { Link } from 'react-router';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   statics: {
     title: [BackButton, 'Lists Page']
   },

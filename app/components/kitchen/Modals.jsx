@@ -4,8 +4,13 @@ import Modal from 'reapp-ui/components/Modal';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   statics: {
     title: [BackButton, 'Modals']
   },

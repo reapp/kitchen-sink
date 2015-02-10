@@ -1,7 +1,9 @@
 import React from 'react';
 import View from 'reapp-ui/views/View';
 import BackButton from 'components/shared/BackButton';
+import StaticView from 'reapp-ui/helpers/StaticView';
 import { Container, Block } from 'reapp-ui/components/Grid';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 var BlueBlock = React.createClass({
   statics: {
@@ -21,6 +23,10 @@ var BlueBlock = React.createClass({
 });
 
 export default React.createClass({
+  mixins: [
+    DemoViewMixin
+  ],
+
   styles: {
     textAlign: 'center',
   },

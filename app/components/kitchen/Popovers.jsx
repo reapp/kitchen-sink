@@ -5,10 +5,11 @@ import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
 import { Link, Navigation } from 'react-router';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default React.createClass({
   mixins: [
-    Navigation
+    DemoViewMixin
   ],
 
   getInitialState() {

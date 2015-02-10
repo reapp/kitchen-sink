@@ -9,6 +9,7 @@ import List from 'reapp-ui/components/List';
 import ListItem from 'reapp-ui/components/ListItem';
 import Title from 'reapp-ui/components/Title';
 import Badge from 'reapp-ui/components/Badge';
+import hasInteracted from 'lib/hasInteracted';
 
 export default React.createClass({
   mixins: [
@@ -17,7 +18,6 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      hasInteracted: false,
       demoIndex: 0,
       searchVal: '',
       disableScroll: false
@@ -25,26 +25,30 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    this.demo();
-
-    window.addEventListener('mouseover', this.setInteracted);
-    window.addEventListener('focus', this.setInteracted);
-  },
-
-  setInteracted() {
-    if (!this.state.hasInteracted)
-      this.setState({ hasInteracted: true });
+    if (window.location.hash === '#demo')
+      this.demo();
   },
 
   demo() {
-    setTimeout(() => {
+    if (this.demoTimeout)
+      clearTimeout(this.demoTimeout);
+
+    this.demoTimeout = setTimeout(() => {
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
-      if (!this.state.hasInteracted) {
+      if (!hasInteracted()) {
         this.transitionTo(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
+
+        if (this.state.demoIndex + 1 === this.interfaceLinks.length)
+          hasInteracted(true);
       }
     }, 2500);
+  },
+
+  handleViewLeft(i) {
+    if (i === 1)
+      this.demo();
   },
 
   handleSearch(e) {
@@ -97,13 +101,10 @@ export default React.createClass({
     return (
       <NestedViewList
         {...this.routedViewListProps()}
-        disableScroll={this.state.disableScroll}>
+        disableScroll={this.state.disableScroll}
+        onViewLeft={this.handleViewLeft}>
         <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
           <SearchBar onChange={this.handleSearch} defaultValue="" />
-
-          <p>
-            Welcome! We're alpha, expect bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues" target="_blank">report issues</a> you find.
-          </p>
 
           <Title>Interface</Title>
           <List>
@@ -114,6 +115,10 @@ export default React.createClass({
           <List>
             {this.filteredLinks(this.viewLinks)}
           </List>
+
+          <p>
+            Welcome! We're alpha, expect bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues" target="_blank">report issues</a> you find.
+          </p>
         </View>
 
         {this.childRouteHandler({

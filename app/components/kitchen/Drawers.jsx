@@ -7,8 +7,13 @@ import Button from 'reapp-ui/components/Button';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   statics: {
     title: [BackButton, 'Drawers']
   },

@@ -13,7 +13,8 @@ module.exports = ({ routes, route }) =>
         route('dotted-view-lists'),
         route('view-frosted'),
         route('grids'),
-        route('forms')
+        route('forms'),
+        route('mailbox')
       ),
       route('viewer')
     )

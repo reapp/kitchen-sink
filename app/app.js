@@ -8,7 +8,7 @@ import Routes from './routes';
 import 'reapp-ui/lib/desktopTouch';
 
 // import our theme
-require('./theme/theme');
+require('reapp-ui/themes/ios/theme');
 
 // run the app
 export default Router(Routes);

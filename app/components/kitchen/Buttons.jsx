@@ -6,8 +6,13 @@ import { Container, Block } from 'reapp-ui/components/Grid';
 import Button from 'reapp-ui/components/Button';
 import ButtonGroup from 'reapp-ui/components/ButtonGroup';
 import Modal from 'reapp-ui/components/Modal';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   statics: {
     title: [BackButton, 'Buttons']
   },

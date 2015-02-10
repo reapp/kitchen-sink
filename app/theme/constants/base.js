@@ -9,6 +9,8 @@ module.exports = {
   activeBG: themeColor,
   activeColor: themeTextColor,
 
+  active: '#fff',
+
   buttonBG: themeColor,
   buttonColor: themeTextColor
 };

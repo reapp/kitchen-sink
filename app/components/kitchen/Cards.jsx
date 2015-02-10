@@ -4,8 +4,13 @@ import CardList from 'reapp-ui/components/CardList';
 import Card from 'reapp-ui/components/Card';
 import BackButton from 'components/shared/BackButton';
 import Title from 'reapp-ui/components/Title';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   statics: {
     title: [BackButton, 'Cards']
   },

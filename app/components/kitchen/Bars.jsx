@@ -7,8 +7,13 @@ import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import Title from 'reapp-ui/components/Title';
+import DemoViewMixin from 'mixins/DemoViewMixin';
 
 export default StaticView({
+  mixins: [
+    DemoViewMixin
+  ],
+
   page: true,
 
   statics: {
@@ -85,25 +90,25 @@ export default StaticView({
           <Title>Bars</Title>
           <p>View different styles of bar displays:</p>
 
-          <Container>
+          <Container wrap pad>
             <Button onTap={this.handleBarType} data-type="text">
               Text
             </Button>
           </Container>
 
-          <Container>
+          <Container wrap pad>
             <Button onTap={this.handleBarType} data-type="icon">
               Icon
             </Button>
           </Container>
 
-          <Container>
+          <Container wrap pad>
             <Button onTap={this.handleBarType} data-type="icon-text">
               Icon + Text
             </Button>
           </Container>
 
-          <Container>
+          <Container wrap pad>
             <Button onTap={this.handleBarType} data-type="icon-text-right">
               Icon + Text (Right)
             </Button>
