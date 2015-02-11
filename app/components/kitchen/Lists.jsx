@@ -27,8 +27,8 @@ export default StaticView({
         <Title>Mail Style Media List</Title>
         <List>
           <ListItem
-            title="Facebook"
-            titleAfter="8:45"
+            title="Donny Radcliffe"
+            titleAfter="8:45 AM"
             titleSub="New messages from Jane Doe"
             wrapper={<a href="#" />}
             noicon>
@@ -42,12 +42,12 @@ export default StaticView({
         <List>
           <ListItem
             before={icon}
-            title="Facebook"
-            titleSub="New messages from Jane Doe" />
+            title="Mark McGraw"
+            titleSub="New messages from a person" />
           <ListItem
             before={icon}
-            title="Facebook"
-            titleSub="New messages from Jane Doe"
+            title="John Appleseed"
+            titleSub="New messages from another person"
             wrapper={<a href="#" />} />
         </List>
 
@@ -55,7 +55,7 @@ export default StaticView({
         <List>
           <ListItem
             before={icon}
-            after="Whatup"
+            after="Linked"
             wrapper={<a href="#" />}>
             Brian Cole
           </ListItem>

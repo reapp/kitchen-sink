@@ -65,7 +65,7 @@ var Mailbox = React.createClass({
           }
         }}>
           <ListItem
-            title="Facebook"
+            title="Erinn Silsby"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -76,7 +76,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Phebe Matz"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -87,7 +87,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Derek Boulware"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -98,7 +98,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Samantha Canor"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -109,7 +109,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Eugenio Calcagni"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -120,7 +120,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Moses Meggs"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -131,7 +131,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Evita Corl"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -142,7 +142,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Shantelle Rabideau"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -153,7 +153,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Angeline Slaten"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -164,7 +164,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Daisey Ertle"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
@@ -175,7 +175,7 @@ var Mailbox = React.createClass({
           </ListItem>
 
           <ListItem
-            title="Facebook"
+            title="Denny Muncy"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
             wrapper={<a href="#" />}
