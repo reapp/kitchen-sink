@@ -86,6 +86,10 @@ export default React.createClass({
     ['cards', 'Cards']
   ],
 
+  demoLinks: [
+    ['mailbox', 'Mailbox'],
+  ],
+
   viewLinks: [
     ['view-lists', 'Nested View List'],
     ['dotted-view-lists', 'Dotted View List']
@@ -105,6 +109,11 @@ export default React.createClass({
         onViewLeft={this.handleViewLeft}>
         <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
           <SearchBar onChange={this.handleSearch} defaultValue="" />
+
+          <Title>Demos</Title>
+          <List>
+            {this.filteredLinks(this.demoLinks)}
+          </List>
 
           <Title>Interface</Title>
           <List>
