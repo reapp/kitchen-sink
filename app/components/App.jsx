@@ -6,6 +6,12 @@ import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
 import hasInteracted from 'lib/hasInteracted';
 
 export default React.createClass({
+  getInitialState() {
+    return {
+      disableDragger: false
+    };
+  },
+
   componentDidMount() {
     window.addEventListener('mouseover', this.setInteracted);
     window.addEventListener('focus', this.setInteracted);
@@ -13,6 +19,10 @@ export default React.createClass({
 
   setInteracted() {
     hasInteracted(true);
+  },
+
+  handleViewEntered(i) {
+    this.setState({ disableDragger: i > 0 });
   },
 
   render() {
@@ -28,7 +38,7 @@ export default React.createClass({
 
     var menu = (
       <Menu>
-        <Link to="kitchen">Kitchen Sink</Link>
+        <Link style={{color: '#fff'}} to="kitchen">Kitchen Sink</Link>
       </Menu>
     );
 
@@ -36,9 +46,10 @@ export default React.createClass({
       <LayoutLeftNav
         side={menu}
         handle={button}
-        title="Kitchen Sink">
+        title="Kitchen Sink"
+        drawerProps={{dragger: !this.state.disableDragger}}>
 
-        <RouteHandler {...this.props} />
+        <RouteHandler {...this.props} onViewEntered={this.handleViewEntered} />
       </LayoutLeftNav>
     );
   }

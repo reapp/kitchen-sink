@@ -104,9 +104,11 @@ export default React.createClass({
   render() {
     return (
       <NestedViewList
-        {...this.routedViewListProps()}
-        disableScroll={this.state.disableScroll}
-        onViewLeft={this.handleViewLeft}>
+        {...this.routedViewListProps({
+          onViewEntered: this.props.onViewEntered,
+          onViewLeft: this.handleViewLeft
+        })}
+        disableScroll={this.state.disableScroll}>
         <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
           <SearchBar onChange={this.handleSearch} defaultValue="" />
 
