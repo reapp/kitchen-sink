@@ -1,34 +1,61 @@
 import React from 'react';
 import BackButton from 'reapp-ui/components/buttons/BackButton';
 import Button from 'reapp-ui/components/Button';
-import Bar from 'reapp-ui/components/Bar';
+import TitleBar from 'reapp-ui/components/TitleBar';
+import Icon from 'reapp-ui/components/Icon';
 import List from 'reapp-ui/components/List';
 import View from 'reapp-ui/views/View';
 import ListItem from 'reapp-ui/components/ListItem';
 import SearchBar from 'reapp-ui/components/SearchBar';
+import StaticWhenAnimated from 'reapp-ui/helpers/StaticWhenAnimated';
 import UI from 'reapp-ui';
 
-export default React.createClass({
+var MailboxView = React.createClass({
   render() {
-    var back =
+    var backButton =
       <BackButton onTap={() => window.history.back()} stopPropagation>
         Mailboxes
       </BackButton>
 
+    newMessageIcon =
+      <Button chromeless>
+        <Icon name="box-arrow-in" size={18} />
+      </Button>
+
     return (
       <View
         {...this.props}
-        title={[back, 'All Inboxes', <Button chromeless>Edit</Button>]}
+        title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
         scrollTop={UI.getConstants('searchBarHeight') + 1}
         fullscreen
       >
-        <SearchBar defaultValue="" />
+        <StaticWhenAnimated animation="viewList">
+          <Mailbox />
+        </StaticWhenAnimated>
+      </View>
+    )
+  }
+});
 
-        <Bar display="bottom">
+var Mailbox = React.createClass({
+  style: {
+    bottomtext: {
+      fontSize: 11,
+      padding: '4px 0 0',
+      fontWeight: 400
+    }
+  },
+
+  render() {
+    return (
+      <div>
+        <SearchBar defaultValue="" />
+        <TitleBar attach="bottom" left="" right={newMessageIcon}>
           <div>
-            Feed
+            <span style={this.style.bottomtext}>Updated Sunday</span>
+            <span style={this.style.bottomtext}>1 Unsent Message</span>
           </div>
-        </Bar>
+        </TitleBar>
 
         <List styles={{
           self: {
@@ -157,7 +184,9 @@ export default React.createClass({
             ursula major sagittis.
           </ListItem>
         </List>
-      </View>
+      </div>
     );
   }
 });
+
+export default MailboxView;
