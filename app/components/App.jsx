@@ -26,29 +26,26 @@ export default React.createClass({
   },
 
   render() {
-    var button = (
+    var handle =
       <Button
         iconProps={{
           name: 'hamburger',
           stroke: 1,
-          size: 24
+          size: 24,
+          animations: false
         }}
         chromeless />
-    );
 
-    var menu = (
+    var menu =
       <Menu>
         <Link style={{color: '#fff'}} to="kitchen">Kitchen Sink</Link>
       </Menu>
-    );
 
     return (
       <LayoutLeftNav
         side={menu}
-        handle={button}
-        title="Kitchen Sink"
-        drawerProps={{dragger: !this.state.disableDragger}}>
-
+        handle={handle}
+        draggable={false}>
         <RouteHandler {...this.props} onViewEntered={this.handleViewEntered} />
       </LayoutLeftNav>
     );
