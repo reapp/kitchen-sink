@@ -12,36 +12,6 @@ import UI from 'reapp-ui';
 
 var MailboxView = React.createClass({
   style: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-    top: 0
-  },
-
-  render() {
-    var backButton =
-      <BackButton onTap={() => window.history.back()} stopPropagation>
-        Mailboxes
-      </BackButton>
-
-    return (
-      <View
-        {...this.props}
-        title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
-        scrollTop={UI.getConstants('searchBarHeight') + 1}
-        fullscreen
-      >
-        <StaticWhenAnimated style={this.style} animation="viewList" fullscreen>
-          <Mailbox />
-        </StaticWhenAnimated>
-      </View>
-    )
-  }
-});
-
-var Mailbox = React.createClass({
-  style: {
     bottomtext: {
       fontSize: 11,
       padding: '4px 0 0',
@@ -50,20 +20,43 @@ var Mailbox = React.createClass({
   },
 
   render() {
+    var backButton =
+      <BackButton onTap={() => window.history.back()} stopPropagation>
+        Mailboxes
+      </BackButton>
+
     var newMessageIcon =
       <Button chromeless>
         <Icon name="box-arrow-in" size={18} />
       </Button>
 
+    var bottomBar =
+      <TitleBar attach="bottom" left="" right={newMessageIcon}>
+        <div>
+          <span style={this.style.bottomtext}>Updated Sunday</span>
+          <span style={this.style.bottomtext}>1 Unsent Message</span>
+        </div>
+      </TitleBar>
+
+    return (
+      <View
+        {...this.props}
+        title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
+        scrollTop={UI.getConstants('searchBarHeight') + 1}
+        after={bottomBar}
+        offsetBottom={43}
+      >
+        <Mailbox />
+      </View>
+    )
+  }
+});
+
+var Mailbox = React.createClass({
+  render() {
     return (
       <div>
         <SearchBar defaultValue="" />
-        <TitleBar attach="bottom" left="" right={newMessageIcon}>
-          <div>
-            <span style={this.style.bottomtext}>Updated Sunday</span>
-            <span style={this.style.bottomtext}>1 Unsent Message</span>
-          </div>
-        </TitleBar>
 
         <List styles={{
           self: {
