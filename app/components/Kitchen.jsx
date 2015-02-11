@@ -25,7 +25,7 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    if (window.location.hash === '#demo')
+    if (window.location.hash.match(/demo/))
       this.demo();
   },
 
@@ -43,7 +43,7 @@ export default React.createClass({
         if (this.state.demoIndex + 1 === this.interfaceLinks.length)
           hasInteracted(true);
       }
-    }, 2500);
+    }, 1600);
   },
 
   handleViewLeft(i) {

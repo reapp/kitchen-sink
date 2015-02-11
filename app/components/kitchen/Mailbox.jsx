@@ -11,16 +11,19 @@ import StaticWhenAnimated from 'reapp-ui/helpers/StaticWhenAnimated';
 import UI from 'reapp-ui';
 
 var MailboxView = React.createClass({
+  style: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    top: 0
+  },
+
   render() {
     var backButton =
       <BackButton onTap={() => window.history.back()} stopPropagation>
         Mailboxes
       </BackButton>
-
-    newMessageIcon =
-      <Button chromeless>
-        <Icon name="box-arrow-in" size={18} />
-      </Button>
 
     return (
       <View
@@ -29,7 +32,7 @@ var MailboxView = React.createClass({
         scrollTop={UI.getConstants('searchBarHeight') + 1}
         fullscreen
       >
-        <StaticWhenAnimated animation="viewList">
+        <StaticWhenAnimated style={this.style} animation="viewList" fullscreen>
           <Mailbox />
         </StaticWhenAnimated>
       </View>
@@ -47,6 +50,11 @@ var Mailbox = React.createClass({
   },
 
   render() {
+    var newMessageIcon =
+      <Button chromeless>
+        <Icon name="box-arrow-in" size={18} />
+      </Button>
+
     return (
       <div>
         <SearchBar defaultValue="" />

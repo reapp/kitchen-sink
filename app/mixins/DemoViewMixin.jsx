@@ -1,3 +1,4 @@
+
 var { Navigation } = require('react-router');
 var hasInteracted = require('lib/hasInteracted');
 
@@ -8,6 +9,6 @@ module.exports = {
     setTimeout(() => {
       if (!hasInteracted())
         this.goBack();
-    }, 2000);
+    }, 1600);
   }
 }
