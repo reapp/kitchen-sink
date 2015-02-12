@@ -60,15 +60,13 @@ var Mailbox = React.createClass({
 
         <List styles={{
           self: {
-            paddingLeft: 25,
-            paddingRight: 10
+            paddingLeft: 25
           }
         }}>
           <ListItem
             title="Erinn Silsby"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -79,7 +77,6 @@ var Mailbox = React.createClass({
             title="Phebe Matz"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -90,7 +87,6 @@ var Mailbox = React.createClass({
             title="Derek Boulware"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -101,7 +97,6 @@ var Mailbox = React.createClass({
             title="Samantha Canor"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -112,7 +107,6 @@ var Mailbox = React.createClass({
             title="Eugenio Calcagni"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -123,7 +117,6 @@ var Mailbox = React.createClass({
             title="Moses Meggs"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -134,7 +127,6 @@ var Mailbox = React.createClass({
             title="Evita Corl"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -145,7 +137,6 @@ var Mailbox = React.createClass({
             title="Shantelle Rabideau"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -156,7 +147,6 @@ var Mailbox = React.createClass({
             title="Angeline Slaten"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -167,7 +157,6 @@ var Mailbox = React.createClass({
             title="Daisey Ertle"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
@@ -178,7 +167,6 @@ var Mailbox = React.createClass({
             title="Denny Muncy"
             titleAfter="8:45 PM"
             titleSub="New messages from Jane Doe really long title should ellipse"
-            wrapper={<a href="#" />}
           >
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
