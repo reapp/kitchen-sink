@@ -77,6 +77,7 @@ export default React.createClass({
   interfaceLinks: [
     ['buttons', 'Buttons'],
     ['lists', 'Lists'],
+    ['photos', 'Photos'],
     ['modals', 'Modals'],
     ['popovers', 'Popovers'],
     ['forms', 'Forms'],

@@ -1,10 +1,15 @@
 import React from 'react';
-// import Images from '../../assets/data/images';
-import Viewer from '../components/viewer/Viewer';
+import Gallery from 'reapp-ui/components/Gallery';
 import View from 'reapp-ui/views/View';
 import TitleBar from 'reapp-ui/components/TitleBar';
 
-var ViewerPage = React.createClass({
+function imageRequire(name) {
+  return require('../../../assets/photos/' + name + '.jpg');
+}
+
+var Images = ['river', 'sunrise', 'winter', 'yosemite'].map(imageRequire);
+
+module.exports = React.createClass({
   getInitialState() {
     return { width: 0, height: 0 };
   },
@@ -24,13 +29,12 @@ var ViewerPage = React.createClass({
     return (
       <View id="ViewerPage">
         <TitleBar>{this.title}</TitleBar>
-        <Viewer
+        <Gallery
           width={this.state.width}
           height={this.state.height}
-          images={[]} />
+          images={Images}
+        />
       </View>
     );
   }
 });
-
-module.exports = ViewerPage;

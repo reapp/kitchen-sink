@@ -14,8 +14,8 @@ module.exports = ({ routes, route }) =>
         route('view-frosted'),
         route('grids'),
         route('forms'),
-        route('mailbox')
-      ),
-      route('viewer')
+        route('mailbox'),
+        route('photos')
+      )
     )
   );

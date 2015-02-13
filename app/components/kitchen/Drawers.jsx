@@ -56,7 +56,7 @@ export default StaticView({
               <p>{type} drawer</p>
               <Button onClick={this.toggleDrawer.bind(this, type)}>Close me</Button>
               <br />
-              <img src="/assets/sunrise.jpg" />
+              <img src="/assets/images/sunrise.jpg" />
             </View>
           </Drawer>
         )}
