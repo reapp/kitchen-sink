@@ -1,7 +1,8 @@
 import React from 'react';
+import StaticView from 'reapp-ui/helpers/StaticView';
 import Gallery from 'reapp-ui/components/Gallery';
-import View from 'reapp-ui/views/View';
 import TitleBar from 'reapp-ui/components/TitleBar';
+import BackButton from 'components/shared/BackButton';
 
 function imageRequire(name) {
   return require('../../../assets/photos/' + name + '.jpg');
@@ -9,7 +10,11 @@ function imageRequire(name) {
 
 var Images = ['river', 'sunrise', 'winter', 'yosemite'].map(imageRequire);
 
-module.exports = React.createClass({
+module.exports = StaticView({
+  statics: {
+    title: [BackButton, 'Photos']
+  },
+
   getInitialState() {
     return { width: 0, height: 0 };
   },
@@ -17,7 +22,7 @@ module.exports = React.createClass({
   componentWillMount() {
     this.setState({
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight - 44
     });
   },
 
@@ -27,14 +32,12 @@ module.exports = React.createClass({
     }
 
     return (
-      <View id="ViewerPage">
-        <TitleBar>{this.title}</TitleBar>
-        <Gallery
-          width={this.state.width}
-          height={this.state.height}
-          images={Images}
-        />
-      </View>
+      <Gallery
+        width={this.state.width}
+        height={this.state.height}
+        images={Images}
+        touchStartBoundsX={{from:30, to:window.innerWidth}}
+      />
     );
   }
 });
