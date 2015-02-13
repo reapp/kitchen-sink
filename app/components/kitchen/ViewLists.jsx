@@ -4,7 +4,6 @@ import NestedViewList from 'reapp-ui/views/NestedViewList';
 import View from 'reapp-ui/views/View';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
-import { Container } from 'reapp-ui/components/Grid';
 
 export default StaticView({
   getInitialState() {
@@ -47,7 +46,7 @@ export default StaticView({
             </p>
           </View>
 
-          <View>
+          <View title="Final View">
             <p>
               Final View. Don't forget you can swipe from the edges to go between views.
             </p>

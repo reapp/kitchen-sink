@@ -4,13 +4,14 @@ import BackButton from 'reapp-ui/components/buttons/BackButton';
 import Button from 'reapp-ui/components/Button';
 import DottedViewList from 'reapp-ui/views/DottedViewList';
 import View from 'reapp-ui/views/View';
-import { Container } from 'reapp-ui/components/Grid';
 
 var OuterView = React.createClass({
   render() {
+    var { disableParentViewList, ...props } = this.props;
+
     return (
-      <View {...this.props}>
-        <InnerView />
+      <View {...props}>
+        <InnerView disableParentViewList={disableParentViewList} />
       </View>
     );
   }
@@ -18,50 +19,49 @@ var OuterView = React.createClass({
 
 var InnerView = React.createClass({
   getInitialState() {
-    return {
-      step: 0
-    };
-  },
-
-  setViewStep(index) {
-    this.setState({ step: index });
-  },
-
-  viewButton(name, index) {
-    return (
-      <BackButton
-        onClick={this.setViewStep.bind(this, 0)}>
-        {name}
-      </BackButton>
-    );
+    return { step: 0 };
   },
 
   render() {
     return (
-      <DottedViewList onViewEntered={this.setViewStep} scrollToStep={this.state.step}>
-        <View id="one" title={[BackButtonStatic,'One']}>
-          <Container>
+      <DottedViewList
+        scrollToStep={this.state.step}
+        onViewEntered={i => this.props.disableParentViewList(i > 0)}>
+        <View title={[BackButtonStatic,'One']}>
+          <p>
             First
-            <Button onClick={this.setViewStep.bind(this, 2)}>Go to third step</Button>
-          </Container>
+          </p>
+
+          <Button onTap={() => this.setState({ step: 2 })}>
+            Go to third step
+          </Button>
         </View>
 
-        <View id="two" title={[this.viewButton('One', 0),'Two']}>
-          <Container>
+        <View title={[
+          <Button chromeless onTap={() => this.setState({ step: 0 })}>One</Button>,
+          'Two'
+        ]}>
+          <p>
             Second
-          </Container>
+          </p>
         </View>
 
-        <View id="three" title={[<BackButton onClick={this.prevView}>Two</BackButton>,'Three']}>
-          <Container>
+        <View title={[
+          <Button chromeless onTap={() => this.setState({ step: 1 })}>Two</Button>,
+          'Three'
+        ]}>
+          <p>
             Third
-          </Container>
+          </p>
         </View>
 
-        <View id="four" title={[<BackButton onClick={this.prevView}>Three</BackButton>,'Four']}>
-          <Container>
+        <View title={[
+          <Button chromeless onTap={() => this.setState({ step: 2 })}>Three</Button>,
+          'Four'
+        ]}>
+          <p>
             Fourth
-          </Container>
+          </p>
         </View>
       </DottedViewList>
     );
