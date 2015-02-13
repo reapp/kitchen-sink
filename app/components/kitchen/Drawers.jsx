@@ -29,10 +29,10 @@ export default StaticView({
 
   toggleDrawer(type) {
     this.setState({ [type]: !this.state[type] });
-    this.props.disableViewListDrag(true);
+    this.props.disableParentViewList(true);
 
     if (!this.state.left && !this.state.right && !this.state.top && !this.state.bottom)
-      this.props.disableViewListDrag(false);
+      this.props.disableParentViewList(false);
   },
 
   render() {

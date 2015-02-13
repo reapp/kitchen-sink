@@ -74,9 +74,9 @@ module.exports = StaticView({
 
         <Title>List with Icons</Title>
         <List>
-          <ListItem before={icon} after="Whatup">Nate Wienert</ListItem>
-          <ListItem before={icon} after={badge}>Nate Wienert</ListItem>
-          <ListItem before={icon} after={icon}>Nate Wienert</ListItem>
+          <ListItem before={icon} after="Whatup">Jane Doe</ListItem>
+          <ListItem before={icon} after={badge}>John Doe</ListItem>
+          <ListItem before={icon} after={icon}>Albert Doe</ListItem>
         </List>
 
         <Title>List with Links</Title>

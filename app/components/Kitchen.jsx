@@ -134,7 +134,7 @@ export default React.createClass({
         </View>
 
         {this.childRouteHandler({
-          disableViewListDrag: this.disableScroll
+          disableParentViewList: this.disableScroll
         })}
       </NestedViewList>
     );
