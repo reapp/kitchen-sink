@@ -3,7 +3,6 @@ import StaticView from 'reapp-ui/helpers/StaticView';
 import Drawer from 'reapp-ui/components/Drawer';
 import View from 'reapp-ui/views/View';
 import Title from 'reapp-ui/components/Title';
-import Button from 'reapp-ui/components/Button';
 import { Container, Block } from 'reapp-ui/components/Grid';
 import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
