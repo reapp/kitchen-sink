@@ -9,13 +9,18 @@ module.exports = ({ routes, route }) =>
         route('cards'),
         route('drawers'),
         route('lists'),
+        route('grids'),
+        route('forms'),
+        route('photos'),
+
+        // views
         route('view-lists'),
         route('dotted-view-lists'),
         route('view-frosted'),
-        route('grids'),
-        route('forms'),
+
+        // demos
         route('mailbox'),
-        route('photos')
+        route('twitter')
       )
     )
   );
