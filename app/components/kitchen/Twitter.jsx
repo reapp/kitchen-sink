@@ -1,5 +1,8 @@
 import React from 'react';
 import DottedViewList from 'reapp-ui/views/DottedViewList';
+import NestedViewList from 'reapp-ui/views/NestedViewList';
+import { RoutedViewListMixin } from 'reapp-routes/react-router';
+import { Link, RouteHandler } from 'react-router';
 import View from 'reapp-ui/views/View';
 import Button from 'reapp-ui/components/Button';
 import Icon from 'reapp-ui/components/Icon';
@@ -7,6 +10,7 @@ import List from 'reapp-ui/components/List';
 import ListItem from 'reapp-ui/components/ListItem';
 import Bar from 'reapp-ui/components/Bar';
 import BarItem from 'reapp-ui/components/BarItem';
+import Tweet from './twitter/Tweet';
 
 var OuterView = React.createClass({
   render() {
@@ -20,6 +24,16 @@ var OuterView = React.createClass({
 });
 
 var InnerView = React.createClass({
+  mixins: [
+    RoutedViewListMixin
+  ],
+
+  getInitialState() {
+    return {
+      nestedViewIndex: 0
+    };
+  },
+
   render() {
     var addPersonIcon =
       <Button chromeless>
@@ -36,79 +50,86 @@ var InnerView = React.createClass({
         <Icon name="new-message" size={18} />
       </Button>
 
+      console.log('nested view index', this.state.nestedViewIndex)
+
     return (
-      <div>
-        <DottedViewList
-          {...this.props}>
-          <View
-            title="Home"
-            titleBarProps={{
-              styles: {
-                self: {
-                  background: 'blue'
-                },
-                mid: {
-                  color: '#fff'
+      <View {...this.props}>
+        <NestedViewList
+          {...this.routedViewListProps({
+            onViewEntered: i => {
+              this.props.disableParentViewList(i > 0);
+              this.setState({ nestedViewIndex: i })
+            }
+          })}
+          onViewEntering={i => {
+            console.log('view entering', i)
+            this.setState({ nestedViewIndex: i })
+          }}
+          titleBarProps={{
+            styles: {
+              self: {
+                background: 'blue'
+              }
+            }
+          }
+        }>
+          <View>
+            <DottedViewList
+              disableScroll={this.state.nestedViewIndex > 0}
+              titleBarProps={{
+                height: 48,
+                styles: {
+                  self: {
+                    background: 'blue'
+                  },
+                  mid: {
+                    color: '#fff'
+                  }
                 }
               }
-            }}>
-            <List>
-              <ListItem
-                title={<TwitTitle name="David Long" handle="@swannster" />}>
-                I just used a ClojureScript REPL to live target C.
-              </ListItem>
+            }>
+              <View title="Home">
+                <List>
+                  <Tweet
+                    onTap={() => this.transitionTo('tweetView')}
+                    name="Nothing"
+                    handle="@nothign">
+                    I just used a ClojureScript REPL to live target C.
+                  </Tweet>
 
-              <ListItem
-                title={<TwitTitle name="Lauren Morill" handle="@laurenmorrill" />}>
-                Lorem.
-              </ListItem>
+                  <Tweet
+                    onTap={() => this.transitionTo('tweetView')}
+                    name="Nothing"
+                    handle="@nothign">
+                    I just used a ClojureScript REPL to live target C.
+                  </Tweet>
 
-              <ListItem
-                title={<TwitTitle name="Benedict Walker" handle="@bwalkerio" />}>
-                Lorem.
-              </ListItem>
+                  <Tweet
+                    onTap={() => this.transitionTo('tweetView')}
+                    name="Nothing"
+                    handle="@nothign">
+                    I just used a ClojureScript REPL to live target C.
+                  </Tweet>
+                </List>
+              </View>
 
-              <ListItem
-                title={<TwitTitle name="Darren Gross" handle="@darren_gross" />}>
-                Lorem.
-              </ListItem>
-            </List>
+              <View title="Discover"></View>
+
+              <View title="Etc"></View>
+            </DottedViewList>
+            <Bar attach="bottom">
+              <BarItem icon="home">Timelines</BarItem>
+              <BarItem icon="bell">Notifications</BarItem>
+              <BarItem icon="message">Messages</BarItem>
+              <BarItem icon="person">Me</BarItem>
+            </Bar>
           </View>
 
-          <View title="Discover"></View>
-
-          <View title="Etc"></View>
-        </DottedViewList>
-        <Bar attach="bottom">
-          <BarItem icon="home">Timelines</BarItem>
-          <BarItem icon="bell">Notifications</BarItem>
-          <BarItem icon="message">Messages</BarItem>
-          <BarItem icon="person">Me</BarItem>
-        </Bar>
-      </div>
+          {this.childRouteHandler()}
+        </NestedViewList>
+      </View>
     )
   }
 });
 
-var TwitTitle = React.createClass({
-  styles: {
-    name: {
-      fontWeight: 'bold'
-    },
-
-    handle: {
-      color: '#999'
-    }
-  },
-
-  render() {
-    return (
-      <div>
-        <span style={this.styles.name}>{this.props.name}</span>
-        <span style={this.styles.handle}>{this.props.handle}</span>
-      </div>
-    );
-  }
-});
-
-export default OuterView;
+export default InnerView;

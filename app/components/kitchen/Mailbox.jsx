@@ -31,7 +31,7 @@ var MailboxView = React.createClass({
       </Button>
 
     var bottomBar =
-      <TitleBar animations={{ self: 'moveToLeft' }} attach="bottom" left="" right={newMessageIcon}>
+      <TitleBar animations={{ self: 'moveToLeft' }} animationState={{ viewList: { index: 1 }}} attach="bottom" left="" right={newMessageIcon}>
         <div>
           <span style={this.style.bottomtext}>Updated Sunday</span>
           <span style={this.style.bottomtext}>1 Unsent Message</span>

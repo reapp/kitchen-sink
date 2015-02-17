@@ -20,7 +20,9 @@ module.exports = ({ routes, route }) =>
 
         // demos
         route('mailbox'),
-        route('twitter')
+        route('twitter',
+          route('tweetView')
+        )
       )
     )
   );
