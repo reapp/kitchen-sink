@@ -9,6 +9,10 @@ import { Container, Block } from 'reapp-ui/components/Grid';
 import Title from 'reapp-ui/components/Title';
 import DemoViewMixin from 'mixins/DemoViewMixin';
 
+var mailbox = require('reapp-ui/assets/icons/mailbox.svg');
+var stopwatch = require('reapp-ui/assets/icons/stopwatch.svg');
+var star = require('reapp-ui/assets/icons/star.svg');
+
 export default StaticView({
   mixins: [
     DemoViewMixin
@@ -42,19 +46,19 @@ export default StaticView({
   barProps: {
     text: [{}, {}, {}],
     icon: [
-      { icon: 'mailbox' },
-      { icon: 'stopwatch' },
-      { icon: 'star' }
+      { icon: mailbox },
+      { icon: stopwatch },
+      { icon: star }
     ],
     'icon-text': [
-      { icon: 'mailbox', text: 'Mailbox' },
-      { icon: 'stopwatch', text: 'Stopwatch' },
-      { icon: 'star', text: 'Star' }
+      { icon: mailbox, text: 'Mailbox' },
+      { icon: stopwatch, text: 'Stopwatch' },
+      { icon: star, text: 'Star' }
     ],
     'icon-text-right': [
-      { icon: 'mailbox', text: 'Mailbox' },
-      { icon: 'stopwatch', text: 'Stopwatch' },
-      { icon: 'star', text: 'Star' }
+      { icon: mailbox, text: 'Mailbox' },
+      { icon: stopwatch, text: 'Stopwatch' },
+      { icon: star, text: 'Star' }
     ]
   },
 

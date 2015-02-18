@@ -8,6 +8,8 @@ import BackButton from 'components/shared/BackButton';
 import Button from 'reapp-ui/components/Button';
 import DemoViewMixin from 'mixins/DemoViewMixin';
 
+var image = require('../../../assets/photos/sunrise.jpg');
+
 export default StaticView({
   mixins: [
     DemoViewMixin
@@ -55,7 +57,7 @@ export default StaticView({
               <p>{type} drawer</p>
               <Button onClick={this.toggleDrawer.bind(this, type)}>Close me</Button>
               <br />
-              <img src="/assets/images/sunrise.jpg" />
+              <img src={image} />
             </View>
           </Drawer>
         )}

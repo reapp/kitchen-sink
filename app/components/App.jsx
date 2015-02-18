@@ -29,7 +29,7 @@ export default React.createClass({
     var handle =
       <Button
         iconProps={{
-          name: 'hamburger',
+          file: require('reapp-ui/assets/icons/hamburger.svg'),
           stroke: 1,
           size: 24,
           animations: false
