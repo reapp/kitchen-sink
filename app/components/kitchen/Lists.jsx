@@ -19,7 +19,14 @@ export default StaticView({
   },
 
   render() {
-    var icon = <img src={require('assets/icon.png')} width={32} height={32} />;
+    var icon =
+      <img
+        src={require('assets/icon.png')}
+        width={24}
+        height={24}
+        style={{ borderRadius: 8 }}
+      />
+
     var badge = <Badge>5</Badge>;
 
     return (
