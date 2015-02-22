@@ -9,6 +9,7 @@ module.exports = ({ routes, route }) =>
         route('cards'),
         route('drawers'),
         route('lists'),
+        route('infinite-lists'),
         route('grids'),
         route('forms'),
         route('photos'),
