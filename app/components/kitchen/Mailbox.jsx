@@ -58,11 +58,7 @@ var Mailbox = React.createClass({
       <div>
         <SearchBar defaultValue="" />
 
-        <List styles={{
-          self: {
-            paddingLeft: 25
-          }
-        }}>
+        <List>
           <ListItem
             title="Erinn Silsby"
             titleAfter="8:45 PM"
