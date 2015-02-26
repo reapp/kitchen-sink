@@ -115,7 +115,11 @@ export default React.createClass({
           onViewLeft: this.handleViewLeft
         })}
         disableScroll={this.state.disableScroll}>
-        <View title={[this.props.handle, 'Kitchen Sink']} scrollTop="searchBarHeight">
+
+        <View
+          title={[this.props.handle, 'Kitchen Sink']}
+          scrollTop="searchBarHeight">
+
           <SearchBar onChange={this.handleSearch} defaultValue="" />
 
           <Title>Demos</Title>
