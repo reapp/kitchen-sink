@@ -9,7 +9,6 @@ import List from 'reapp-ui/components/List';
 import ListItem from 'reapp-ui/components/ListItem';
 import Title from 'reapp-ui/components/Title';
 import Badge from 'reapp-ui/components/Badge';
-import hasInteracted from 'lib/hasInteracted';
 
 export default React.createClass({
   mixins: [
@@ -18,15 +17,19 @@ export default React.createClass({
 
   getInitialState() {
     return {
+      isDemoing: false,
+      hasInteracted: false,
       demoIndex: 0,
       searchVal: '',
       disableScroll: false
     };
   },
 
-  componentDidMount() {
-    if (window.location.hash.match(/demo/))
+  componentWillMount() {
+    if (window.location.hash.match(/demo/)) {
+      this.setState({ isDemoing: true });
       this.demo();
+    }
   },
 
   demo() {
@@ -36,18 +39,18 @@ export default React.createClass({
     this.demoTimeout = setTimeout(() => {
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
-      if (!hasInteracted()) {
+      if (!this.state.hasInteracted && !this.props.hasInteracted) {
         this.transitionTo(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
 
         if (this.state.demoIndex + 1 === this.interfaceLinks.length)
-          hasInteracted(true);
+          this.setState({ hasInteracted: true });
       }
     }, 1600);
   },
 
   handleViewLeft(i) {
-    if (i === 1)
+    if (this.state.isDemoing && i === 1)
       this.demo();
   },
 
@@ -105,7 +108,9 @@ export default React.createClass({
 
   render() {
     var RouteHandler = this.childRouteHandler({
-      disableParentViewList: this.disableScroll
+      disableParentViewList: this.disableScroll,
+      isDemoing: this.state.isDemoing,
+      hasInteracted: this.props.hasInteracted || this.state.hasInteracted
     });
 
     return (

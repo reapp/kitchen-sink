@@ -3,7 +3,6 @@ import { Link, RouteHandler } from 'react-router';
 import Menu from 'reapp-ui/components/Menu';
 import Button from 'reapp-ui/components/Button';
 import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
-import hasInteracted from 'lib/hasInteracted';
 
 export default React.createClass({
   getInitialState() {
@@ -18,7 +17,7 @@ export default React.createClass({
   },
 
   setInteracted() {
-    hasInteracted(true);
+    this.setState({ hasInteracted: true });
   },
 
   handleViewEntered(i) {
@@ -46,7 +45,10 @@ export default React.createClass({
         side={menu}
         handle={handle}
         draggable={false}>
-        <RouteHandler {...this.props} onViewEntered={this.handleViewEntered} />
+        <RouteHandler {...this.props}
+          onViewEntered={this.handleViewEntered}
+          hasInteracted={this.state.hasInteracted}
+        />
       </LayoutLeftNav>
     );
   }

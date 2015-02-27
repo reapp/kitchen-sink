@@ -1,13 +1,11 @@
-
 var { Navigation } = require('react-router');
-var hasInteracted = require('lib/hasInteracted');
 
 module.exports = {
   mixins: [Navigation],
 
   componentDidMount() {
     setTimeout(() => {
-      if (!hasInteracted())
+      if (this.props.isDemoing && !this.props.hasInteracted)
         this.goBack();
     }, 1600);
   }
