@@ -2,6 +2,8 @@ import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import Gallery from 'reapp-ui/components/Gallery';
 import TitleBar from 'reapp-ui/components/TitleBar';
+import Button from 'reapp-ui/components/Button';
+import Title from 'reapp-ui/components/Title';
 import BackButton from 'components/shared/BackButton';
 
 function imageRequire(name) {
@@ -16,7 +18,7 @@ module.exports = StaticView({
   },
 
   getInitialState() {
-    return { width: 0, height: 0 };
+    return { width: 0, height: 0, show: false };
   },
 
   componentWillMount() {
@@ -27,17 +29,29 @@ module.exports = StaticView({
   },
 
   render() {
-    if (!this.state.width || !this.state.height) {
+    var { width, height, show } = this.state;
+
+    if (!width || !height) {
       return <div>Loading...</div>;
     }
 
     return (
-      <Gallery
-        width={this.state.width}
-        height={this.state.height}
-        images={Images}
-        touchStartBoundsX={{from:30, to:window.innerWidth}}
-      />
+      <div>
+        <Title>Photos Demo</Title>
+        <Button onTap={() => this.setState({ show: true })}>
+          Show Gallery
+        </Button>
+
+        {show &&
+          <Gallery
+            onClose={() => this.setState({ show: false })}
+            width={width}
+            height={height}
+            images={Images}
+            touchStartBoundsX={{from:30, to:window.innerWidth}}
+          />
+        }
+      </div>
     );
   }
 });
