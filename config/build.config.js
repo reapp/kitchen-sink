@@ -7,5 +7,5 @@ module.exports = {
   linkModules: true,
   debug: true,
   minify: true,
-  separateStylesheets: true
+  separateStylesheet: true
 };
