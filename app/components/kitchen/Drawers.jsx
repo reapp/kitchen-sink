@@ -40,10 +40,10 @@ export default StaticView({
         <Title>Drawers</Title>
         <p>Drawers slide out from a side of the screen</p>
         <Container wrap>
-          <Button onClick={this.toggleDrawer.bind(this, 'top')}>Top</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'right')}>Right</Button>
-          <Button onClick={this.toggleDrawer.bind(this, 'left')}>Left</Button>
+          <Button onTap={this.toggleDrawer.bind(this, 'top')}>Top</Button>
+          <Button onTap={this.toggleDrawer.bind(this, 'bottom')}>Bottom</Button>
+          <Button onTap={this.toggleDrawer.bind(this, 'right')}>Right</Button>
+          <Button onTap={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
         {['left', 'right', 'bottom', 'top'].map((type) =>
@@ -53,7 +53,7 @@ export default StaticView({
             dragger={type !== 'left'}>
             <View>
               <p>{type} drawer</p>
-              <Button onClick={this.toggleDrawer.bind(this, type)}>Close me</Button>
+              <Button onTap={this.toggleDrawer.bind(this, type)}>Close me</Button>
               <br />
               <img src={image} />
             </View>
