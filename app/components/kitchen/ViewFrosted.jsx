@@ -8,7 +8,7 @@ import Icon from 'reapp-ui/components/Icon';
 import Badge from 'reapp-ui/components/Badge';
 import Title from 'reapp-ui/components/Title';
 import ListItem from 'reapp-ui/components/ListItem';
-import ScrollableMixin from 'reapp-ui/mixins/Scrollable';
+import Scrollable from 'reapp-ui/mixins/Scrollable';
 import { Link } from 'react-router';
 
 import TouchableArea from 'reapp-ui/helpers/TouchableArea';
@@ -22,7 +22,13 @@ module.exports = StaticView({
     title: [BackButton, 'FrostedGlassContainer']
   },
 
-  mixins: [ScrollableMixin({ scrollY: true })],
+  mixins: [
+    Scrollable
+  ],
+
+  scrollerProps: {
+    scrollingY: true
+  },
 
   render() {
     var titleBarStyle = { background: 'rgba(255,255,255,0.8)', height:44 };
