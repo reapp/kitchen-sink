@@ -6,14 +6,13 @@ import 'reapp-ui/themes/ios/stylesheets';
 // we use but override the constants from iOS
 UI.addConstants(
   iOS.constants.base,
-  require('./constants/base'),
-  iOS.constants.components,
-  require('./constants/components')
+  // require('./constants/base'),
+  iOS.constants.components
+  // require('./constants/components')
 );
 
 UI.addStyles(
-  iOS.styles,
-  require('./styles')
+  iOS.styles
 );
 
 UI.addAnimations(

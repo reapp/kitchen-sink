@@ -47,7 +47,7 @@ export default React.createClass({
     var menuButton =
       <Button
         iconProps={{
-          name: 'hamburger',
+          file: require('reapp-ui/assets/icons/hamburger.svg'),
           size: 24,
           stroke: 1,
           shapeRendering: 'crispEdges',

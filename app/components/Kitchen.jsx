@@ -80,11 +80,11 @@ export default React.createClass({
   interfaceLinks: [
     ['buttons', 'Buttons'],
     ['lists', 'Lists'],
-    ['photos', 'Photos'],
+    ['gallery', 'Gallery'],
     ['modals', 'Modals'],
     ['popovers', 'Popovers'],
     ['forms', 'Forms'],
-    ['bars', 'Toolbars'],
+    ['bars', 'Bars'],
     ['grids', 'Grid'],
     ['drawers', 'Drawers'],
     ['cards', 'Cards']

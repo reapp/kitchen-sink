@@ -14,7 +14,7 @@ var Images = ['river', 'sunrise', 'winter', 'yosemite'].map(imageRequire);
 
 module.exports = StaticView({
   statics: {
-    title: [BackButton, 'Photos']
+    title: [BackButton, 'Gallery']
   },
 
   getInitialState() {
@@ -28,6 +28,16 @@ module.exports = StaticView({
     });
   },
 
+  showGallery() {
+    this.setState({ show: true });
+    this.props.disableParentViewList(true);
+  },
+
+  hideGallery() {
+    this.setState({ show: false });
+    this.props.disableParentViewList(false);
+  },
+
   render() {
     var { width, height, show } = this.state;
 
@@ -38,13 +48,13 @@ module.exports = StaticView({
     return (
       <div>
         <Title>Photos Demo</Title>
-        <Button onTap={() => this.setState({ show: true })}>
+        <Button onTap={this.showGallery}>
           Show Gallery
         </Button>
 
         {show &&
           <Gallery
-            onClose={() => this.setState({ show: false })}
+            onClose={this.hideGallery}
             width={width}
             height={height}
             images={Images}

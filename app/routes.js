@@ -11,7 +11,7 @@ module.exports = ({ routes, route }) =>
         route('lists'),
         route('grids'),
         route('forms'),
-        route('photos'),
+        route('gallery'),
 
         // views
         route('view-lists'),
