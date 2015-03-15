@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Tappable from 'reapp-ui/helpers/Tappable';
-import { RoutedViewListMixin } from 'reapp-routes/react-router';
+import RoutedViewListMixin from 'reapp-routes/react-router/RoutedViewListMixin';
 import NestedViewList from 'reapp-ui/views/NestedViewList';
 import View from 'reapp-ui/views/View';
 import SearchBar from 'reapp-ui/components/SearchBar';
