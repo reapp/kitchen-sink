@@ -17,6 +17,6 @@
     "reapp-component": "~1.0.1",
     "reapp-platform": "^1.0.4",
     "reapp-routes": "^0.9.5",
-    "reapp-ui": "^0.9.0"
+    "reapp-ui": "^0.10.0"
   }
 }
