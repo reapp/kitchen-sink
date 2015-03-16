@@ -11,7 +11,4 @@ import 'reapp-ui/lib/desktopTouch';
 // import our theme
 let theme = require('reapp-ui/themes/ios/theme');
 
-// run the app
-React.withContext({ theme, test: '123' }, () => {
-  Router(Routes)
-});
+Router(Routes, { context: { theme } });
