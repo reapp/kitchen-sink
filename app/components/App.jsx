@@ -19,7 +19,8 @@ export default React.createClass({
   },
 
   setInteracted() {
-    this.setState({ hasInteracted: true });
+    if (this.isMounted() && !this.state.hasInteracted)
+      this.setState({ hasInteracted: true });
   },
 
   handleViewEntered(i) {

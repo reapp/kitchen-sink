@@ -44,8 +44,7 @@ var MailboxView = React.createClass({
         title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
         scrollTop={UI.getConstants('searchBarHeight') + 1}
         after={bottomBar}
-        offsetBottom={43}
-      >
+        offsetBottom={43}>
         <Mailbox />
       </View>
     )
@@ -53,121 +52,26 @@ var MailboxView = React.createClass({
 });
 
 var Mailbox = React.createClass({
+  messages: ['Erinn Silsby', 'Phebe Matz', 'Derek Boulware', 'Samantha Canor',
+    'Eugenio Calcagni', 'Moses Meggs', 'Evita Corel', 'Shantelle Rabideau'],
+
   render() {
     return (
       <div>
-        <SearchBar defaultValue="" />
+        <SearchBar key={100} defaultValue="" />
 
-        <List>
-          <ListItem
-            title="Erinn Silsby"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Phebe Matz"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Derek Boulware"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Samantha Canor"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Eugenio Calcagni"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Moses Meggs"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Evita Corl"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Shantelle Rabideau"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Angeline Slaten"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Daisey Ertle"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
-
-          <ListItem
-            title="Denny Muncy"
-            titleAfter="8:45 PM"
-            titleSub="New messages from Jane Doe really long title should ellipse"
-          >
-            Lorem ipsume dolor sit amet, consectetur adipiscing
-            elit. Nulla sagittis tellus ut turpis condimentium,
-            ursula major sagittis.
-          </ListItem>
+        <List key={110}>
+          {this.messages.map((message, i) =>
+            <ListItem
+              key={i}
+              title={message}
+              titleAfter="8:45 PM"
+              titleSub="New messages from someone really long title should ellipse">
+              Lorem ipsume dolor sit amet, consectetur adipiscing
+              elit. Nulla sagittis tellus ut turpis condimentium,
+              ursula major sagittis.
+            </ListItem>
+          )}
         </List>
       </div>
     );
