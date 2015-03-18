@@ -64,9 +64,10 @@ export default React.createClass({
     return filteredLinks.map(this.makeLink);
   },
 
-  makeLink(link) {
+  makeLink(link, i) {
     return (
       <ListItem
+        key={i}
         onTap={() => this.context.router.transitionTo(link[0])}
         after={link[2] &&
           <Badge styles={{self: { background: 'red' } }}>!</Badge>
