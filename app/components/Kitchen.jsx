@@ -40,7 +40,7 @@ export default React.createClass({
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
       if (!this.state.hasInteracted && !this.props.hasInteracted) {
-        this.transitionTo(name);
+        this.context.router.transitionTo(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
 
         if (this.state.demoIndex + 1 === this.interfaceLinks.length)
@@ -67,7 +67,7 @@ export default React.createClass({
   makeLink(link) {
     return (
       <ListItem
-        onTap={() => this.transitionTo(link[0])}
+        onTap={() => this.context.router.transitionTo(link[0])}
         after={link[2] &&
           <Badge styles={{self: { background: 'red' } }}>!</Badge>
         }
