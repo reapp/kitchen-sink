@@ -16,7 +16,6 @@ module.exports = ({ routes, route }) =>
         // views
         route('view-lists'),
         route('dotted-view-lists'),
-        route('view-frosted'),
 
         // demos
         route('mailbox'),
