@@ -46,7 +46,7 @@ export default React.createClass({
         if (this.state.demoIndex + 1 === this.interfaceLinks.length)
           this.setState({ hasInteracted: true });
       }
-    }, 1600);
+    }, 3600);
   },
 
   handleViewLeft(i) {
