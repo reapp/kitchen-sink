@@ -8,9 +8,12 @@ import View from 'reapp-ui/views/View';
 import ListItem from 'reapp-ui/components/ListItem';
 import SearchBar from 'reapp-ui/components/SearchBar';
 import StaticWhenAnimated from 'reapp-ui/helpers/StaticWhenAnimated';
-import UI from 'reapp-ui';
 
 var MailboxView = React.createClass({
+  contextTypes: {
+    theme: React.PropTypes.object
+  },
+
   style: {
     bottomtext: {
       fontSize: 11,
@@ -42,7 +45,7 @@ var MailboxView = React.createClass({
       <View
         {...this.props}
         title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
-        scrollTop={UI.getConstants('searchBarHeight') + 1}
+        scrollTop={this.context.theme.constants['searchBarHeight'] + 1}
         after={bottomBar}
         offsetBottom={43}>
         <Mailbox />
