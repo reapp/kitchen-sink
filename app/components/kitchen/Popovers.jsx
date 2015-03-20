@@ -60,9 +60,9 @@ export default React.createClass({
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
         {this.state.popoverProps &&
           <Popover {...this.state.popoverProps} onClose={this.handlePopoverClose}>
-            <a onClick={this.popoverClick.bind(this, 'modals')}>Modals</a>
-            <a onClick={this.popoverClick.bind(this, 'popovers')}>Popovers</a>
-            <a onClick={this.popoverClick.bind(this, 'tabs')}>Tabs</a>
+            <Button chromeless onTap={this.popoverClick.bind(this, 'modals')}>Modals</Button>
+            <Button chromeless onTap={this.popoverClick.bind(this, 'popovers')}>Popovers</Button>
+            <Button chromeless onTap={this.popoverClick.bind(this, 'tabs')}>Tabs</Button>
           </Popover>
         }
 
