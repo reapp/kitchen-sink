@@ -14,7 +14,6 @@
     "qs": "^2.3.3",
     "react": "^0.13.1",
     "react-router": "^0.13.0",
-    "reapp-component": "~1.0.1",
     "reapp-platform": "^1.0.4",
     "reapp-routes": "^0.10.0",
     "reapp-ui": "^0.11.0"

@@ -1,5 +1,4 @@
 import React from 'react';
-import Component from '../../component';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import Bar from 'reapp-ui/components/Bar';
 import BarItem from 'reapp-ui/components/BarItem';
@@ -17,8 +16,6 @@ export default StaticView({
   mixins: [
     DemoViewMixin
   ],
-
-  page: true,
 
   statics: {
     title: [BackButton, 'Bar']

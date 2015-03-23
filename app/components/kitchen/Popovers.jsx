@@ -14,16 +14,49 @@ export default React.createClass({
 
   getInitialState() {
     return {
-      to: null,
-      popoverProps: false
+      target: null
     };
+  },
+
+  render() {
+    var menuButton =
+      <Button
+        iconProps={{
+          file: require('reapp-ui/assets/icons/hamburger.svg'),
+          size: 24,
+          stroke: 1,
+          debug: true,
+          shapeRendering: 'crispEdges',
+          animations: { self: 'moveToLeft' }
+        }}
+        onTap={e => this.setState({ target: e.target })}
+        chromeless
+      />
+
+    return (
+      <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
+        <PopoversContent target={this.state.target} />
+      </View>
+    );
+  }
+});
+
+
+let PopoversContent = React.createClass({
+  getInitialState() {
+    return {
+      to: null,
+      target: this.props.target
+    };
+  },
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ target: nextProps.target });
   },
 
   showPopover(e) {
     this.setState({
-      popoverProps: {
-        target: e.target
-      }
+      target: e.target
     });
   },
 
@@ -35,7 +68,7 @@ export default React.createClass({
     var path = this.state.to;
 
     this.setState({
-      popoverProps: null,
+      target: null,
       to: null
     });
 
@@ -58,9 +91,9 @@ export default React.createClass({
       />
 
     return (
-      <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
-        {this.state.popoverProps &&
-          <Popover {...this.state.popoverProps} onClose={this.handlePopoverClose}>
+      <div>
+        {this.state.target &&
+          <Popover target={this.state.target} onClose={this.handlePopoverClose}>
             <Button chromeless onTap={this.popoverClick.bind(this, 'modals')}>Modals</Button>
             <Button chromeless onTap={this.popoverClick.bind(this, 'popovers')}>Popovers</Button>
             <Button chromeless onTap={this.popoverClick.bind(this, 'tabs')}>Tabs</Button>
@@ -83,7 +116,7 @@ export default React.createClass({
           A popover near the bottom half of the screen will popover upwards.
         </p>
         <Button onTap={this.showPopover}>Above</Button>
-      </View>
+      </div>
     );
   }
 });

@@ -11,6 +11,10 @@ import Title from 'reapp-ui/components/Title';
 import Badge from 'reapp-ui/components/Badge';
 
 export default React.createClass({
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
   mixins: [
     RoutedViewListMixin
   ],
