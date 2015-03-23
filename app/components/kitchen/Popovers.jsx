@@ -7,6 +7,8 @@ import Title from 'reapp-ui/components/Title';
 import { Link, Navigation } from 'react-router';
 import DemoViewMixin from 'mixins/DemoViewMixin';
 
+const hamburgerIcon = require('reapp-ui/assets/icons/hamburger.svg');
+
 export default React.createClass({
   mixins: [
     DemoViewMixin
@@ -18,18 +20,24 @@ export default React.createClass({
     };
   },
 
+  menuIconProps: {
+    file: hamburgerIcon,
+    size: 24,
+    stroke: 1,
+    debug: true,
+    shapeRendering: 'crispEdges',
+    animations: false
+  },
+
+  handleMenuPopover(e) {
+    this.setState({ target: e.target });
+  },
+
   render() {
     var menuButton =
       <Button
-        iconProps={{
-          file: require('reapp-ui/assets/icons/hamburger.svg'),
-          size: 24,
-          stroke: 1,
-          debug: true,
-          shapeRendering: 'crispEdges',
-          animations: { self: 'moveToLeft' }
-        }}
-        onTap={e => this.setState({ target: e.target })}
+        iconProps={this.menuIconProps}
+        onTap={this.handleMenuPopover}
         chromeless
       />
 
