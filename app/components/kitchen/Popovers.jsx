@@ -50,11 +50,12 @@ export default React.createClass({
           file: require('reapp-ui/assets/icons/hamburger.svg'),
           size: 24,
           stroke: 1,
+          debug: true,
           shapeRendering: 'crispEdges',
         }}
         onTap={this.showPopover}
         chromeless
-      />;
+      />
 
     return (
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
@@ -67,17 +68,21 @@ export default React.createClass({
         }
 
         <Title>Popover Below</Title>
+        <Button onTap={this.showPopover}>Below</Button>
         <p>
-          Popovers are <Button onTap={this.showPopover}>menus</Button> that will float above an element that triggers them. Apple recommends to use popovers on iPad, not smaller mobile devices. For iPhone, use actions and modals.
+          Popovers are menus that float above the element that triggers them.
+          Apple recommends to use popovers on iPad, not smaller mobile devices.
+          For iPhone, use actions and modals.
         </p>
 
-        <div style={{height: 200}} />
+        <Title>Menu</Title>
+        <p>Try the hambuger icon at the top right to see menus near edges of screen.</p>
 
         <Title>Popover Above</Title>
         <p>
-          This is a popover that should trigger from the bottom of the page and point upwards.
+          A popover near the bottom half of the screen will popover upwards.
         </p>
-        <Button onTap={this.showPopover}>Click here</Button>
+        <Button onTap={this.showPopover}>Above</Button>
       </View>
     );
   }

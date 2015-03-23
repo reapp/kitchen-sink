@@ -108,12 +108,6 @@ export default React.createClass({
   },
 
   render() {
-    var RouteHandler = this.childRouteHandler({
-      disableParentViewList: this.disableScroll,
-      isDemoing: this.state.isDemoing,
-      hasInteracted: this.props.hasInteracted || this.state.hasInteracted
-    });
-
     return (
       <NestedViewList
         {...this.routedViewListProps({
@@ -148,7 +142,11 @@ export default React.createClass({
           </p>
         </View>
 
-        {RouteHandler}
+        {this.childRouteHandler({
+          disableParentViewList: this.disableScroll,
+          isDemoing: this.state.isDemoing,
+          hasInteracted: this.props.hasInteracted || this.state.hasInteracted
+        })}
       </NestedViewList>
     );
   }
