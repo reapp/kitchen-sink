@@ -3,7 +3,7 @@
   "name": "reapp-kitchen",
   "repository": "https://github.com/reapp/kitchen-sink",
   "description": "reapp Kitchen Sink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./app/app.js",
   "reapp": "0.8",
   "scripts": {
