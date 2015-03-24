@@ -28,7 +28,7 @@ export default React.createClass({
   },
 
   render() {
-    var handle =
+    const handle =
       <Button
         iconProps={{
           file: require('reapp-ui/assets/icons/hamburger.svg'),
@@ -38,7 +38,7 @@ export default React.createClass({
         }}
         chromeless />
 
-    var menu =
+    const menu =
       <Menu>
         <Link style={{color: '#fff'}} to="kitchen">Kitchen Sink</Link>
       </Menu>

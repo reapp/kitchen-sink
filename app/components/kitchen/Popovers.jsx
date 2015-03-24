@@ -43,7 +43,10 @@ export default React.createClass({
 
     return (
       <View {...this.props} title={[BackButton, 'Popovers', menuButton]}>
-        <PopoversContent target={this.state.target} />
+        <PopoversContent
+          target={this.state.target}
+          onPopoverClose={() => this.handleMenuPopover({})}
+        />
       </View>
     );
   }
@@ -59,7 +62,9 @@ let PopoversContent = React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    this.setState({ target: nextProps.target });
+    this.setState({
+      target: nextProps.target
+    });
   },
 
   showPopover(e) {
@@ -69,11 +74,13 @@ let PopoversContent = React.createClass({
   },
 
   popoverClick(to) {
-    this.setState({ to: to });
+    this.setState({ to });
   },
 
   handlePopoverClose() {
     var path = this.state.to;
+
+    this.props.onPopoverClose();
 
     this.setState({
       target: null,

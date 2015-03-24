@@ -51,7 +51,7 @@ export default StaticView({
             from={type}
             open={this.state[type]}
             dragger={type !== 'left'}>
-            <View>
+            <View plain>
               <p>{type} drawer</p>
               <Button onTap={this.toggleDrawer.bind(this, type)}>Close me</Button>
               <br />
