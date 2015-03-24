@@ -36,12 +36,12 @@ export default StaticView({
         }
 
         <Container wrap>
-          <p>These are replacements for the Alert and Prompt modals.</p>
+          <p>These are replacements for the Alert and Confirm modals.</p>
         </Container>
 
         <Container wrap>
           <Button onTap={this.toggleModal.bind(this, 'alert')}>Alert</Button>
-          <Button onTap={this.toggleModal.bind(this, 'prompt')}>Prompt</Button>
+          <Button onTap={this.toggleModal.bind(this, 'confirm')}>Confirm</Button>
         </Container>
       </div>
     );
