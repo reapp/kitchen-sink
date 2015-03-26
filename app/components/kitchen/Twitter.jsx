@@ -60,47 +60,41 @@ var InnerView = React.createClass({
             }
           })}
           onViewEntering={i => this.setState({ nestedViewIndex: i })}
-          titleBarProps={{
-            styles: {
-              self: {
-                background: 'blue'
-              }
-            }
-          }
-        }>
-          <View>
+          titleBarProps={{ styles: styles.titlebar }}>
+          <View
+            offsetBottom={49}
+            after={
+              <Bar attach="bottom">
+                <BarItem icon="home">Timelines</BarItem>
+                <BarItem icon="bell">Notifications</BarItem>
+                <BarItem icon="message">Messages</BarItem>
+                <BarItem icon="person">Me</BarItem>
+              </Bar>
+            }>
             <DottedViewList
               disableScroll={this.state.nestedViewIndex > 0}
               titleBarProps={{
                 height: 48,
-                styles: {
-                  self: {
-                    background: 'blue'
-                  },
-                  mid: {
-                    color: '#fff'
-                  }
-                }
-              }
-            }>
+                styles: styles.titlebar
+              }}>
               <View title="Home">
                 <List>
                   <Tweet
-                    onTap={() => this.transitionTo('tweetView')}
+                    onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
                   </Tweet>
 
                   <Tweet
-                    onTap={() => this.transitionTo('tweetView')}
+                    onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
                   </Tweet>
 
                   <Tweet
-                    onTap={() => this.transitionTo('tweetView')}
+                    onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
@@ -108,23 +102,32 @@ var InnerView = React.createClass({
                 </List>
               </View>
 
-              <View title="Discover"></View>
+              <View title="Discover" plain></View>
 
-              <View title="Etc"></View>
+              <View title="Etc" plain></View>
             </DottedViewList>
-            <Bar attach="bottom">
-              <BarItem icon="home">Timelines</BarItem>
-              <BarItem icon="bell">Notifications</BarItem>
-              <BarItem icon="message">Messages</BarItem>
-              <BarItem icon="person">Me</BarItem>
-            </Bar>
           </View>
 
-          {this.childRouteHandler()}
+          {this.childRouteHandler({
+            titleBarProps: {
+              styles: styles.titlebar
+            }
+          })}
         </NestedViewList>
       </View>
     )
   }
 });
+
+const styles = {
+  titlebar: {
+    self: {
+      background: '#2C81D5'
+    },
+    mid: {
+      color: '#fff'
+    }
+  }
+};
 
 export default InnerView;

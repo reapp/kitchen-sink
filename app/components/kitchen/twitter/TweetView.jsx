@@ -8,19 +8,7 @@ import List from 'reapp-ui/components/List';
 export default React.createClass({
   render() {
     return (
-      <View
-        {...this.props}
-        title="View Tweet"
-        titleBarProps={{
-          styles: {
-            self: {
-              background: 'blue'
-            },
-            mid: {
-              color: '#fff'
-            }
-          }
-      }}>
+      <View {...this.props} title="View Tweet">
         <List>
           <Tweet
             name="dlongster"
