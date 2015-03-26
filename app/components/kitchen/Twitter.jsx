@@ -50,8 +50,6 @@ var InnerView = React.createClass({
         <Icon name="new-message" size={18} />
       </Button>
 
-      console.log('nested view index', this.state.nestedViewIndex)
-
     return (
       <View {...this.props}>
         <NestedViewList
@@ -61,10 +59,7 @@ var InnerView = React.createClass({
               this.setState({ nestedViewIndex: i })
             }
           })}
-          onViewEntering={i => {
-            console.log('view entering', i)
-            this.setState({ nestedViewIndex: i })
-          }}
+          onViewEntering={i => this.setState({ nestedViewIndex: i })}
           titleBarProps={{
             styles: {
               self: {

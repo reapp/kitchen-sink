@@ -1,7 +1,7 @@
 import React from 'react';
 import BackButton from 'reapp-ui/components/buttons/BackButton';
 import Button from 'reapp-ui/components/Button';
-import TitleBar from 'reapp-ui/components/TitleBar';
+import Bar from 'reapp-ui/components/Bar';
 import Icon from 'reapp-ui/components/Icon';
 import List from 'reapp-ui/components/List';
 import View from 'reapp-ui/views/View';
@@ -14,45 +14,43 @@ var MailboxView = React.createClass({
     theme: React.PropTypes.object
   },
 
-  style: {
-    bottomtext: {
-      fontSize: 11,
-      padding: '4px 0 0',
-      fontWeight: 400
-    }
-  },
-
   render() {
     var backButton =
       <BackButton onTap={() => window.history.back()} stopPropagation>
         Mailboxes
       </BackButton>
 
-    var newMessageIcon =
-      <Button chromeless>
-        <Icon name="box-arrow-in" size={18} />
-      </Button>
-
-    var bottomBar =
-      <TitleBar animations={{ self: 'moveToLeft' }} animationState={{ viewList: { index: 1 }}} attach="bottom" left="" right={newMessageIcon}>
-        <div>
-          <span style={this.style.bottomtext}>Updated Sunday</span>
-          <span style={this.style.bottomtext}>1 Unsent Message</span>
-        </div>
-      </TitleBar>
-
     return (
       <View
         {...this.props}
         title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
         scrollTop={this.context.theme.constants['searchBarHeight'] + 1}
-        after={bottomBar}
-        offsetBottom={43}>
+        after={<MailboxBar />}
+        offsetBottom={48}>
         <Mailbox />
       </View>
     )
   }
 });
+
+var MailboxBar = React.createClass({
+  render() {
+    return (
+      <Bar
+        animationSource="viewList"
+        animations={{ self: 'moveToLeft' }}
+        attach="bottom">
+        <div>
+          <span style={styles.bottomtext}>Updated Sunday</span>
+          <span style={styles.bottomtext}>1 Unsent Message</span>
+        </div>
+        <Button chromeless>
+          <Icon name="box-arrow-in" size={18} />
+        </Button>
+      </Bar>
+    )
+  }
+})
 
 var Mailbox = React.createClass({
   messages: ['Erinn Silsby', 'Phebe Matz', 'Derek Boulware', 'Samantha Canor',
@@ -82,3 +80,11 @@ var Mailbox = React.createClass({
 });
 
 export default MailboxView;
+
+const styles = {
+  bottomtext: {
+    fontSize: 11,
+    padding: '4px 0 0',
+    fontWeight: 400
+  }
+};

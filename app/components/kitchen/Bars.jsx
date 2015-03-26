@@ -62,8 +62,6 @@ export default StaticView({
   render() {
     var activeBarProps = this.barProps[this.state.barType];
 
-    console.log(this.state.barType)
-
     var bar = (
       <Bar display={this.state.barType} activeIndex={this.state.activeBar}>
         <BarItem {...activeBarProps[0]} onTap={this.handleBarActive.bind(null, 0)}>
