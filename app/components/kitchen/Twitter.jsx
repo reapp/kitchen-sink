@@ -7,9 +7,7 @@ import View from 'reapp-ui/views/View';
 import Button from 'reapp-ui/components/Button';
 import Icon from 'reapp-ui/components/Icon';
 import List from 'reapp-ui/components/List';
-import ListItem from 'reapp-ui/components/ListItem';
 import Bar from 'reapp-ui/components/Bar';
-import BarItem from 'reapp-ui/components/BarItem';
 import Tweet from './twitter/Tweet';
 
 var OuterView = React.createClass({
@@ -65,10 +63,10 @@ var InnerView = React.createClass({
             offsetBottom={49}
             after={
               <Bar attach="bottom">
-                <BarItem icon="home">Timelines</BarItem>
-                <BarItem icon="bell">Notifications</BarItem>
-                <BarItem icon="message">Messages</BarItem>
-                <BarItem icon="person">Me</BarItem>
+                <Bar.Item icon="home">Timelines</Bar.Item>
+                <Bar.Item icon="bell">Notifications</Bar.Item>
+                <Bar.Item icon="message">Messages</Bar.Item>
+                <Bar.Item icon="person">Me</Bar.Item>
               </Bar>
             }>
             <DottedViewList

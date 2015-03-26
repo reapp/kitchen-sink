@@ -5,7 +5,6 @@ import Bar from 'reapp-ui/components/Bar';
 import Icon from 'reapp-ui/components/Icon';
 import List from 'reapp-ui/components/List';
 import View from 'reapp-ui/views/View';
-import ListItem from 'reapp-ui/components/ListItem';
 import SearchBar from 'reapp-ui/components/SearchBar';
 import StaticWhenAnimated from 'reapp-ui/helpers/StaticWhenAnimated';
 
@@ -63,7 +62,7 @@ var Mailbox = React.createClass({
 
         <List key={110}>
           {this.messages.map((message, i) =>
-            <ListItem
+            <List.Item
               key={i}
               title={message}
               titleAfter="8:45 PM"
@@ -71,7 +70,7 @@ var Mailbox = React.createClass({
               Lorem ipsume dolor sit amet, consectetur adipiscing
               elit. Nulla sagittis tellus ut turpis condimentium,
               ursula major sagittis.
-            </ListItem>
+            </List.Item>
           )}
         </List>
       </div>

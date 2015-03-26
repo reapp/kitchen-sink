@@ -5,7 +5,6 @@ import List from 'reapp-ui/components/List';
 import Icon from 'reapp-ui/components/Icon';
 import Badge from 'reapp-ui/components/Badge';
 import Title from 'reapp-ui/components/Title';
-import ListItem from 'reapp-ui/components/ListItem';
 import { Link } from 'react-router';
 import DemoViewMixin from 'mixins/DemoViewMixin';
 
@@ -33,7 +32,7 @@ export default StaticView({
       <div>
         <Title>Mail Style Media List</Title>
         <List>
-          <ListItem
+          <List.Item
             title="Donny Radcliffe"
             titleAfter="8:45 AM"
             titleSub="New messages from Jane Doe"
@@ -42,16 +41,16 @@ export default StaticView({
             Lorem ipsume dolor sit amet, consectetur adipiscing
             elit. Nulla sagittis tellus ut turpis condimentium,
             ursula major.
-          </ListItem>
+          </List.Item>
         </List>
 
         <Title>Simple Media List</Title>
         <List>
-          <ListItem
+          <List.Item
             before={icon}
             title="Mark McGraw"
             titleSub="New messages from a person" />
-          <ListItem
+          <List.Item
             before={icon}
             title="John Appleseed"
             titleSub="New messages from another person"
@@ -60,22 +59,22 @@ export default StaticView({
 
         <Title>List with Icons</Title>
         <List>
-          <ListItem
+          <List.Item
             before={icon}
             after="Linked"
             wrapper={<a href="#" />}>
             Brian Cole
-          </ListItem>
-          <ListItem
+          </List.Item>
+          <List.Item
             before={icon}
             after={badge}>
             Joey Mills
-          </ListItem>
-          <ListItem
+          </List.Item>
+          <List.Item
             before={icon}
             after={icon}>
             Blair Batac
-          </ListItem>
+          </List.Item>
         </List>
 
         <Title>Basic list</Title>

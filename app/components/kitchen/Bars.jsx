@@ -1,7 +1,6 @@
 import React from 'react';
 import StaticView from 'reapp-ui/helpers/StaticView';
 import Bar from 'reapp-ui/components/Bar';
-import BarItem from 'reapp-ui/components/BarItem';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'components/shared/BackButton';
 import { Container, Block } from 'reapp-ui/components/Grid';
@@ -64,15 +63,15 @@ export default StaticView({
 
     var bar = (
       <Bar display={this.state.barType} activeIndex={this.state.activeBar}>
-        <BarItem {...activeBarProps[0]} onTap={this.handleBarActive.bind(null, 0)}>
+        <Bar.Item {...activeBarProps[0]} onTap={this.handleBarActive.bind(null, 0)}>
           Feed
-        </BarItem>
-        <BarItem {...activeBarProps[1]} onTap={this.handleBarActive.bind(null, 1)}>
+        </Bar.Item>
+        <Bar.Item {...activeBarProps[1]} onTap={this.handleBarActive.bind(null, 1)}>
           Stream
-        </BarItem>
-        <BarItem {...activeBarProps[2]} onTap={this.handleBarActive.bind(null, 2)}>
+        </Bar.Item>
+        <Bar.Item {...activeBarProps[2]} onTap={this.handleBarActive.bind(null, 2)}>
           Board
-        </BarItem>
+        </Bar.Item>
       </Bar>
     );
 
