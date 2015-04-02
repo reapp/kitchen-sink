@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, RouteHandler } from 'react-router';
 import Theme from 'reapp-ui/helpers/Theme';
-import iOSTheme from 'reapp-ui/themes/ios';
+import iOSTheme from 'reapp-ui/themes/ios/theme';
 import Menu from 'reapp-ui/components/Menu';
 import Button from 'reapp-ui/components/Button';
 import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
