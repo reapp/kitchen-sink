@@ -16,7 +16,8 @@ export default StaticView({
         <NestedViewList
           scrollToStep={this.state.step}
           onViewEntered={i => this.props.disableParentViewList(i > 0)}>
-          <View title={[
+          <View
+            title={[
             BackButton,
             'One',
             <Button chromeless onTap={() => this.setState({ step: 1 })}>Two</Button>

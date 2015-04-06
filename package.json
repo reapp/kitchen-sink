@@ -7,7 +7,6 @@
   "main": "./app/app.js",
   "reapp": "0.8",
   "scripts": {
-    "test": "",
     "start": "reapp run"
   },
   "dependencies": {
