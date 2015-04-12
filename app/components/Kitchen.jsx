@@ -97,7 +97,7 @@ export default React.createClass({
 
   demoLinks: [
     ['mailbox', 'Mailbox'],
-    // ['twitter', 'Twitter'],
+    ['twitter', 'Twitter'],
   ],
 
   viewLinks: [
