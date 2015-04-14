@@ -58,7 +58,10 @@ var InnerView = React.createClass({
             }
           })}
           onViewEntering={i => this.setState({ nestedViewIndex: i })}
-          titleBarProps={{ styles: styles.titlebar }}>
+          titleBarProps={{
+            height: 52,
+            styles: styles.titlebar
+          }}>
           <View
             offsetBottom={49}
             after={
@@ -72,12 +75,13 @@ var InnerView = React.createClass({
             <DottedViewList
               disableScroll={this.state.nestedViewIndex > 0}
               titleBarProps={{
-                height: 48,
+                height: 52,
                 styles: styles.titlebar
               }}>
               <View title="Home">
                 <List>
                   <Tweet
+                    index={0}
                     onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
@@ -85,6 +89,7 @@ var InnerView = React.createClass({
                   </Tweet>
 
                   <Tweet
+                    index={1}
                     onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
@@ -92,6 +97,7 @@ var InnerView = React.createClass({
                   </Tweet>
 
                   <Tweet
+                    index={2}
                     onTap={() => this.context.router.transitionTo('tweetView')}
                     name="Nothing"
                     handle="@nothign">
@@ -120,7 +126,8 @@ var InnerView = React.createClass({
 const styles = {
   titlebar: {
     self: {
-      background: '#2C81D5'
+      border: 'none',
+      background: '#2DA3D5'
     },
     mid: {
       color: '#fff'

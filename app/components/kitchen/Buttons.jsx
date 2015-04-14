@@ -66,7 +66,7 @@ export default StaticView({
 
         <Title>Buttons</Title>
         <Container wrap>
-          <Button onTap={this.toggleAlert} active>Active</Button>
+          <Button onTap={this.toggleAlert} filled>Active</Button>
           <Button onTap={this.toggleAlert}>Button</Button>
           <Button onTap={this.toggleAlert} rounded>Round</Button>
         </Container>
@@ -80,7 +80,7 @@ export default StaticView({
         <Title>Rounded</Title>
         <ButtonGroup buttonProps={{rounded: true}}>
           <Button onTap={this.toggleAlert}>Button</Button>
-          <Button onTap={this.toggleAlert} active>Button</Button>
+          <Button onTap={this.toggleAlert} filled>Button</Button>
           <Button onTap={this.toggleAlert}>Button</Button>
         </ButtonGroup>
 
@@ -88,7 +88,7 @@ export default StaticView({
         <Container style={{marginBottom: 20}}>
           <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
             <Button onTap={this.toggleAlert}>Button</Button>
-            <Button onTap={this.toggleAlert} active>Button</Button>
+            <Button onTap={this.toggleAlert} filled>Button</Button>
             <Button onTap={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>

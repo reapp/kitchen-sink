@@ -16,13 +16,13 @@ var MailboxView = React.createClass({
   render() {
     var backButton =
       <BackButton onTap={() => window.history.back()} stopPropagation>
-        Mailboxes
+        Kitchen Sink
       </BackButton>
 
     return (
       <View
         {...this.props}
-        title={[backButton, 'All Inboxes', <Button chromeless>Edit</Button>]}
+        title={[backButton, 'Inbox', <Button chromeless>Edit</Button>]}
         scrollTop={this.context.theme.constants['searchBarHeight'] + 1}
         after={<MailboxBar />}
         offsetBottom={48}>

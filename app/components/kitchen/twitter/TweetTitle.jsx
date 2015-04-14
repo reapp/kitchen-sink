@@ -1,29 +1,30 @@
 import React from 'react';
 
 export default React.createClass({
-  styles: {
-    title: {
-      flexFlow: 'row'
-    },
-
-    name: {
-      fontWeight: 'bold'
-    },
-
-    handle: {
-      color: '#999',
-      fontWeight: 300,
-      fontSize: '14px'
-    }
-  },
-
   render() {
     return (
-      <div style={this.styles.title}>
-        <span style={this.styles.name}>{this.props.name}</span>
+      <div style={styles.title}>
+        <div style={styles.name}>{this.props.name}</div>
         &nbsp;
-        <span style={this.styles.handle}>{this.props.handle}</span>
+        <div style={styles.handle}>{this.props.handle}</div>
       </div>
     );
   }
 });
+
+const styles = {
+  title: {
+    flexFlow: 'row',
+    WebkitFlexFlow: 'row'
+  },
+
+  name: {
+    fontWeight: 'bold'
+  },
+
+  handle: {
+    color: '#999',
+    fontWeight: 300,
+    fontSize: '14px'
+  }
+}
