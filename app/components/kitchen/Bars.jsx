@@ -47,14 +47,14 @@ export default StaticView({
       { icon: star }
     ],
     'icon-text': [
-      { icon: mailbox, text: 'Mailbox' },
-      { icon: stopwatch, text: 'Stopwatch' },
-      { icon: star, text: 'Star' }
+      { icon: mailbox },
+      { icon: stopwatch },
+      { icon: star }
     ],
     'icon-text-right': [
-      { icon: mailbox, text: 'Mailbox' },
-      { icon: stopwatch, text: 'Stopwatch' },
-      { icon: star, text: 'Star' }
+      { icon: mailbox },
+      { icon: stopwatch },
+      { icon: star }
     ]
   },
 
