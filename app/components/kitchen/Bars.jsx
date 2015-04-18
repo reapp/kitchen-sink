@@ -119,8 +119,10 @@ export default StaticView({
     ];
 
     return (
-      <div>
-        {contents[this.state.activeBar]}
+      <div className="fullscreen">
+        <div style={{flex:1, padding:10}}>
+          {contents[this.state.activeBar]}
+        </div>
         {bar}
       </div>
     );

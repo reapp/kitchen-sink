@@ -44,7 +44,7 @@ var MailboxBar = React.createClass({
           <span style={styles.bottomtext}>1 Unsent Message</span>
         </div>
         <Button chromeless>
-          <Icon name="box-arrow-in" size={18} />
+          <Icon file={require('reapp-ui/assets/icons/box-arrow-in.svg')} size={18} />
         </Button>
       </Bar>
     )
