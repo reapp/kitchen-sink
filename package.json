@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "qs": "^2.3.3",
-    "react": "^0.13.2",
+    "react": "0.13.2",
     "react-router": "^0.13.0",
     "reapp-platform": "^1.0.4",
     "reapp-routes": "^0.10.0",
-    "reapp-ui": "^0.11.0"
+    "reapp-ui": "^0.12.0"
   }
 }
