@@ -112,6 +112,21 @@ export default React.createClass({
   },
 
   render() {
+
+    console.log('Kitchen.render');
+
+    // setup props to be sent to every child
+    const childRouteProps = {
+      disableParentViewList: this.disableScroll,
+      isDemoing: this.state.isDemoing,
+      hasInteracted: this.props.hasInteracted || this.state.hasInteracted
+    }
+
+    // create children with passed-on props
+    const childrenWithProps = React.Children.map(
+      this.props.children,
+      (child) => React.cloneElement(child, childRouteProps));
+
     return (
       <NestedViewList
         {...this.routedViewListProps({
@@ -142,15 +157,12 @@ export default React.createClass({
           </List>
 
           <p>
-            Welcome! We're alpha, expect bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues" target="_blank">report issues</a> you find.
+            Welcome! We are alpha, expect bugs and sketchy performance. Help us &amp; <a href="https://github.com/reapp/reapp-ui/issues" target="_blank">report issues</a> you find.
           </p>
         </View>
 
-        {this.childRouteHandler({
-          disableParentViewList: this.disableScroll,
-          isDemoing: this.state.isDemoing,
-          hasInteracted: this.props.hasInteracted || this.state.hasInteracted
-        })}
+        {childrenWithProps}
+
       </NestedViewList>
     );
   }

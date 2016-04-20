@@ -28,6 +28,7 @@ export default React.createClass({
   },
 
   render() {
+    console.log('App.render');
     const handle =
       <Button
         iconProps={{
@@ -45,10 +46,7 @@ export default React.createClass({
 
     return (
       <Theme {...iOSTheme}>
-          <RouteHandler {...this.props}
-            onViewEntered={this.handleViewEntered}
-            hasInteracted={this.state.hasInteracted}
-          />
+        {this.props.children}
       </Theme>
     );
   }
