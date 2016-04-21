@@ -7,6 +7,21 @@ import Button from 'reapp-ui/components/Button';
 import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
 
 export default React.createClass({
+
+  contextTypes: {
+    router: React.PropTypes.object
+  },
+
+  childContextTypes: {
+    routeDepth: React.PropTypes.number
+  },
+
+  getChildContext() {
+    return {
+      routeDepth: 0
+    };
+  },
+
   getInitialState() {
     return {
       disableDragger: false

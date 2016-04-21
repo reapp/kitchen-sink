@@ -12,7 +12,8 @@ import Badge from 'reapp-ui/components/Badge';
 
 export default React.createClass({
   contextTypes: {
-    router: React.PropTypes.func
+    router: React.PropTypes.object,
+    routeDepth: React.PropTypes.number
   },
 
   mixins: [
@@ -125,7 +126,7 @@ export default React.createClass({
     // create children with passed-on props
     const childrenWithProps = React.Children.map(
       this.props.children,
-      (child) => React.cloneElement(child, childRouteProps));
+      (child) => React.cloneElement(child, Object.assign(childRouteProps, child.props)));
 
     return (
       <NestedViewList

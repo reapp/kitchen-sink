@@ -2,7 +2,7 @@ import 'reapp-ui';
 import 'reapp-ui/lib/desktopTouch'; // demo
 import React from 'react';
 
-import { Route, browserHistory } from 'react-router';
+import { Route, IndexRoute, browserHistory } from 'react-router';
 import App from './components/App.jsx';
 import Kitchen from './components/Kitchen.jsx';
 import Bars from './components/kitchen/Bars.jsx';
@@ -26,6 +26,7 @@ import Routes from './routes';
 
 const appRoutes = (
   <Route component={App} path="/">
+    <IndexRoute component={Kitchen} />
       <Route component={Kitchen} path="/">
         <Route component={Modals} path="/modals" />
         <Route component={Popovers} path="/popovers" />
