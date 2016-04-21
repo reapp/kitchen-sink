@@ -35,6 +35,7 @@
     "react-hot-loader": "^1.3.0",
     "react-proxy-loader": "^0.3.4",
     "react-router": "2.0.0",
+    "reapp-kit": "^1.2.0",
     "reapp-object-assign": "1.0.0",
     "reapp-platform": "git+https://github.com/reapp/reapp-platform.git",
     "reapp-routes": "git+https://github.com/reapp/reapp-routes.git",
