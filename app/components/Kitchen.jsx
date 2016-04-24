@@ -114,8 +114,6 @@ export default React.createClass({
 
   render() {
 
-    console.log('Kitchen.render');
-
     // setup props to be sent to every child
     const childRouteProps = {
       disableParentViewList: this.disableScroll,

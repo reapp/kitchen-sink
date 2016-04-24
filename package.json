@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "qs": "^2.3.3",
-    "react": "0.14.x",
+    "react": "0.14.7",
     "reapp-kit": "file:../reapp-kit/dist/",
     "reapp-ui": "file:../reapp-ui/build/",
     "reapp-routes": "file:../reapp-routes/",

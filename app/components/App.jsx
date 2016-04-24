@@ -43,7 +43,6 @@ export default React.createClass({
   },
 
   render() {
-    console.log('App.render');
     const handle =
       <Button
         iconProps={{
