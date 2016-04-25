@@ -4,6 +4,8 @@ import { router, route } from 'reapp-kit';
 router(require,
   route('app', '/', { dir: '' },
     route('kitchen', '/',
+
+      // interface
       route('modals'),
       route('popovers'),
       route('bars'),
@@ -24,6 +26,7 @@ router(require,
       route('twitter',
         route('tweetView')
       )
+      
     )
   )
 );

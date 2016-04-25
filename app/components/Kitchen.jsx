@@ -8,6 +8,7 @@ import SearchBar from 'reapp-ui/components/SearchBar';
 import List from 'reapp-ui/components/List';
 import ListItem from 'reapp-ui/components/ListItem';
 import Title from 'reapp-ui/components/Title';
+import TitleBar from 'reapp-ui/components/TitleBar';
 import Badge from 'reapp-ui/components/Badge';
 
 export default React.createClass({
@@ -82,28 +83,32 @@ export default React.createClass({
     );
   },
 
-  interfaceLinks: [
-    ['buttons', 'Buttons'],
-    ['lists', 'Lists'],
-    ['gallery', 'Gallery'],
-    ['modals', 'Modals'],
-    ['popovers', 'Popovers'],
-    ['forms', 'Forms'],
-    ['bars', 'Bars'],
-    ['grids', 'Grid'],
-    ['drawers', 'Drawers'],
-    ['cards', 'Cards']
-  ],
+  links: {
+    components: {
+      interface: [
+        ['buttons', 'Buttons'],
+        ['lists', 'Lists'],
+        ['gallery', 'Gallery'],
+        ['modals', 'Modals'],
+        ['popovers', 'Popovers'],
+        ['forms', 'Forms'],
+        ['bars', 'Bars'],
+        ['grids', 'Grid'],
+        ['drawers', 'Drawers'],
+        ['cards', 'Cards']
+      ],
 
-  demoLinks: [
-    ['mailbox', 'Mailbox'],
-    ['twitter', 'Twitter'],
-  ],
+      demo: [
+        ['mailbox', 'Mailbox'],
+        ['twitter', 'Twitter'],
+      ],
 
-  viewLinks: [
-    ['view-lists', 'Nested View List'],
-    ['dotted-view-lists', 'Dotted View List']
-  ],
+      view: [
+        ['view-lists', 'Nested View List'],
+        ['dotted-view-lists', 'Dotted View List']
+      ]
+    }
+  },
 
   disableScroll(val) {
     this.setState({
@@ -128,17 +133,17 @@ export default React.createClass({
 
           <Title>Demos</Title>
           <List>
-            {this.filteredLinks(this.demoLinks)}
+            {this.filteredLinks(this.links.components.demo)}
           </List>
 
           <Title>Interface</Title>
           <List>
-            {this.filteredLinks(this.interfaceLinks)}
+            {this.filteredLinks(this.links.components.interface)}
           </List>
 
           <Title>Views</Title>
           <List>
-            {this.filteredLinks(this.viewLinks)}
+            {this.filteredLinks(this.links.components.view)}
           </List>
 
           <p>

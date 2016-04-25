@@ -12,7 +12,6 @@
   "dependencies": {
     "qs": "^2.3.3",
     "react": "0.14.x",
-    "react": "0.14.x",
     "reapp-kit": "^1.2.0"
   }
 }
