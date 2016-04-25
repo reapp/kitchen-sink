@@ -1,3 +1,3 @@
 export default {
-  // can override reapp-ui/themes/ios/constants/components.js
+  // can override reapp-ui/themes/[theme]/constants/components.js
 };

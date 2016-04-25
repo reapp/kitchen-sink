@@ -1,17 +1,20 @@
 import { theme } from 'reapp-kit';
-import iOS from 'reapp-kit/themes/ios';
+import material from 'reapp-kit/themes/material';
 import components from './constants/components';
 import styles from './styles';
 
 theme({
   constants: [
-    iOS.constants.base,
-    iOS.constants.components,
+    material.constants.colors,
+    material.constants.spacing,
+    material.constants.typography,
+    material.constants.base,
+    material.constants.components,
     components
   ],
   styles: [
-    iOS.styles,
+    material.styles,
     styles
   ],
-  animations: [iOS.animations]
+  animations: [material.animations]
 });
