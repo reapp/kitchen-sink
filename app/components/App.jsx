@@ -42,13 +42,9 @@ export default React.createClass({
       <Menu>
         <Link style={{color: '#fff'}} to="kitchen">Kitchen Sink</Link>
       </Menu>
-
     return (
-      <Theme {...materialTheme}>
-          <RouteHandler {...this.props}
-            onViewEntered={this.handleViewEntered}
-            hasInteracted={this.state.hasInteracted}
-          />
+      <Theme {...materialTheme} onViewEntered={this.handleViewEntered} hasInteracted={this.state.hasInteracted}>
+        {this.props.children}
       </Theme>
     );
   }
