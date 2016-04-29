@@ -46,7 +46,7 @@ export default React.createClass({
       var name = this.interfaceLinks[this.state.demoIndex][0];
 
       if (!this.state.hasInteracted && !this.props.hasInteracted) {
-        this.context.router.transitionTo(name);
+        this.context.router.push(name);
         this.setState({ demoIndex: this.state.demoIndex + 1 });
 
         if (this.state.demoIndex + 1 === this.interfaceLinks.length)
@@ -74,7 +74,7 @@ export default React.createClass({
     return (
       <ListItem
         key={i}
-        onTap={() => this.context.router.transitionTo(link[0])}
+        onTap={() => this.context.router.push(link[0])}
         after={link[2] &&
           <Badge styles={{self: { background: 'red' } }}>!</Badge>
         }
@@ -165,7 +165,12 @@ export default React.createClass({
           </p>
         </View>
 
-        {childrenWithProps}
+        {this.childRouteHandler({
+          disableParentViewList: this.disableScroll,
+          isDemoing: this.state.isDemoing,
+          hasInteracted: this.props.hasInteracted || this.state.hasInteracted,
+          router: this.context.router
+        })}
 
       </NestedViewList>
     );
