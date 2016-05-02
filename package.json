@@ -11,11 +11,7 @@
   },
   "dependencies": {
     "qs": "^2.3.3",
-    "react": "0.14.7",
-    "reapp-kit": "file:../reapp-kit/dist/",
-    "reapp-ui": "file:../reapp-ui/build/",
-    "reapp-routes": "file:../reapp-routes/",
-    "reapp-pack": "git+https://github.com/reapp/reapp-pack.git/#feature/copy_webpack_modules_fix",
-    "reapp": "git+https://github.com/reapp/reapp.git#feature/fix_dependencies"
+    "react": "0.14.x",
+    "reapp-kit": "file:../reapp-kit/dist/"
   }
 }

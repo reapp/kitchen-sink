@@ -53,10 +53,6 @@ export default StaticView({
     }
   },
 
-  doSomething() {
-    console.log('here');
-  },
-
   render() {
     return (
       <div>
@@ -70,43 +66,37 @@ export default StaticView({
 
         <Title>Buttons</Title>
         <Container wrap>
-          <Button filled onTap={this.doSomething()}>Active</Button>
-          <Button onTap={this.doSomething()}>Button</Button>
-          <Button rounded>Round</Button>
+          <Button onTap={this.toggleAlert} filled>Active</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
+          <Button onTap={this.toggleAlert} rounded>Round</Button>
         </Container>
 
         <Title>Group</Title>
         <ButtonGroup>
-          <Button>Button</Button>
-          <Button>Button</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
         </ButtonGroup>
 
         <Title>Rounded</Title>
         <ButtonGroup buttonProps={{rounded: true}}>
-          <Button>Button</Button>
-          <Button filled>Button</Button>
-          <Button>Button</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
+          <Button onTap={this.toggleAlert} filled>Button</Button>
+          <Button onTap={this.toggleAlert}>Button</Button>
         </ButtonGroup>
 
         <Title>Styled</Title>
         <Container style={{marginBottom: 20}}>
           <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
-            <Button>Button</Button>
-            <Button filled>Button</Button>
-            <Button>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
+            <Button onTap={this.toggleAlert} filled>Button</Button>
+            <Button onTap={this.toggleAlert}>Button</Button>
           </ButtonGroup>
         </Container>
 
         <Container wrap>
-          <Button styles={this.buttonStyles.red}>Active</Button>
-          <Button styles={this.buttonStyles.green}>Button</Button>
-          <Button styles={this.buttonStyles.blue} rounded>Round</Button>
-        </Container>
-
-        <Title>Chromeless</Title>
-        <Container wrap>
-          <Button filled chromeless>Active</Button>
-          <Button chromeless>Chromeless</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.red}>Active</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.green}>Button</Button>
+          <Button onTap={this.toggleAlert} styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
 
       </div>
