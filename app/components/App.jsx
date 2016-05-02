@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, RouteHandler } from 'react-router';
 import Theme from 'reapp-ui/helpers/Theme';
-import iOSTheme from 'reapp-ui/themes/ios/Theme';
+import materialTheme from 'reapp-ui/themes/material/theme';
 import Menu from 'reapp-ui/components/Menu';
 import Button from 'reapp-ui/components/Button';
 import LayoutLeftNav from 'reapp-ui/views/LayoutLeftNav';
@@ -58,7 +58,7 @@ export default React.createClass({
         <Link style={{color: '#fff'}} to="kitchen">Kitchen Sink</Link>
       </Menu>
     return (
-      <Theme {...iOSTheme} onViewEntered={this.handleViewEntered} hasInteracted={this.state.hasInteracted}>
+      <Theme {...materialTheme} onViewEntered={this.handleViewEntered} hasInteracted={this.state.hasInteracted}>
         {this.props.children}
       </Theme>
     );
