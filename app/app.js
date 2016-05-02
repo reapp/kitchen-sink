@@ -1,6 +1,3 @@
-import 'reapp-ui';
-import 'reapp-ui/lib/desktopTouch'; // demo
-import './theme';
 import { router, route } from 'reapp-kit';
 
 router(require,
@@ -28,7 +25,7 @@ router(require,
       route('twitter',
         route('tweetView')
       )
-      
+
     )
   )
 );

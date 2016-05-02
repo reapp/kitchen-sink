@@ -98,7 +98,6 @@ export default StaticView({
           <Button onTap={this.toggleAlert} styles={this.buttonStyles.green}>Button</Button>
           <Button onTap={this.toggleAlert} styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
-
       </div>
     );
   }
