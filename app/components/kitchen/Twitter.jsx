@@ -82,7 +82,7 @@ var InnerView = React.createClass({
                 <List>
                   <Tweet
                     index={0}
-                    onTap={() => this.context.router.transitionTo('tweetView')}
+                    onTap={() => this.context.router.push('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
@@ -90,7 +90,7 @@ var InnerView = React.createClass({
 
                   <Tweet
                     index={1}
-                    onTap={() => this.context.router.transitionTo('tweetView')}
+                    onTap={() => this.context.router.push('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
@@ -98,7 +98,7 @@ var InnerView = React.createClass({
 
                   <Tweet
                     index={2}
-                    onTap={() => this.context.router.transitionTo('tweetView')}
+                    onTap={() => this.context.router.push('tweetView')}
                     name="Nothing"
                     handle="@nothign">
                     I just used a ClojureScript REPL to live target C.
