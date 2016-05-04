@@ -70,7 +70,7 @@ export default StaticView({
 
         <Title>Buttons</Title>
         <Container wrap>
-          <Button filled onTap={this.doSomething()}>Active</Button>
+          <Button secondaryRipple filled onTap={this.doSomething()}>Active</Button>
           <Button onTap={this.doSomething()}>Button</Button>
           <Button rounded>Round</Button>
         </Container>
@@ -91,21 +91,21 @@ export default StaticView({
         <Title>Styled</Title>
         <Container style={{marginBottom: 20}}>
           <ButtonGroup buttonProps={{styles: this.buttonStyles.green}}>
-            <Button>Button</Button>
-            <Button filled>Button</Button>
-            <Button>Button</Button>
+            <Button secondaryRipple>Button</Button>
+            <Button filled secondaryRipple>Button</Button>
+            <Button secondaryRipple>Button</Button>
           </ButtonGroup>
         </Container>
 
         <Container wrap>
-          <Button styles={this.buttonStyles.red}>Active</Button>
-          <Button styles={this.buttonStyles.green}>Button</Button>
-          <Button styles={this.buttonStyles.blue} rounded>Round</Button>
+          <Button secondaryRipple styles={this.buttonStyles.red}>Active</Button>
+          <Button secondaryRipple styles={this.buttonStyles.green}>Button</Button>
+          <Button secondaryRipple styles={this.buttonStyles.blue} rounded>Round</Button>
         </Container>
 
         <Title>Chromeless</Title>
         <Container wrap>
-          <Button filled chromeless>Active</Button>
+          <Button secondaryRipple filled chromeless>Active</Button>
           <Button chromeless>Chromeless</Button>
         </Container>
 

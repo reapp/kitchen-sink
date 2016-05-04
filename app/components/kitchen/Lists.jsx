@@ -21,8 +21,8 @@ export default StaticView({
     var icon =
       <img
         src={require('assets/icon.png')}
-        width={24}
-        height={24}
+        width={40}
+        height={40}
         style={{ borderRadius: 8 }}
       />
 
@@ -61,8 +61,7 @@ export default StaticView({
         <List>
           <List.Item
             before={icon}
-            after="Linked"
-            wrapper={<a href="#" />}>
+            after="Linked">
             Brian Cole
           </List.Item>
           <List.Item
@@ -83,13 +82,13 @@ export default StaticView({
         </List>
 
         <Title>Grouped with Sticky Titles</Title>
-        <List title="A" wrap>
+        <List title='Name Starting with "A"' wrap>
           {['Adam', 'Alix', 'Annabel']}
         </List>
-        <List title="B" wrap>
+        <List title='Name Starting with "B"' wrap>
           {['Billy', 'Brenda', 'Byron']}
         </List>
-        <List title="C" wrap>
+        <List title='Name Starting with "C"' wrap>
           {['Clay', 'Cody', 'Crystal']}
         </List>
 

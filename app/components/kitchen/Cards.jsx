@@ -20,7 +20,7 @@ export default StaticView({
       <div {...this.props}>
         <Title>Card List</Title>
         <CardList>
-          <Card title="What">Lorem ipsum dolor sit amet</Card>
+          <Card title="Card Title" subTitle="Card Subtitle">Lorem ipsum dolor sit amet</Card>
           <Card title="Third">Lorem ipsum dolor sit amet</Card>
           <Card title="Fourth Card">Lorem ipsum dolor sit amet</Card>
         </CardList>
