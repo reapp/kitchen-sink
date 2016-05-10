@@ -95,7 +95,8 @@ export default React.createClass({
         ['bars', 'Bars'],
         ['grids', 'Grid'],
         ['drawers', 'Drawers'],
-        ['cards', 'Cards']
+        ['cards', 'Cards'],
+        ['search', 'Search']
       ],
 
       demo: [

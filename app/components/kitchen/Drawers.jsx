@@ -31,10 +31,26 @@ export default StaticView({
   toggleDrawer(type) {
     this.setState({ [type]: !this.state[type] });
     var allClosed = !this.state.left && !this.state.right && !this.state.top && !this.state.bottom;
-    this.props.disableParentViewList(allClosed);
+    //this.props.disableParentViewList(allClosed);
   },
 
   render() {
+    var drawers = [];
+    drawers = ['left', 'right', 'bottom', 'top'].map((type) =>
+      <Drawer
+        from={type}
+        open={this.state[type]}
+        dragger={type === 'right'}>
+        <View plain>
+          <p>{type} drawer</p>
+          <Button onTap={this.toggleDrawer.bind(this, type)}>Close me</Button>
+          <br />
+          <img src={image} />
+        </View>
+      </Drawer>
+    );
+    
+
     return (
       <div>
         <Title>Drawers</Title>
@@ -46,19 +62,7 @@ export default StaticView({
           <Button onTap={this.toggleDrawer.bind(this, 'left')}>Left</Button>
         </Container>
 
-        {['left', 'right', 'bottom', 'top'].map((type) =>
-          <Drawer
-            from={type}
-            open={this.state[type]}
-            dragger={type === 'right'}>
-            <View plain>
-              <p>{type} drawer</p>
-              <Button onTap={this.toggleDrawer.bind(this, type)}>Close me</Button>
-              <br />
-              <img src={image} />
-            </View>
-          </Drawer>
-        )}
+        {drawers}
       </div>
     );
   }

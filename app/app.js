@@ -16,6 +16,7 @@ router(require,
       route('grids'),
       route('forms'),
       route('gallery'),
+      route('search'),
 
       // views
       route('view-lists'),
